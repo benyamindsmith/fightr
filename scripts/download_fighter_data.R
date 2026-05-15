@@ -20,37 +20,23 @@ json_text <- response |>
 
 writeLines(json_text, "data/fighter_data_raw.json")
 
-fighter_json <- fromJSON(json_text, flatten = TRUE)
+fighter_json <- fromJSON(json_text)|>
+  imap_dfr(function(x, id) {
+    x |>
+      map_chr(~ if (length(.x) == 0) NA_character_ else as.character(.x[[1]])) |>
+      as.list() |>
+      as_tibble() |>
+      mutate(fighter_id = id, .before = 1)
+  })
+
 
 # Handle APIs that return either:
 # 1. a top-level list/dataframe of fighters
 # 2. a nested object like { "fighters": [...] }
-if (is.data.frame(fighter_json)) {
-  fighter_df <- fighter_json
-} else if ("fighters" %in% names(fighter_json)) {
-  fighter_df <- fighter_json$fighters
-} else if ("data" %in% names(fighter_json)) {
-  fighter_df <- fighter_json$data
-} else {
+if (!is.data.frame(fighter_json)) {
   stop("Could not find fighter records in the API response.")
 }
 
-fighter_df <- as_tibble(fighter_df)
-
-# Flatten any remaining list-columns
-fighter_df <- fighter_df |>
-  mutate(across(
-    where(is.list),
-    ~ map_chr(.x, function(value) {
-      if (is.null(value) || length(value) == 0) {
-        NA_character_
-      } else if (length(value) == 1 && !is.list(value)) {
-        as.character(value)
-      } else {
-        toJSON(value, auto_unbox = TRUE)
-      }
-    })
-  ))
 
 save(fighter_df, file = "data/fighter_data.RData")
 

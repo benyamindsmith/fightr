@@ -19,14 +19,7 @@ json_text <- response |>
 writeLines(json_text, "data/rankings_data_raw.json")
 
 rankings_json <- fromJSON(json_text)|>
-  imap_dfr(function(x, id) {
-    x |>
-      map_chr(~ if (length(.x) == 0) NA_character_ else as.character(.x[[1]])) |>
-      as.list() |>
-      as_tibble() |>
-      mutate(fighter_id = id, .before = 1)
-  })
-
+  as_tibble()
 
 # Handle APIs that return either:
 # 1. a top-level list/dataframe of fighters

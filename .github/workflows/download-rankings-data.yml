@@ -24,7 +24,7 @@ jobs:
           Rscript -e 'install.packages("pak")'
           Rscript -e 'pak::pkg_install(c("httr2", "jsonlite", "dplyr", "tidyr", "purrr"))'
 
-      - name: Download fighter JSON from API
+      - name: Download rankings JSON from API
         run: |
           Rscript scripts/download_rankings.R
 

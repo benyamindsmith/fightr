@@ -1,5 +1,3 @@
-# scripts/download_fighter_data.R
-
 library(httr2)
 library(jsonlite)
 library(dplyr)
@@ -38,7 +36,7 @@ if (!is.data.frame(fighter_json)) {
 }
 
 
-save(fighter_df, file = "data/fighter_data.RData")
+save(fighter_json, file = "data/fighter_data.RData")
 
 message("Saved flattened fighter dataframe to data/fighter_data.RData")
 message("Rows: ", nrow(fighter_json))

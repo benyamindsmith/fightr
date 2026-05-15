@@ -1,5 +1,3 @@
-# scripts/download_fighter_data.R
-
 library(httr2)
 library(jsonlite)
 library(dplyr)
@@ -18,9 +16,9 @@ response <- request |>
 json_text <- response |>
   resp_body_string()
 
-writeLines(json_text, "data/fighter_data_raw.json")
+writeLines(json_text, "data/rankings_data_raw.json")
 
-fighter_json <- fromJSON(json_text)|>
+rankings_json <- fromJSON(json_text)|>
   imap_dfr(function(x, id) {
     x |>
       map_chr(~ if (length(.x) == 0) NA_character_ else as.character(.x[[1]])) |>
@@ -33,13 +31,13 @@ fighter_json <- fromJSON(json_text)|>
 # Handle APIs that return either:
 # 1. a top-level list/dataframe of fighters
 # 2. a nested object like { "fighters": [...] }
-if (!is.data.frame(fighter_json)) {
-  stop("Could not find fighter records in the API response.")
+if (!is.data.frame(rankings_json)) {
+  stop("Could not find rankings data in the API response.")
 }
 
 
-save(fighter_df, file = "data/fighter_data.RData")
+save(rankings_json, file = "data/fighter_rankings.RData")
 
-message("Saved flattened fighter dataframe to data/fighter_data.RData")
-message("Rows: ", nrow(fighter_json))
-message("Columns: ", ncol(fighter_json))
+message("Saved flattened rankings taframe to data/fighter_rankings.RData")
+message("Rows: ", nrow(rankings_json))
+message("Columns: ", ncol(rankings_json))

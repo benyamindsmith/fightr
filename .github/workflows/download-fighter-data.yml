@@ -23,7 +23,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("httr2", "jsonlite", "dplyr", "tidyr", "purrr"), repos = "https://cloud.r-project.org")'
+          Rscript -e 'install.packages(c("httr2", "jsonlite", "dplyr", "tidyr", "purrr"))'
 
       - name: Download fighter JSON from API
         run: |

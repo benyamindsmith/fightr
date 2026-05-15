@@ -1,0 +1,36 @@
+# .github/workflows/download-fighter-data.yml
+
+name: Download and Flatten Fighter Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs daily at 6:00 AM UTC
+    - cron: "0 6 * * *"
+
+jobs:
+  download-and-process:
+    runs-on: ubuntu-latest
+
+    env:
+      FIGHTER_API_URL: "https://api.octagon-api.com/fighters"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install R packages
+        run: |
+          Rscript -e 'install.packages(c("httr2", "jsonlite", "dplyr", "tidyr", "purrr"), repos = "https://cloud.r-project.org")'
+
+      - name: Download fighter JSON from API
+        run: |
+          Rscript scripts/download_fighter_data.R
+
+      - name: Upload RData artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fighter-data-rdata
+          path: data/fighter_data.RData

@@ -41,5 +41,5 @@ if (!is.data.frame(fighter_json)) {
 save(fighter_df, file = "data/fighter_data.RData")
 
 message("Saved flattened fighter dataframe to data/fighter_data.RData")
-message("Rows: ", nrow(fighter_df))
-message("Columns: ", ncol(fighter_df))
+message("Rows: ", nrow(fighter_json))
+message("Columns: ", ncol(fighter_json))

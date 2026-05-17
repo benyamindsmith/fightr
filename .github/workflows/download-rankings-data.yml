@@ -31,5 +31,5 @@ jobs:
       - name: Upload RData artifact
         uses: actions/upload-artifact@v4
         with:
-          name: fighter-data-rdata
-          path: data/fighter_data.RData
+          name: fighter-rankings-data-rdata
+          path: data/fighter_rankings.RData

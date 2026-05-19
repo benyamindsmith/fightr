@@ -63,7 +63,7 @@ def parse_fighter_details(url):
             stat_map = {
                 'Height': 'Height', 'Weight': 'Weight', 'Reach': 'Reach',
                 'STANCE': 'STANCE', 'DOB': 'DOB', 'SLpM': 'SLpM',
-                'Str. Acc.': 'Str. Acc.', 'SApM': 'SApM', 'Str. Def': 'Str. Def',
+                'Str. Acc.': 'Str. Acc.', 'SApM': 'SApM', 'Str. Def': 'Str. Def.',
                 'TD Avg.': 'TD Avg.', 'TD Acc.': 'TD Acc.', 'TD Def.': 'TD Def.',
                 'Sub. Avg.': 'Sub. Avg.'
             }

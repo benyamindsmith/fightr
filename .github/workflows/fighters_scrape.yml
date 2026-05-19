@@ -36,8 +36,18 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add ./data/ufc_fighters_data.csv ./data/ufc_fighters_data.RData
           
-          # Only commit if there are changes
-          git diff --quiet && git diff --staged --quiet || git commit -m "Automated update of UFC fighter data"
-          git push
+          # Update these paths if you are saving to a data/ folder
+          git add data/ufc_fighters_data.csv data/ufc_fighters_data.RData
+          
+          # Check if there are changes to commit
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "Automated update of UFC fighter data"
+            
+            # Pull any changes that happened during the ~40 minute scraping window
+            git pull --rebase origin main
+            
+            git push
+          else
+            echo "No data changes to commit."
+          fi

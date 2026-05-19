@@ -1,0 +1,44 @@
+name: UFC Fighter Scraper
+
+on:
+  # Allows you to trigger the workflow manually from the Actions tab
+  workflow_dispatch: 
+  # Runs automatically at midnight on the 1st of every month
+  schedule:
+    - cron: '0 0 1 * *' 
+
+# Explicitly grant write permissions to the repository so the bot can push files
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip' # Caches packages for faster runs
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 pandas pyreadr
+
+      - name: Run Scraper Script
+        run: python scrape_fighters.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ./data/ufc_fighters_data.csv ./data/ufc_fighters_data.RData
+          
+          # Only commit if there are changes
+          git diff --quiet && git diff --staged --quiet || git commit -m "Automated update of UFC fighter data"
+          git push

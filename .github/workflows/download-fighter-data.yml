@@ -30,8 +30,22 @@ jobs:
         run: |
           Rscript scripts/download_fighter_data.R
 
-      - name: Upload RData artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: fighter-data-rdata
-          path: data/fighter_data.RData
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Update these paths if you are saving to a data/ folder
+          git add .
+          
+          # Check if there are changes to commit
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "Automated update of UFC fighter data"
+            
+            # Pull any changes that happened during the ~40 minute scraping window
+            git pull --rebase origin main
+            
+            git push
+          else
+            echo "No data changes to commit."
+          fi

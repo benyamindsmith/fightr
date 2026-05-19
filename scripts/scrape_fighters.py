@@ -101,12 +101,12 @@ if __name__ == "__main__":
     df_fighters = scrape_all_fighters(letters_to_scrape=test_letters)
     
     # Save as CSV
-    csv_filename = 'ufc_fighters_data.csv'
+    csv_filename = './data/ufc_fighters_data.csv'
     df_fighters.to_csv(csv_filename, index=False)
     print(f"Saved to {csv_filename}")
     
     # Save as .RData
-    rdata_filename = 'ufc_fighters_data.RData'
+    rdata_filename = './data/ufc_fighters_data.RData'
     # df_name is the variable name that will appear in R when you run load("ufc_fighters_data.RData")
     pyreadr.write_rdata(rdata_filename, df_fighters, df_name='fighters_data')
     print(f"Saved to {rdata_filename}")

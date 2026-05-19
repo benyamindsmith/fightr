@@ -7,7 +7,9 @@ on:
   #schedule:
     # Runs daily at 6:00 AM UTC
   #  - cron: "0 6 * * *"
-
+# Explicitly grant write permissions to the repository so the bot can push files
+permissions:
+  contents: write
 jobs:
   download-and-process:
     runs-on: ubuntu-latest

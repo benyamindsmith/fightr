@@ -175,11 +175,11 @@ def main():
     if all_fights_data:
         df = pd.DataFrame(all_fights_data)
         
-        csv_filename = 'ufc_fights.csv'
+        csv_filename = './data/ufc_fights.csv'
         df.to_csv(csv_filename, index=False)
         logging.info(f"Data successfully saved to {csv_filename}")
         
-        rdata_filename = 'ufc_fights.RData'
+        rdata_filename = './data/ufc_fights.RData'
         pyreadr.write_rdata(rdata_filename, df, df_name='ufc_fights')
         logging.info(f"Data successfully saved to R environment format as {rdata_filename}")
         

@@ -1,18 +1,10 @@
-import os
-import re
-import time
-import random
 import requests
-import pandas as pd
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
-
-# Optional: only needed for .RData export
-try:
-    import pyreadr
-    HAS_PYREADR = True
-except ImportError:
-    HAS_PYREADR = False
+import pandas as pd
+import time
+import re
+import logging
+import pyreadr  # Added for RData export
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -107,23 +99,20 @@ def parse_fight_details(fight_url, event_name, date, location):
         elif 'Referee:' in text:
             fight_data['referee'] = text.replace('Referee:', '').strip()
 
-    # Judging details (often contains the exact judge scores)
+    # Judging details
     judging_section = soup.select('.b-fight-details__text')
     for section in judging_section:
         if 'Details:' in section.text:
             fight_data['judging_details'] = clean_text(section.text.replace('Details:', ''))
 
     # 3. Parse Statistical Tables (Totals & Significant Strikes)
-    # The site duplicates tables for 'Overall' and 'Per Round'. We target the first two tables (Overall).
     tables = soup.select('.b-fight-details__table')
     if len(tables) >= 2:
         totals_table = tables[0]
         sig_str_table = tables[1]
         
-        # Helper to flatten table rows
         def extract_table_stats(table, suffix_tag=""):
             headers = [clean_text(th.text) for th in table.select('thead th')]
-            # The first row in tbody contains the overall fight totals
             first_row_tds = table.select('tbody tr')[0].select('td')
             
             for idx, td in enumerate(first_row_tds):
@@ -131,19 +120,17 @@ def parse_fight_details(fight_url, event_name, date, location):
                     break
                 header_name = headers[idx].lower().replace('.', '').replace(' ', '_').replace('%', 'pct')
                 
-                # Each td contains two <p> tags, one for Fighter 1, one for Fighter 2
                 p_tags = td.select('p')
                 if len(p_tags) == 2:
                     fight_data[f'f1_{header_name}{suffix_tag}'] = clean_text(p_tags[0].text)
                     fight_data[f'f2_{header_name}{suffix_tag}'] = clean_text(p_tags[1].text)
 
         extract_table_stats(totals_table, suffix_tag="_total")
-        # For the significant strike table, skip the first 3 columns (Fighter, Sig Str, Sig Str %) to avoid duplicates
-        # as they are already extracted in the totals table.
+        
         headers = [clean_text(th.text) for th in sig_str_table.select('thead th')]
         first_row_tds = sig_str_table.select('tbody tr')[0].select('td')
         for idx, td in enumerate(first_row_tds):
-            if idx < 3: # Skip duplicate total columns
+            if idx < 3: 
                 continue
             header_name = headers[idx].lower().replace('.', '').replace(' ', '_')
             p_tags = td.select('p')
@@ -155,18 +142,12 @@ def parse_fight_details(fight_url, event_name, date, location):
 
 def main():
     event_links = get_event_links()
-    
-    # For a full data pull, leave this as is. 
-    # For testing, you might want to slice the list: event_links = event_links[:2]
-    
     all_fights_data = []
     
-    # Loop through events
     for event_idx, event_url in enumerate(event_links):
         logging.info(f"Processing Event {event_idx + 1}/{len(event_links)}: {event_url}")
         fight_links, event_name, date, location = get_fight_links(event_url)
         
-        # Loop through fights in the event
         for fight_url in fight_links:
             try:
                 fight_data = parse_fight_details(fight_url, event_name, date, location)
@@ -175,15 +156,28 @@ def main():
             except Exception as e:
                 logging.error(f"Error parsing {fight_url}: {e}")
             
-            # Respectful scraping delay
             time.sleep(1) 
             
-    # Export to flattened CSV
+    # Export to both CSV and RData
     if all_fights_data:
         df = pd.DataFrame(all_fights_data)
-        output_filename = 'ufc_flattened_fight_data.csv'
-        df.to_csv(output_filename, index=False)
-        logging.info(f"Data successfully saved to {output_filename}")
+        
+        # CSV Export
+        csv_filename = 'ufc_fights.csv'
+        df.to_csv(csv_filename, index=False)
+        logging.info(f"Data successfully saved to {csv_filename}")
+        
+        # RData Export
+        # We assign df_name='ufc_fights' so that when you run load('...RData') in R,
+        # the dataframe object will appear in your global environment as `ufc_fights`.
+        rdata_filename = 'ufc_fights.RData'
+        pyreadr.write_rdata(rdata_filename, df, df_name='ufc_fights')
+        logging.info(f"Data successfully saved to R environment format as {rdata_filename}")
+        
+        # Optional: Save as .rds (often preferred for single dataframes in R)
+        # rds_filename = 'ufc_flattened_fight_data.rds'
+        # pyreadr.write_rds(rds_filename, df)
+        
         logging.info(f"Total fights extracted: {len(df)}")
     else:
         logging.warning("No data extracted.")

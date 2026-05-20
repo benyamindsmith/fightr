@@ -38,7 +38,7 @@ jobs:
           git config --local user.name "GitHub Action"
 
           # Update these paths if you are saving to a data/ folder
-          git add data/ufc_fighters_data.csv data/ufc_fighters_data.RData
+          git add .
 
           # Check if there are changes to commit
           if ! git diff --quiet || ! git diff --staged --quiet; then

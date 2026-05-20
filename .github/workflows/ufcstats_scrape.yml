@@ -1,11 +1,11 @@
-name: UFC Fighter Scraper
+name: UFCStats Scraper
 
 on:
   # Allows you to trigger the workflow manually from the Actions tab
-  workflow_dispatch: 
+  workflow_dispatch:
   # Runs automatically at midnight on the 1st of every month
   schedule:
-    - cron: '0 0 1 * *' 
+    - cron: '0 0 1 * *'
 
 # Explicitly grant write permissions to the repository so the bot can push files
 permissions:
@@ -36,17 +36,17 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
           # Update these paths if you are saving to a data/ folder
           git add data/ufc_fighters_data.csv data/ufc_fighters_data.RData
-          
+
           # Check if there are changes to commit
           if ! git diff --quiet || ! git diff --staged --quiet; then
             git commit -m "Automated update of UFC fighter data"
-            
+
             # Pull any changes that happened during the ~40 minute scraping window
             git pull --rebase origin main
-            
+
             git push
           else
             echo "No data changes to commit."

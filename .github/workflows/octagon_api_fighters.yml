@@ -1,0 +1,51 @@
+name: Octagon API Fighters
+
+on:
+  workflow_dispatch:
+  schedule:
+  # Runs daily at 6:00 AM UTC
+   # - cron: "0 6 * * *"
+# Explicitly grant write permissions to the repository so the bot can push files
+permissions:
+  contents: write
+jobs:
+  download-and-process:
+    runs-on: ubuntu-latest
+
+    env:
+      FIGHTER_API_URL: "https://api.octagon-api.com/fighters"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install R packages
+        run: |
+          Rscript -e 'install.packages("pak")'
+          Rscript -e 'pak::pkg_install(c("httr2", "jsonlite", "dplyr", "tidyr", "purrr"))'
+
+      - name: Download fighter JSON from API
+        run: |
+          Rscript scripts/download_fighter_data.R
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # Update these paths if you are saving to a data/ folder
+          git add .
+
+          # Check if there are changes to commit
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "Automated update of UFC fighter data"
+
+            # Pull any changes that happened during the ~40 minute scraping window
+            git pull --rebase origin main
+
+            git push
+          else
+            echo "No data changes to commit."
+          fi

@@ -16,7 +16,7 @@ response <- request |>
 json_text <- response |>
   resp_body_string()
 
-writeLines(json_text, "data/rankings_data_raw.json")
+writeLines(json_text, "data/octagon_api_rankings.json")
 
 rankings_json <- fromJSON(json_text)|>
   as_tibble()
@@ -29,8 +29,8 @@ if (!is.data.frame(rankings_json)) {
 }
 
 
-save(rankings_json, file = "data/fighter_rankings.RData")
+save(rankings_json, file = "data/octagon_api_rankings.RData")
 
-message("Saved flattened rankings taframe to data/fighter_rankings.RData")
+message("Saved flattened rankings taframe to data/octagon_api_rankings.RData")
 message("Rows: ", nrow(rankings_json))
 message("Columns: ", ncol(rankings_json))

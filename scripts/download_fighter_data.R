@@ -16,9 +16,9 @@ response <- request |>
 json_text <- response |>
   resp_body_string()
 
-writeLines(json_text, "data/fighter_data_raw.json")
+writeLines(json_text, "data/octagon_api_fighters.json")
 
-fighter_json <- fromJSON(json_text)|>
+octagon_api_fighters <- fromJSON(json_text)|>
   imap_dfr(function(x, id) {
     x |>
       map_chr(~ if (length(.x) == 0) NA_character_ else as.character(.x[[1]])) |>
@@ -36,8 +36,8 @@ if (!is.data.frame(fighter_json)) {
 }
 
 
-save(fighter_json, file = "data/fighter_data.RData")
+save(fighter_json, file = "data/octagon_api_fighters.RData")
 
-message("Saved flattened fighter dataframe to data/fighter_data.RData")
+message("Saved flattened fighter dataframe to data/octagon_api_fighters.RData")
 message("Rows: ", nrow(fighter_json))
 message("Columns: ", ncol(fighter_json))

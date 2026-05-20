@@ -30,7 +30,7 @@ jobs:
           pip install requests beautifulsoup4 pandas pyreadr
 
       - name: Run Scraper Script
-        run: python ./scripts/scrape_fighters.py
+        run: python ./scripts/scrape_ufcstats.py
 
       - name: Commit and Push Changes
         run: |

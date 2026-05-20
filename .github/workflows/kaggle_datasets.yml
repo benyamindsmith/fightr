@@ -30,7 +30,7 @@ jobs:
           pip install pandas pyreadr
 
       - name: Run Scraper Script
-        run: python ./scripts/scrape_ufc.py
+        run: python ./scripts/get_kaggle_datasets.py
 
       - name: Commit and Push Changes
         run: |

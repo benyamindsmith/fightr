@@ -91,14 +91,20 @@ def scrape_all_fighters(letters_to_scrape='a'):
             time.sleep(0.5) 
             
     df = pd.DataFrame(all_fighters)
+    
+    # THE FIX: Sanitize the None types to prevent pyreadr segfaults
+    df = df.fillna('') 
+    
     return df
 
 if __name__ == "__main__":
-    # Change test_letters to string.ascii_lowercase to run the full alphabet
     test_letters = string.ascii_lowercase 
     
     print("Starting scraper...")
     df_fighters = scrape_all_fighters(letters_to_scrape=test_letters)
+    
+    # THE FIX: Ensure the directory exists on the GitHub Actions runner
+    os.makedirs('./data', exist_ok=True)
     
     # Save as CSV
     csv_filename = './data/ufcstats_data.csv'
@@ -107,6 +113,5 @@ if __name__ == "__main__":
     
     # Save as .RData
     rdata_filename = './data/ufcstats_data.RData'
-    # df_name is the variable name that will appear in R when you run load("ufc_fighters_data.RData")
     pyreadr.write_rdata(rdata_filename, df_fighters, df_name='ufcstats_data')
     print(f"Saved to {rdata_filename}")

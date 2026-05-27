@@ -1,13 +1,10 @@
 name: UFC Scraper
 
 on:
-  # Allows you to trigger the workflow manually from the Actions tab
   workflow_dispatch:
-  # Runs automatically at midnight on the 1st of every month
   # schedule:
   #   - cron: '0 0 1 * *'
 
-# Explicitly grant write permissions to the repository so the bot can push files
 permissions:
   contents: write
 
@@ -24,30 +21,34 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 pandas pyreadr
+          pip install requests beautifulsoup4 pandas
 
-      - name: Run Scraper Script
+      - name: Run scraper script
         run: python ./scripts/scrape_ufc.py
 
-      - name: Commit and Push Changes
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Convert CSV to RData
+        run: |
+          ufc_data <- read.csv("./data/ufc_data.csv")
+          save(ufc_data, file = "./data/ufc_data.RData")
+        shell: Rscript {0}
+
+      - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          # Update these paths if you are saving to a data/ folder
-          git add .
+          git add ./data/ufc_data.csv ./data/ufc_data.RData
 
-          # Check if there are changes to commit
-          if ! git diff --quiet || ! git diff --staged --quiet; then
-            git commit -m "Automated update of UFC fighter data"
-
-            # Pull any changes that happened during the ~40 minute scraping window
-            git pull --rebase origin main
-
-            git push
-          else
+          if git diff --cached --quiet; then
             echo "No data changes to commit."
+          else
+            git commit -m "Automated update of UFC data"
+            git pull --rebase origin main
+            git push
           fi

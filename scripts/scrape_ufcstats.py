@@ -5,7 +5,6 @@ import pandas as pd
 import time
 import re
 import string
-import pyreadr
 
 def get_fighter_links(letter):
     url = f"http://ufcstats.com/statistics/fighters?char={letter}&page=all"
@@ -112,7 +111,3 @@ if __name__ == "__main__":
     df_fighters.to_csv(csv_filename, index=False)
     print(f"Saved to {csv_filename}")
     
-    # Save as .RData
-    rdata_filename = './data/ufcstats_data.RData'
-    pyreadr.write_rdata(rdata_filename, df_fighters, df_name='ufcstats_data')
-    print(f"Saved to {rdata_filename}")

@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import re
 import logging
-import pyreadr
+# import pyreadr
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -179,9 +179,9 @@ def main():
         df.to_csv(csv_filename, index=False)
         logging.info(f"Data successfully saved to {csv_filename}")
         
-        rdata_filename = './data/ufc_fights.RData'
-        pyreadr.write_rdata(rdata_filename, df, df_name='ufc_fights')
-        logging.info(f"Data successfully saved to R environment format as {rdata_filename}")
+        # rdata_filename = './data/ufc_fights.RData'
+        # pyreadr.write_rdata(rdata_filename, df, df_name='ufc_fights')
+        # logging.info(f"Data successfully saved to R environment format as {rdata_filename}")
         
         logging.info(f"Total fights extracted: {len(df)}")
     else:

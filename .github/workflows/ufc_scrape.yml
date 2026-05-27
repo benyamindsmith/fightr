@@ -4,8 +4,8 @@ on:
   # Allows you to trigger the workflow manually from the Actions tab
   workflow_dispatch:
   # Runs automatically at midnight on the 1st of every month
-  schedule:
-    - cron: '0 0 1 * *'
+  # schedule:
+  #   - cron: '0 0 1 * *'
 
 # Explicitly grant write permissions to the repository so the bot can push files
 permissions:

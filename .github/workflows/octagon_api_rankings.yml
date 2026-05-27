@@ -2,9 +2,9 @@ name: Octagon API Rankings
 
 on:
   workflow_dispatch:
-  #schedule:
+  schedule:
     # Runs daily at 6:00 AM UTC
-  #  - cron: "0 6 * * *"
+    - cron: "0 6 * * SUN"
 
 jobs:
   download-and-process:

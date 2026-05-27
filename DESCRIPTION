@@ -1,6 +1,6 @@
 Package: fightr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Analyze Fight Probabilities and Props via Statistical Frameworks
 Version: 0.1.0
 Authors@R: c(
     person(
@@ -9,8 +9,25 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: Predicts the probability of a win and method of victory for a 
+    matchup between two fighters. Features multiple statistical frameworks 
+    including multinomial logistic regression, Bradley-Terry, and 
+    Thurstone-Mosteller network models.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 4.1.0)
+Imports: 
+    BradleyTerry2,
+    dplyr,
+    ggplot2,
+    marginaleffects,
+    nnet,
+    readr,
+    scales,
+    stats,
+    stringr,
+    tidyr,
+    cli

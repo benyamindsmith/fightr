@@ -123,3 +123,7 @@ ufcstats_data<- ufcstats_data |>
     )
   )|>
   janitor::clean_names()
+
+write(ufc_athletes, file="data/ufc_athletes.RData")
+write(ufc_fights, file ="data/ufc_fights.RData")
+write(ufcstats_data, file = "data/ufcstats_data.RData")

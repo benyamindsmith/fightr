@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -94,19 +96,23 @@ def scrape_all_fighters(letters_to_scrape='a'):
     return df
 
 if __name__ == "__main__":
-    # Change test_letters to string.ascii_lowercase to run the full alphabet
-    test_letters = string.ascii_lowercase 
-    
-    print("Starting scraper...")
+
+    test_letters = string.ascii_lowercase
+
+    print("Starting scraper...", flush=True)
+
+    Path("./data").mkdir(parents=True, exist_ok=True)
+
     df_fighters = scrape_all_fighters(letters_to_scrape=test_letters)
-    
-    # Save as CSV
+
     csv_filename = './data/ufcstats_data.csv'
     df_fighters.to_csv(csv_filename, index=False)
-    print(f"Saved to {csv_filename}")
-    
-    # Save as .RData
+    print(f"Saved to {csv_filename}", flush=True)
+
+    print("Importing pyreadr...", flush=True)
+    import pyreadr
+
     rdata_filename = './data/ufcstats_data.RData'
-    # df_name is the variable name that will appear in R when you run load("ufc_fighters_data.RData")
+    print("Writing RData...", flush=True)
     pyreadr.write_rdata(rdata_filename, df_fighters, df_name='ufcstats_data')
-    print(f"Saved to {rdata_filename}")
+    print(f"Saved to {rdata_filename}", flush=True)

@@ -8,17 +8,17 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 # Optional: only needed for .RData export
-try:
-    import pyreadr
-    HAS_PYREADR = True
-except ImportError:
-    HAS_PYREADR = False
+# try:
+#     import pyreadr
+#     HAS_PYREADR = True
+# except ImportError:
+#     HAS_PYREADR = False
 
 
 BASE_URL = "https://www.ufc.com"
 OUTPUT_DIR = "./data"
 CSV_FILENAME = os.path.join(OUTPUT_DIR, "ufc_athletes.csv")
-RDATA_FILENAME = os.path.join(OUTPUT_DIR, "ufc_athletes.RData")
+# RDATA_FILENAME = os.path.join(OUTPUT_DIR, "ufc_athletes.RData")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -400,12 +400,12 @@ if __name__ == "__main__":
     ufc_df.to_csv(CSV_FILENAME, index=False)
     print(f"Saved CSV to {CSV_FILENAME}")
 
-    # Save RData
-    if HAS_PYREADR:
-        pyreadr.write_rdata(RDATA_FILENAME, ufc_df, df_name="ufc_athletes")
-        print(f"Saved RData to {RDATA_FILENAME}")
-    else:
-        print(
-            "Skipped RData export because pyreadr is not installed. "
-            "Install it with: pip install pyreadr"
-        )
+    # # Save RData
+    # if HAS_PYREADR:
+    #     pyreadr.write_rdata(RDATA_FILENAME, ufc_df, df_name="ufc_athletes")
+    #     print(f"Saved RData to {RDATA_FILENAME}")
+    # else:
+    #     print(
+    #         "Skipped RData export because pyreadr is not installed. "
+    #         "Install it with: pip install pyreadr"
+    #     )

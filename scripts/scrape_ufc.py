@@ -3,39 +3,22 @@ import re
 import time
 import random
 import logging
-import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
-# Set up logging to replace print statements
+# Set up logging
 logging.basicConfig(
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 
-# Optional: only needed for .RData export
-# try:
-#     import pyreadr
-#     HAS_PYREADR = True
-# except ImportError:
-#     HAS_PYREADR = False
-
 BASE_URL = "https://www.ufc.com"
 OUTPUT_DIR = "./data"
 CSV_FILENAME = os.path.join(OUTPUT_DIR, "ufc_athletes.csv")
-# RDATA_FILENAME = os.path.join(OUTPUT_DIR, "ufc_athletes.RData")
-
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/125.0.0.0 Safari/537.36"
-    )
-}
 
 def clean_text(value):
     """Normalize whitespace."""
@@ -43,140 +26,71 @@ def clean_text(value):
         return None
     return re.sub(r"\s+", " ", value).strip()
 
-
-def request_soup(url, session, retries=3, timeout=25):
-    """
-    Fetch a URL and return BeautifulSoup.
-    Retries on temporary server errors.
-    """
-    last_error = None
-
-    for attempt in range(1, retries + 1):
-        try:
-            response = session.get(url, headers=HEADERS, timeout=timeout)
-
-            if response.status_code == 200:
-                return BeautifulSoup(response.text, "html.parser")
-
-            # Explicit check for Cloudflare blocks
-            if response.status_code == 403:
-                logging.error(f"403 Forbidden at {url} - You may have been blocked by Cloudflare.")
-                return None
-
-            logging.warning(f"Request failed: {response.status_code} | {url}")
-
-            # Retry only on server-side/rate-limit-ish responses
-            if response.status_code in [429, 500, 502, 503, 504]:
-                sleep_for = attempt * 2 + random.uniform(0.5, 1.5)
-                time.sleep(sleep_for)
-                continue
-
-            return None
-
-        except Exception as e:
-            last_error = e
-            logging.error(f"Request error on attempt {attempt}: {e} | {url}")
-            time.sleep(attempt * 2)
-
-    logging.error(f"Giving up on {url}. Last error: {last_error}")
-    return None
-
-
 def extract_text_by_possible_labels(soup, labels):
     """Fallback parser for raw text extraction."""
     results = {}
-    lines = [
-        clean_text(line)
-        for line in soup.get_text("\n").split("\n")
-        if clean_text(line)
-    ]
-
-    # Pre-compute for faster O(1) lookups
+    lines = [clean_text(line) for line in soup.get_text("\n").split("\n") if clean_text(line)]
     lower_labels = {x.lower() for x in labels}
 
     for i, line in enumerate(lines):
         normalized_line = line.lower().rstrip(":")
-        
         for label in labels:
             normalized_label = label.lower().rstrip(":")
             if normalized_line == normalized_label and i + 1 < len(lines):
                 value = lines[i + 1]
-                
-                # Check against the pre-computed set
                 if value and value.lower() not in lower_labels:
                     results[label] = value
-
     return results
 
-
-def get_fighter_bio(profile_url, session, debug=False):
-    """
-    Visit an individual UFC fighter profile and extract bio/deep profile fields.
-    """
+def get_fighter_bio(profile_url, page, debug=False):
+    """Visit an individual UFC fighter profile and extract bio using Playwright."""
     if not profile_url:
         return {}
 
-    soup = request_soup(profile_url, session=session)
-    if soup is None:
+    try:
+        page.goto(profile_url, wait_until="domcontentloaded", timeout=30000)
+        # Give dynamic stat blocks a moment to render
+        page.wait_for_timeout(random.uniform(1000, 2000))
+        html = page.content()
+    except PlaywrightTimeoutError:
+        logging.error(f"Timeout loading profile: {profile_url}")
+        return {}
+    except Exception as e:
+        logging.error(f"Error loading {profile_url}: {e}")
         return {}
 
-    if debug:
-        with open("debug_profile.html", "w", encoding="utf-8") as f:
-            f.write(str(soup))
-        logging.info("Saved debug_profile.html")
-
+    soup = BeautifulSoup(html, "html.parser")
     stats = {}
 
-    # Profile name
     h1 = soup.select_one("h1")
     if h1:
         stats["Profile Name"] = clean_text(h1.get_text(" "))
 
-    # Nickname - UFC markup can vary
     nickname_selectors = [
-        ".hero-profile__nickname",
-        ".c-hero__headline-suffix",
-        ".field--name-nickname",
-        ".c-bio__nickname",
+        ".hero-profile__nickname", ".c-hero__headline-suffix", 
+        ".field--name-nickname", ".c-bio__nickname",
     ]
-
     for selector in nickname_selectors:
         elem = soup.select_one(selector)
         if elem:
             stats["Profile Nickname"] = clean_text(elem.get_text(" ")).replace('"', "")
             break
 
-    # Main bio fields
     for field in soup.select(".c-bio__field, .c-bio__field--border-bottom"):
         label_elem = field.select_one(".c-bio__label")
         value_elem = field.select_one(".c-bio__text")
-
         if label_elem and value_elem:
             key = clean_text(label_elem.get_text(" "))
             value = clean_text(value_elem.get_text(" "))
             if key and value:
                 stats[key] = value
 
-    # Some stat blocks use other class names
     label_value_blocks = soup.select(
-        ".c-stat-compare__group, "
-        ".c-stat-3bar__group, "
-        ".c-overlap__stats, "
-        ".overlap-wrap"
+        ".c-stat-compare__group, .c-stat-3bar__group, .c-overlap__stats, .overlap-wrap"
     )
-
     for block in label_value_blocks:
-        label_elem = block.select_one(
-            ".c-overlap__stats-text, "
-            ".c-stat-compare__label, "
-            ".c-stat-3bar__label"
-        )
-        value_elem = block.select_one(
-            ".c-overlap__stats-value, "
-            ".c-stat-compare__number, "
-            ".c-stat-3bar__value"
-        )
-
+        label_elem = block.select_one(".c-overlap__stats-text, .c-stat-compare__label, .c-stat-3bar__label")
+        value_elem = block.select_one(".c-overlap__stats-value, .c-stat-compare__number, .c-stat-3bar__value")
         if label_elem and value_elem:
             key = clean_text(label_elem.get_text(" "))
             value = clean_text(value_elem.get_text(" "))
@@ -189,27 +103,20 @@ def get_fighter_bio(profile_url, session, debug=False):
         "Fighting style", "Fighting Style", "Trains at", 
         "Trains At", "Status",
     ]
-
     fallback = extract_text_by_possible_labels(soup, wanted_labels)
-
     for key, value in fallback.items():
         stats.setdefault(key, value)
 
     return stats
 
-
 def parse_roster_card(card):
     """Extract basic fighter info from one UFC roster card."""
     fighter = {}
-
     name_elem = card.select_one(".c-listing-athlete__name")
     fighter["Name"] = clean_text(name_elem.get_text(" ")) if name_elem else None
 
     nickname_elem = card.select_one(".c-listing-athlete__nickname")
-    fighter["Nickname"] = (
-        clean_text(nickname_elem.get_text(" ")).replace('"', "")
-        if nickname_elem else None
-    )
+    fighter["Nickname"] = clean_text(nickname_elem.get_text(" ")).replace('"', "") if nickname_elem else None
 
     weight_elem = card.select_one(".c-listing-athlete__title")
     fighter["Weight Class"] = clean_text(weight_elem.get_text(" ")) if weight_elem else None
@@ -223,128 +130,88 @@ def parse_roster_card(card):
 
     return fighter
 
-
-def scrape_roster_page(page_num, session):
-    """Scrape one UFC roster page."""
-    url = f"{BASE_URL}/athletes/all?page={page_num}"
-    soup = request_soup(url, session=session)
-
-    if soup is None:
-        return []
-
-    possible_cards = soup.select("li.l-flex__item, .view-athletes .views-row, .c-listing-athlete")
-
-    cards = [card for card in possible_cards if card.select_one(".c-listing-athlete__name")]
-
-    fighters = []
-    seen_urls = set()
-
-    for card in cards:
-        fighter = parse_roster_card(card)
-
-        if not fighter.get("Name") and not fighter.get("URL"):
-            continue
-
-        url_key = fighter.get("URL") or fighter.get("Name")
-        if url_key in seen_urls:
-            continue
-
-        seen_urls.add(url_key)
-        fighters.append(fighter)
-
-    return fighters
-
-
-def scrape_all_ufc_fighters(
-    max_pages=300,
-    scrape_deep_stats=True,
-    delay_between_pages=1.0,
-    delay_between_profiles=0.5,
-    stop_after_empty_pages=3,
-):
+def scrape_all_ufc_fighters():
     all_fighters = []
     seen_urls = set()
-    empty_pages = 0
 
-    session = requests.Session()
-    logging.info("Starting UFC roster scrape...")
+    with sync_playwright() as p:
+        # Launch browser. In GitHub actions, this runs headlessly by default.
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+        )
+        page = context.new_page()
 
-    for page in range(max_pages):
-        fighters_on_page = scrape_roster_page(page, session=session)
+        logging.info("Loading UFC roster page...")
+        page.goto(f"{BASE_URL}/athletes/all", wait_until="domcontentloaded")
 
-        if not fighters_on_page:
-            empty_pages += 1
-            logging.info(f"No fighters found on page {page}. Empty streak: {empty_pages}")
+        # Handle potential cookie banners obscuring the button
+        try:
+            accept_btn = page.locator("button:has-text('Accept'), button#onetrust-accept-btn-handler")
+            if accept_btn.is_visible(timeout=3000):
+                accept_btn.click()
+        except:
+            pass
 
-            if empty_pages >= stop_after_empty_pages:
-                logging.info("Stopping because multiple empty pages were found.")
+        # Click "Load More" repeatedly
+        click_count = 0
+        while True:
+            # The 'Load More' link usually has an 'a' tag with class 'button' 
+            load_more_btn = page.locator("a.button:has-text('Load More'), li.pager__item a:has-text('Load More')").first
+            
+            if load_more_btn.is_visible():
+                try:
+                    load_more_btn.scroll_into_view_if_needed()
+                    load_more_btn.click()
+                    click_count += 1
+                    logging.info(f"Clicked 'Load More' ({click_count})")
+                    # Wait for new items to render into the DOM
+                    page.wait_for_timeout(2500)
+                except Exception as e:
+                    logging.warning(f"Failed to click 'Load More': {e}")
+                    break
+            else:
+                logging.info("No more 'Load More' button visible. Assuming all fighters are loaded.")
                 break
 
-            time.sleep(delay_between_pages)
-            continue
+        # Extract all HTML once fully loaded
+        html = page.content()
+        soup = BeautifulSoup(html, "html.parser")
+        possible_cards = soup.select("li.l-flex__item, .view-athletes .views-row, .c-listing-athlete")
+        cards = [card for card in possible_cards if card.select_one(".c-listing-athlete__name")]
 
-        empty_pages = 0
-        new_count = 0
+        logging.info(f"Found {len(cards)} fighter cards on the master page. Extracting URLs...")
 
-        for fighter in fighters_on_page:
+        roster = []
+        for card in cards:
+            fighter = parse_roster_card(card)
+            url_key = fighter.get("URL")
+            if url_key and url_key not in seen_urls:
+                seen_urls.add(url_key)
+                roster.append(fighter)
+
+        logging.info(f"Beginning deep scrape for {len(roster)} fighters...")
+
+        # Deep scrape per fighter
+        for i, fighter in enumerate(roster, 1):
             profile_url = fighter.get("URL")
-
-            if profile_url and profile_url in seen_urls:
-                continue
-
             if profile_url:
-                seen_urls.add(profile_url)
-
-            if scrape_deep_stats and profile_url:
-                deep_stats = get_fighter_bio(profile_url, session=session)
+                deep_stats = get_fighter_bio(profile_url, page)
                 fighter.update(deep_stats)
-                time.sleep(delay_between_profiles + random.uniform(0.1, 0.4))
-
+                
             all_fighters.append(fighter)
-            new_count += 1
+            if i % 10 == 0:
+                logging.info(f"Progress: {i} / {len(roster)} scraped.")
 
-        logging.info(
-            f"Page {page}: found {len(fighters_on_page)} fighters, "
-            f"added {new_count}, total {len(all_fighters)}"
-        )
-
-        time.sleep(delay_between_pages + random.uniform(0.2, 0.8))
+        browser.close()
 
     df = pd.DataFrame(all_fighters)
     df = df.dropna(axis=1, how="all")
-
     return df
 
-
-def test_single_fighter():
-    """Test parser on Dong Hyun Ma first."""
-    session = requests.Session()
-    url = "https://www.ufc.com/athlete/dong-hyun-ma"
-
-    stats = get_fighter_bio(url, session=session, debug=True)
-
-    logging.info("Single fighter test:")
-    logging.info("-" * 60)
-    for key, value in stats.items():
-        logging.info(f"{key}: {value}")
-
-
 if __name__ == "__main__":
-    # Step 1: Test one fighter first.
-    test_single_fighter()
-
-    # Step 2: Run the full scrape.
-    ufc_df = scrape_all_ufc_fighters(
-        max_pages=300,
-        scrape_deep_stats=True,
-        delay_between_pages=1.0,
-        delay_between_profiles=0.5,
-    )
-
-    logging.info("\nPreview:")
-    logging.info(f"\n{ufc_df.head()}")
+    ufc_df = scrape_all_ufc_fighters()
     logging.info(f"\nRows scraped: {len(ufc_df)}")
-
-    # Save CSV
+    
     ufc_df.to_csv(CSV_FILENAME, index=False)
     logging.info(f"Saved CSV to {CSV_FILENAME}")

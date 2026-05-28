@@ -1,24 +1,23 @@
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import time
+import os
 import re
+import time
 import random
 import logging
-import os
-# import pyreadr
+import pandas as pd
+from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+# Optional: only needed for .RData export
+# try:
+#     import pyreadr
+#     HAS_PYREADR = True
+# except ImportError:
+#     HAS_PYREADR = False
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Base URLs
 EVENTS_URL = "http://ufcstats.com/statistics/events/completed?page=all"
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/125.0.0.0 Safari/537.36"
-    )
-}
 
 def clean_text(text):
     """Removes extra whitespace and newlines from scraped text."""
@@ -26,22 +25,17 @@ def clean_text(text):
         return ""
     return re.sub(r'\s+', ' ', text.strip())
 
-def request_soup(url, session, retries=3, timeout=15):
-    """Fetches a URL and returns BeautifulSoup. Retries on failures."""
+def get_soup(url, page, retries=3, timeout=15000):
+    """Fetches a URL using Playwright and returns BeautifulSoup. Retries on failures."""
     for attempt in range(1, retries + 1):
         try:
-            response = session.get(url, timeout=timeout)
+            # Wait until the DOM is loaded
+            page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+            return BeautifulSoup(page.content(), 'html.parser')
             
-            if response.status_code == 200:
-                return BeautifulSoup(response.content, 'html.parser')
-                
-            logging.warning(f"Bad status {response.status_code} for {url}")
-            
-            # Stop retrying if it's a hard 404 Not Found
-            if response.status_code == 404:
-                return None
-                
-        except requests.RequestException as e:
+        except PlaywrightTimeoutError:
+            logging.warning(f"Timeout on attempt {attempt} for {url}")
+        except Exception as e:
             logging.error(f"Attempt {attempt} failed for {url}: {e}")
             
         # Jittered sleep before retrying
@@ -50,10 +44,10 @@ def request_soup(url, session, retries=3, timeout=15):
     logging.error(f"Giving up on {url} after {retries} attempts.")
     return None
 
-def get_event_links(session):
+def get_event_links(page):
     """Scrapes the main page to get all completed event URLs."""
     logging.info("Fetching event list...")
-    soup = request_soup(EVENTS_URL, session)
+    soup = get_soup(EVENTS_URL, page)
     if not soup:
         return []
     
@@ -68,9 +62,9 @@ def get_event_links(session):
     logging.info(f"Found {len(event_links)} events.")
     return event_links
 
-def get_fight_links(event_url, session):
+def get_fight_links(event_url, page):
     """Scrapes an event page to get URLs for all fights on the card."""
-    soup = request_soup(event_url, session)
+    soup = get_soup(event_url, page)
     if not soup:
         return [], "", "", ""
     
@@ -80,7 +74,6 @@ def get_fight_links(event_url, session):
         if 'data-link' in row.attrs:
             fight_links.append(row['data-link'])
             
-    # Fixed the class name for the event title selector
     title_elem = soup.find(class_='b-content__title-highlight')
     event_name = clean_text(title_elem.text) if title_elem else ""
     
@@ -90,9 +83,9 @@ def get_fight_links(event_url, session):
     
     return fight_links, event_name, date, location
 
-def parse_fight_details(fight_url, event_name, date, location, session):
+def parse_fight_details(fight_url, event_name, date, location, page):
     """Extracts and flattens total fight details from a single fight page."""
-    soup = request_soup(fight_url, session)
+    soup = get_soup(fight_url, page)
     if not soup:
         return None
     
@@ -187,30 +180,35 @@ def parse_fight_details(fight_url, event_name, date, location, session):
     return fight_data
 
 def main():
-    # Initialize the robust connection pool
-    session = requests.Session()
-    session.headers.update(HEADERS)
-    
-    event_links = get_event_links(session)
     all_fights_data = []
     
-    # NOTE: You can slice event_links[:5] here if you want to test a smaller batch first
-    for event_idx, event_url in enumerate(event_links):
-        logging.info(f"Processing Event {event_idx + 1}/{len(event_links)}: {event_url}")
-        fight_links, event_name, date, location = get_fight_links(event_url, session)
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+        )
+        page = context.new_page()
         
-        for fight_url in fight_links:
-            try:
-                fight_data = parse_fight_details(fight_url, event_name, date, location, session)
-                if fight_data:
-                    all_fights_data.append(fight_data)
-            except Exception as e:
-                logging.error(f"Error parsing {fight_url}: {e}")
+        event_links = get_event_links(page)
+        
+        # NOTE: You can slice event_links[:2] here if you want to test a smaller batch first
+        for event_idx, event_url in enumerate(event_links):
+            logging.info(f"Processing Event {event_idx + 1}/{len(event_links)}: {event_url}")
+            fight_links, event_name, date, location = get_fight_links(event_url, page)
             
-            # Added a slight random jitter to the sleep timer to act more human
-            time.sleep(1 + random.uniform(0.1, 0.5)) 
+            for fight_url in fight_links:
+                try:
+                    fight_data = parse_fight_details(fight_url, event_name, date, location, page)
+                    if fight_data:
+                        all_fights_data.append(fight_data)
+                except Exception as e:
+                    logging.error(f"Error parsing {fight_url}: {e}")
+                
+                time.sleep(1 + random.uniform(0.1, 0.5)) 
+                
+        browser.close()
             
-    # Export to both CSV and RData
+    # Export data
     if all_fights_data:
         os.makedirs('./data', exist_ok=True)
         df = pd.DataFrame(all_fights_data)
@@ -218,11 +216,6 @@ def main():
         csv_filename = './data/ufc_fights.csv'
         df.to_csv(csv_filename, index=False)
         logging.info(f"Data successfully saved to {csv_filename}")
-        
-        # rdata_filename = './data/ufc_fights.RData'
-        # pyreadr.write_rdata(rdata_filename, df, df_name='ufc_fights')
-        # logging.info(f"Data successfully saved to R environment format as {rdata_filename}")
-        
         logging.info(f"Total fights extracted: {len(df)}")
     else:
         logging.warning("No data extracted.")

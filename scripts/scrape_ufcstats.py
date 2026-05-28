@@ -1,26 +1,41 @@
 import os
 from pathlib import Path
-import requests
-from bs4 import BeautifulSoup
+import logging
 import pandas as pd
 import time
 import re
 import string
-#import pyreadr
+import random
+from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
-def get_fighter_links(letter):
+# Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def get_soup(url, page, retries=3, timeout=15000):
+    """Fetches a URL using Playwright and returns BeautifulSoup. Retries on failures."""
+    for attempt in range(1, retries + 1):
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+            return BeautifulSoup(page.content(), 'html.parser')
+        except PlaywrightTimeoutError:
+            logging.warning(f"Timeout on attempt {attempt} for {url}")
+        except Exception as e:
+            logging.error(f"Attempt {attempt} failed for {url}: {e}")
+            
+        time.sleep(attempt * 2 + random.uniform(0.5, 1.5))
+        
+    logging.error(f"Giving up on {url} after {retries} attempts.")
+    return None
+
+def get_fighter_links(letter, page):
     url = f"http://ufcstats.com/statistics/fighters?char={letter}&page=all"
-    headers = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/125.0.0.0 Safari/537.36"
-    )
-    }
-    response = requests.get(url, headers=headers)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = get_soup(url, page)
     
     links = []
+    if not soup:
+        return links
+        
     table = soup.find('table', class_='b-statistics__table')
     if not table:
         return links
@@ -33,10 +48,8 @@ def get_fighter_links(letter):
             
     return links
 
-def parse_fighter_details(url):
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    response = requests.get(url, headers=headers)
-    soup = BeautifulSoup(response.text, 'html.parser')
+def parse_fighter_details(url, page):
+    soup = get_soup(url, page)
     
     fighter_data = {
         'Name': None, 'Wins': 0, 'Losses': 0, 'Draws': 0, 'NC': 0,
@@ -45,6 +58,9 @@ def parse_fighter_details(url):
         'TD Avg.': None, 'TD Acc.': None, 'TD Def.': None, 'Sub. Avg.': None
     }
     
+    if not soup:
+        return fighter_data
+
     name_tag = soup.find('span', class_='b-content__title-highlight')
     if name_tag:
         fighter_data['Name'] = name_tag.text.strip()
@@ -81,40 +97,49 @@ def parse_fighter_details(url):
 
     return fighter_data
 
-def scrape_all_fighters(letters_to_scrape='a'):
+def scrape_all_fighters(letters_to_scrape, page):
     all_fighters = []
     
     for letter in letters_to_scrape:
-        print(f"Fetching links for '{letter.upper()}'...")
-        fighter_links = get_fighter_links(letter)
+        logging.info(f"Fetching links for '{letter.upper()}'...")
+        fighter_links = get_fighter_links(letter, page)
         
         for i, link in enumerate(fighter_links):
-            print(f"Scraping fighter {i+1}/{len(fighter_links)}: {link}")
+            logging.info(f"Scraping fighter {i+1}/{len(fighter_links)}: {link}")
             try:
-                data = parse_fighter_details(link)
+                data = parse_fighter_details(link, page)
                 all_fighters.append(data)
             except Exception as e:
-                print(f"Error scraping {link}: {e}")
+                logging.error(f"Error scraping {link}: {e}")
                 
-            time.sleep(0.5) 
+            time.sleep(0.5 + random.uniform(0.1, 0.4)) 
             
     df = pd.DataFrame(all_fighters)
     return df
 
-if __name__ == "__main__":
-
+def main():
     test_letters = string.ascii_lowercase
-
-    print("Starting scraper...", flush=True)
+    logging.info("Starting scraper...")
 
     Path("./data").mkdir(parents=True, exist_ok=True)
 
-    df_fighters = scrape_all_fighters(letters_to_scrape=test_letters)
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+        )
+        page = context.new_page()
 
-    csv_filename = './data/ufcstats_data.csv'
-    df_fighters.to_csv(csv_filename, index=False)
-    print(f"Saved to {csv_filename}", flush=True)
-    rdata_filename = './data/ufcstats_data.RData'
-    # print("Writing RData...", flush=True)
-    # pyreadr.write_rdata(rdata_filename, df_fighters, df_name='ufcstats_data')
-    # print(f"Saved to {rdata_filename}", flush=True)
+        df_fighters = scrape_all_fighters(letters_to_scrape=test_letters, page=page)
+        
+        browser.close()
+
+    if not df_fighters.empty:
+        csv_filename = './data/ufcstats_data.csv'
+        df_fighters.to_csv(csv_filename, index=False)
+        logging.info(f"Saved {len(df_fighters)} rows to {csv_filename}")
+    else:
+        logging.warning("No data was extracted.")
+
+if __name__ == "__main__":
+    main()

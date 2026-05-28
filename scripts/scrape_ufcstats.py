@@ -1,141 +1,112 @@
-import os
-import re
-import time
-import random
-import string
-import logging
-import pandas as pd
+import requests
 from bs4 import BeautifulSoup
-from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
+import pandas as pd
+import time
+import re
+import string
+import pyreadr
 
-# Configure Logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-# Base URL for formatting
-FIGHTERS_BASE_URL = "http://ufcstats.com/statistics/fighters?char={}&page=all"
-
-def clean_text(text):
-    """Removes extra whitespace and newlines from scraped text."""
-    if not text:
-        return ""
-    return re.sub(r'\s+', ' ', text.strip())
-
-def get_soup(url, page, retries=3, timeout=15000):
-    """Fetches a URL using Playwright and returns a BeautifulSoup object. Retries on failure."""
-    for attempt in range(1, retries + 1):
-        try:
-            # Wait until the DOM is fully loaded to ensure the table is present
-            page.goto(url, wait_until="domcontentloaded", timeout=timeout)
-            return BeautifulSoup(page.content(), 'html.parser')
-            
-        except PlaywrightTimeoutError:
-            logging.warning(f"Timeout on attempt {attempt} for {url}")
-        except Exception as e:
-            logging.error(f"Attempt {attempt} failed for {url}: {e}")
-            
-        # Jittered sleep to avoid rate-limiting
-        time.sleep(attempt * 2 + random.uniform(0.5, 1.5))
-        
-    logging.error(f"Giving up on {url} after {retries} attempts.")
-    return None
-
-def parse_fighters_page(soup):
-    """Extracts fighter data from the table on the current page."""
-    fighters_data = []
+def get_fighter_links(letter):
+    url = f"http://ufcstats.com/statistics/fighters?char={letter}&page=all"
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    response = requests.get(url, headers=headers)
+    soup = BeautifulSoup(response.text, 'html.parser')
     
-    # Target the main statistics table
+    links = []
     table = soup.find('table', class_='b-statistics__table')
     if not table:
-        return fighters_data
+        return links
         
-    # Skip the header row(s) and iterate through fighter rows
-    rows = table.find_all('tr', class_='b-statistics__table-row')
-    
+    rows = table.find_all('tr', class_='b-statistics__table-row')[2:] 
     for row in rows:
-        cols = row.find_all('td')
-        
-        # A valid fighter row should have at least 10 columns
-        if len(cols) < 10:
-            continue
+        a_tag = row.find('a', class_='b-link')
+        if a_tag and 'href' in a_tag.attrs:
+            links.append(a_tag['href'])
             
-        # Extract Fighter URL from the first name tag
-        first_name_tag = cols[0].find('a')
-        fighter_url = first_name_tag['href'] if first_name_tag and 'href' in first_name_tag.attrs else ""
-        
-        # Determine if the fighter has a championship belt icon
-        is_champion = False
-        if len(cols) > 10:
-            belt_img = cols[10].find('img')
-            if belt_img:
-                is_champion = True
+    return links
 
-        # Extract textual data
-        fighter = {
-            'fighter_url': fighter_url,
-            'first_name': clean_text(cols[0].text),
-            'last_name': clean_text(cols[1].text),
-            'nickname': clean_text(cols[2].text),
-            'height': clean_text(cols[3].text),
-            'weight': clean_text(cols[4].text),
-            'reach': clean_text(cols[5].text),
-            'stance': clean_text(cols[6].text),
-            'wins': clean_text(cols[7].text),
-            'losses': clean_text(cols[8].text),
-            'draws': clean_text(cols[9].text),
-            'is_champion': is_champion
-        }
+def parse_fighter_details(url):
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    response = requests.get(url, headers=headers)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    fighter_data = {
+        'Name': None, 'Wins': 0, 'Losses': 0, 'Draws': 0, 'NC': 0,
+        'Height': None, 'Weight': None, 'Reach': None, 'STANCE': None, 'DOB': None,
+        'SLpM': None, 'Str. Acc.': None, 'SApM': None, 'Str. Def.': None,
+        'TD Avg.': None, 'TD Acc.': None, 'TD Def.': None, 'Sub. Avg.': None
+    }
+    
+    name_tag = soup.find('span', class_='b-content__title-highlight')
+    if name_tag:
+        fighter_data['Name'] = name_tag.text.strip()
         
-        fighters_data.append(fighter)
-        
-    return fighters_data
+    record_tag = soup.find('span', class_='b-content__title-record')
+    if record_tag:
+        record_str = record_tag.text.strip() 
+        match = re.search(r'Record:\s*(\d+)-(\d+)-(\d+)(?:\s*\((?:(\d+)\s*NC)?\))?', record_str)
+        if match:
+            fighter_data['Wins'] = int(match.group(1))
+            fighter_data['Losses'] = int(match.group(2))
+            fighter_data['Draws'] = int(match.group(3))
+            if match.group(4):
+                fighter_data['NC'] = int(match.group(4))
 
-def main():
+    list_items = soup.find_all('li', class_='b-list__box-list-item')
+    
+    for item in list_items:
+        title_tag = item.find('i', class_='b-list__box-item-title')
+        if title_tag:
+            title = title_tag.text.strip().replace(':', '')
+            value = item.text.replace(title_tag.text, '').strip()
+            
+            stat_map = {
+                'Height': 'Height', 'Weight': 'Weight', 'Reach': 'Reach',
+                'STANCE': 'STANCE', 'DOB': 'DOB', 'SLpM': 'SLpM',
+                'Str. Acc.': 'Str. Acc.', 'SApM': 'SApM', 'Str. Def': 'Str. Def.',
+                'TD Avg.': 'TD Avg.', 'TD Acc.': 'TD Acc.', 'TD Def.': 'TD Def.',
+                'Sub. Avg.': 'Sub. Avg.'
+            }
+            
+            if title in stat_map:
+                fighter_data[stat_map[title]] = None if value == '--' else value
+
+    return fighter_data
+
+def scrape_all_fighters(letters_to_scrape='a'):
     all_fighters = []
     
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
-        )
-        page = context.new_page()
+    for letter in letters_to_scrape:
+        print(f"Fetching links for '{letter.upper()}'...")
+        fighter_links = get_fighter_links(letter)
         
-        # Iterate through alphabet a-z
-        letters = string.ascii_lowercase
-        
-        for letter in letters:
-            target_url = FIGHTERS_BASE_URL.format(letter)
-            logging.info(f"Scraping fighters starting with '{letter.upper()}': {target_url}")
-            
-            soup = get_soup(target_url, page)
-            if soup:
-                page_data = parse_fighters_page(soup)
-                logging.info(f"Found {len(page_data)} fighters for letter '{letter.upper()}'.")
-                all_fighters.extend(page_data)
-            
-            # Polite scraping pause between large page loads
-            time.sleep(2 + random.uniform(0.5, 1.5))
+        for i, link in enumerate(fighter_links):
+            print(f"Scraping fighter {i+1}/{len(fighter_links)}: {link}")
+            try:
+                data = parse_fighter_details(link)
+                all_fighters.append(data)
+            except Exception as e:
+                print(f"Error scraping {link}: {e}")
                 
-        browser.close()
+            time.sleep(0.5) 
             
-    # Compile and Export Data
-    if all_fighters:
-        os.makedirs('./data', exist_ok=True)
-        df = pd.DataFrame(all_fighters)
-        
-        # Optional: Convert string numbers to numeric where appropriate
-        for col in ['wins', 'losses', 'draws']:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
-        
-        csv_filename = './data/ufc_fighters.csv'
-        df.to_csv(csv_filename, index=False)
-        
-        logging.info(f"Data successfully saved to {csv_filename}")
-        logging.info(f"Total fighters extracted: {len(df)}")
-        
-        print("\n--- DataFrame Snapshot ---")
-        print(df.head())
-    else:
-        logging.warning("No data extracted. Check your connection or the target website structure.")
+    df = pd.DataFrame(all_fighters)
+    return df
 
 if __name__ == "__main__":
-    main()
+    # Change test_letters to string.ascii_lowercase to run the full alphabet
+    test_letters = string.ascii_lowercase 
+    
+    print("Starting scraper...")
+    df_fighters = scrape_all_fighters(letters_to_scrape=test_letters)
+    
+    # Save as CSV
+    csv_filename = './data/ufcstats_data.csv'
+    df_fighters.to_csv(csv_filename, index=False)
+    print(f"Saved to {csv_filename}")
+    
+    # Save as .RData
+    rdata_filename = './data/ufcstats_data.RData'
+    # df_name is the variable name that will appear in R when you run load("ufc_fighters_data.RData")
+    pyreadr.write_rdata(rdata_filename, df_fighters, df_name='ufcstats_data')
+    print(f"Saved to {rdata_filename}")

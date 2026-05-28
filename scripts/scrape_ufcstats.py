@@ -82,13 +82,6 @@ def parse_fighter_details(url, session):
 def scrape_all_fighters(letters_to_scrape='a'):
     all_fighters = []
     session = requests.Session()
-    # Prime the session on the bare domain so Cloudflare sets cookies
-    # before we hit any parameterised (?char=X) URL
-    try:
-        session.get("http://ufcstats.com/statistics/fighters", headers=HEADERS, timeout=30)
-        time.sleep(1)
-    except Exception:
-        pass
 
     for letter in letters_to_scrape:
         print(f"Fetching links for '{letter.upper()}'...")

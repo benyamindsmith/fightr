@@ -17,18 +17,6 @@ HEADERS = {
     'Upgrade-Insecure-Requests': '1',
 }
 
-def make_session():
-    """Create a session primed with a base request to establish cookies."""
-    session = requests.Session()
-    # Prime the session on the bare domain first so Cloudflare sets cookies
-    # before we hit any parameterised URL
-    try:
-        session.get("http://ufcstats.com/statistics/events/completed", headers=HEADERS, timeout=30)
-        time.sleep(1)
-    except Exception:
-        pass
-    return session
-
 def clean_text(text):
     if not text:
         return ""
@@ -155,7 +143,7 @@ def parse_fight_details(fight_url, event_name, date, location, session):
     return fight_data
 
 def main():
-    session = make_session()
+    session = requests.Session()
     event_links = get_event_links(session)
     all_fights_data = []
 

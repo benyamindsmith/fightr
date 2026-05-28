@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import re
 import logging
-import pyreadr
+import pyreadr  # pin to 0.4.2 — versions >=0.5.0 segfault on Linux (librdata conflict)
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -27,13 +27,11 @@ def get_event_links():
     soup = BeautifulSoup(response.content, 'html.parser')
     
     event_links = []
-    # Skip the first row as it's the header
-    rows = soup.select('.b-statistics__table-events tbody tr')[1:] 
-    for row in rows:
-        # Changed select_first to find for broader environment compatibility
-        link_tag = row.find('a') 
-        if link_tag and 'href' in link_tag.attrs:
-            event_links.append(link_tag['href'])
+    # Select all anchor tags that point to event detail pages
+    for link_tag in soup.find_all('a', href=re.compile(r'ufcstats\.com/event-details/')):
+        href = link_tag['href']
+        if href not in event_links:
+            event_links.append(href)
             
     logging.info(f"Found {len(event_links)} events.")
     return event_links

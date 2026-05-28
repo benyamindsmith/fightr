@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import re
 import string
-import pyreadr
+import pyreadr  # pin to 0.4.2 — versions >=0.5.0 segfault on Linux (librdata conflict)
 
 def get_fighter_links(letter):
     url = f"http://ufcstats.com/statistics/fighters?char={letter}&page=all"

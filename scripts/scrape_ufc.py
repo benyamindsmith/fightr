@@ -7,7 +7,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-# Optional: only needed for .RData export
+# pin to 0.4.2 — versions >=0.5.0 segfault on Linux (librdata conflict)
 try:
     import pyreadr
     HAS_PYREADR = True

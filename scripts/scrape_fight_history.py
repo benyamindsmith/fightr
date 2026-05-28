@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import re
 import logging
-import pyreadr  # pin to 0.4.2 — versions >=0.5.0 segfault on Linux (librdata conflict)
+import pyreadr  # pin to 0.4.9 — versions >=0.5.0 segfault on Linux (librdata conflict)
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 

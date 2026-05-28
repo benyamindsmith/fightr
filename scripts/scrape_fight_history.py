@@ -1,45 +1,56 @@
-import requests
+from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
 import re
 import logging
+import os
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
-EVENTS_URL = "http://ufcstats.com/statistics/events/completed?page=all"
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Accept-Encoding': 'gzip, deflate',
-    'Connection': 'keep-alive',
-    'Upgrade-Insecure-Requests': '1',
-}
+# 1. FIX SUBDOMAIN: Route to www. to avoid 301 parameter-stripping redirects
+EVENTS_URL = "http://www.ufcstats.com/statistics/events/completed?page=all"
 
 def clean_text(text):
     if not text:
         return ""
     return re.sub(r'\s+', ' ', text.strip())
 
-def get_event_links(session):
+def get_event_links(page):
     logging.info("Fetching event list...")
-    response = session.get(EVENTS_URL, headers=HEADERS, timeout=30)
-    soup = BeautifulSoup(response.content, 'html.parser')
+    page.goto(EVENTS_URL, wait_until="domcontentloaded")
+    
+    # Wait for event link selector to verify challenge has passed
+    try:
+        page.wait_for_selector('a[href*="/event-details/"]', timeout=20000)
+    except Exception as e:
+        logging.error(f"Timeout waiting for event links page to load: {e}")
+        return []
+        
+    soup = BeautifulSoup(page.content(), 'html.parser')
 
     event_links = []
     for link_tag in soup.find_all('a', href=re.compile(r'/event-details/')):
         href = link_tag['href']
-        full_url = href if href.startswith('http') else 'http://ufcstats.com' + href
+        full_url = href if href.startswith('http') else 'http://www.ufcstats.com' + href
+        full_url = full_url.replace('http://ufcstats.com', 'http://www.ufcstats.com')
         if full_url not in event_links:
             event_links.append(full_url)
 
     logging.info(f"Found {len(event_links)} events.")
     return event_links
 
-def get_fight_links(event_url, session):
-    response = session.get(event_url, headers=HEADERS, timeout=30)
-    soup = BeautifulSoup(response.content, 'html.parser')
+def get_fight_links(event_url, page):
+    page.goto(event_url, wait_until="domcontentloaded")
+    
+    # Wait for the fight rows to generate safely
+    try:
+        page.wait_for_selector('.b-fight-details__table-row', timeout=15000)
+    except Exception as e:
+        logging.error(f"Timeout waiting for fight rows on event page: {event_url}. Error: {e}")
+        return [], "", "", ""
+
+    soup = BeautifulSoup(page.content(), 'html.parser')
 
     fight_links = []
     rows = soup.select('.b-fight-details__table-row')
@@ -57,12 +68,21 @@ def get_fight_links(event_url, session):
     logging.info(f"  Found {len(fight_links)} fights — {event_name}")
     return fight_links, event_name, date, location
 
-def parse_fight_details(fight_url, event_name, date, location, session):
-    response = session.get(fight_url, headers=HEADERS, timeout=30)
-    soup = BeautifulSoup(response.content, 'html.parser')
+def parse_fight_details(fight_url, event_name, date, location, page):
+    fight_url_fixed = fight_url.replace('http://ufcstats.com', 'http://www.ufcstats.com')
+    page.goto(fight_url_fixed, wait_until="domcontentloaded")
+    
+    # Wait for fighter details container to load 
+    try:
+        page.wait_for_selector('.b-fight-details__person', timeout=15000)
+    except Exception as e:
+        logging.error(f"Timeout waiting for fight details to load: {fight_url_fixed}. Error: {e}")
+        return None
+
+    soup = BeautifulSoup(page.content(), 'html.parser')
 
     fight_data = {
-        'fight_url': fight_url,
+        'fight_url': fight_url_fixed,
         'event_name': event_name,
         'date': date,
         'location': location
@@ -115,7 +135,10 @@ def parse_fight_details(fight_url, event_name, date, location, session):
             tbody = table.find('tbody')
             if not tbody:
                 return
-            first_row_tds = tbody.select('tr')[0].select('td')
+            tbody_rows = tbody.select('tr')
+            if not tbody_rows:
+                return
+            first_row_tds = tbody_rows[0].select('td')
             for idx, td in enumerate(first_row_tds):
                 if idx >= len(headers):
                     break
@@ -130,38 +153,61 @@ def parse_fight_details(fight_url, event_name, date, location, session):
         headers = [clean_text(th.text) for th in sig_str_table.select('thead th')]
         tbody = sig_str_table.find('tbody')
         if tbody:
-            first_row_tds = tbody.select('tr')[0].select('td')
-            for idx, td in enumerate(first_row_tds):
-                if idx < 3:
-                    continue
-                header_name = headers[idx].lower().replace('.', '').replace(' ', '_')
-                p_tags = td.select('p')
-                if len(p_tags) == 2:
-                    fight_data[f'f1_{header_name}_sig'] = clean_text(p_tags[0].text)
-                    fight_data[f'f2_{header_name}_sig'] = clean_text(p_tags[1].text)
+            tbody_rows = tbody.select('tr')
+            if tbody_rows:
+                first_row_tds = tbody_rows[0].select('td')
+                for idx, td in enumerate(first_row_tds):
+                    if idx < 3:
+                        continue
+                    header_name = headers[idx].lower().replace('.', '').replace(' ', '_')
+                    p_tags = td.select('p')
+                    if len(p_tags) == 2:
+                        fight_data[f'f1_{header_name}_sig'] = clean_text(p_tags[0].text)
+                        fight_data[f'f2_{header_name}_sig'] = clean_text(p_tags[1].text)
 
     return fight_data
 
 def main():
-    session = requests.Session()
-    event_links = get_event_links(session)
     all_fights_data = []
 
-    for event_idx, event_url in enumerate(event_links):
-        logging.info(f"Processing Event {event_idx + 1}/{len(event_links)}: {event_url}")
-        fight_links, event_name, date, location = get_fight_links(event_url, session)
+    # Initialize Playwright Engine Context
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+        )
+        page = context.new_page()
 
-        for fight_url in fight_links:
+        try:
+            event_links = get_event_links(page)
+        except Exception as e:
+            logging.error(f"Failed to fetch event links: {e}")
+            event_links = []
+
+        # Optimization Tip: To test first, slice this list: event_links[:3]
+        for event_idx, event_url in enumerate(event_links):
+            logging.info(f"Processing Event {event_idx + 1}/{len(event_links)}: {event_url}")
             try:
-                fight_data = parse_fight_details(fight_url, event_name, date, location, session)
-                if fight_data:
-                    all_fights_data.append(fight_data)
+                fight_links, event_name, date, location = get_fight_links(event_url, page)
             except Exception as e:
-                logging.error(f"Error parsing {fight_url}: {e}")
-            time.sleep(1)
+                logging.error(f"Error gathering fight links for {event_url}: {e}")
+                continue
+
+            for fight_url in fight_links:
+                try:
+                    fight_data = parse_fight_details(fight_url, event_name, date, location, page)
+                    if fight_data:
+                        all_fights_data.append(fight_data)
+                except Exception as e:
+                    logging.error(f"Error parsing {fight_url}: {e}")
+                
+                time.sleep(1)
+
+        browser.close()
 
     if all_fights_data:
         df = pd.DataFrame(all_fights_data)
+        os.makedirs('./data', exist_ok=True)
         csv_filename = './data/ufc_fights.csv'
         df.to_csv(csv_filename, index=False)
         logging.info(f"Data successfully saved to {csv_filename}")

@@ -1,40 +1,51 @@
-import requests
+from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
 import re
 import string
+import os
 
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Connection': 'keep-alive',
-}
+def get_fighter_links(letter, page):
+    url = f"http://www.ufcstats.com/statistics/fighters?char={letter}&page=all"
+    
+    # Go to the URL and wait until the network is mostly idle
+    page.goto(url, wait_until="domcontentloaded")
+    
+    # CRITICAL: Wait for the actual fighter links to appear. 
+    # If the JS challenge is running, this forces the script to wait until it passes and reloads.
+    try:
+        page.wait_for_selector('a[href*="/fighter-details/"]', timeout=20000)
+    except Exception as e:
+        print(f"  [!] Timeout waiting for links on letter {letter}. Might be blocked or no fighters.")
+        return []
 
-def get_fighter_links(letter, session):
-    url = f"http://ufcstats.com/statistics/fighters?char={letter}&page=all"
-    response = session.get(url, headers=HEADERS, timeout=30)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(page.content(), 'html.parser')
     
     links = []
     seen = set()
-    # Each row has multiple <a> tags pointing to the same fighter-details URL; deduplicate
+    
     for a_tag in soup.find_all('a', href=re.compile(r'/fighter-details/')):
         href = a_tag['href']
+        
         if href.startswith('http'):
-            full_url = href
+            full_url = href.replace('http://ufcstats.com', 'http://www.ufcstats.com')
         else:
-            full_url = 'http://ufcstats.com' + href
+            full_url = 'http://www.ufcstats.com' + href
+            
         if full_url not in seen:
             seen.add(full_url)
             links.append(full_url)
 
     return links
 
-def parse_fighter_details(url, session):
-    response = session.get(url, headers=HEADERS, timeout=30)
-    soup = BeautifulSoup(response.text, 'html.parser')
+def parse_fighter_details(url, page):
+    page.goto(url, wait_until="domcontentloaded")
+    
+    # Wait for the fighter's name to render to ensure we passed any secondary bot checks
+    page.wait_for_selector('.b-content__title-highlight', timeout=15000)
+    
+    soup = BeautifulSoup(page.content(), 'html.parser')
     
     fighter_data = {
         'Name': None, 'Wins': 0, 'Losses': 0, 'Draws': 0, 'NC': 0,
@@ -60,54 +71,72 @@ def parse_fighter_details(url, session):
 
     list_items = soup.find_all('li', class_='b-list__box-list-item')
     
+    stat_map = {
+        'Height': 'Height', 'Weight': 'Weight', 'Reach': 'Reach',
+        'STANCE': 'STANCE', 'DOB': 'DOB', 'SLpM': 'SLpM',
+        'Str. Acc.': 'Str. Acc.', 'SApM': 'SApM', 'Str. Def': 'Str. Def.',
+        'TD Avg.': 'TD Avg.', 'TD Acc.': 'TD Acc.', 'TD Def.': 'TD Def.',
+        'Sub. Avg.': 'Sub. Avg.'
+    }
+    
     for item in list_items:
-        title_tag = item.find('i', class_='b-list__box-item-title')
-        if title_tag:
-            title = title_tag.text.strip().replace(':', '')
-            value = item.text.replace(title_tag.text, '').strip()
-            
-            stat_map = {
-                'Height': 'Height', 'Weight': 'Weight', 'Reach': 'Reach',
-                'STANCE': 'STANCE', 'DOB': 'DOB', 'SLpM': 'SLpM',
-                'Str. Acc.': 'Str. Acc.', 'SApM': 'SApM', 'Str. Def': 'Str. Def.',
-                'TD Avg.': 'TD Avg.', 'TD Acc.': 'TD Acc.', 'TD Def.': 'TD Def.',
-                'Sub. Avg.': 'Sub. Avg.'
-            }
+        strings = list(item.stripped_strings)
+        if len(strings) >= 1:
+            title = strings[0].replace(':', '').strip()
+            value = strings[1] if len(strings) > 1 else None
             
             if title in stat_map:
-                fighter_data[stat_map[title]] = None if value == '--' else value
+                final_key = stat_map[title]
+                fighter_data[final_key] = None if value in ['--', None] else value
 
     return fighter_data
 
 def scrape_all_fighters(letters_to_scrape='a'):
     all_fighters = []
-    session = requests.Session()
+    
+    # Start the Playwright browser session
+    with sync_playwright() as p:
+        # Launch browser. Set headless=False if you want to visibly watch it work!
+        browser = p.chromium.launch(headless=True) 
+        
+        # Adding a real user agent helps prevent getting flagged
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+        )
+        page = context.new_page()
 
-    for letter in letters_to_scrape:
-        print(f"Fetching links for '{letter.upper()}'...")
-        fighter_links = get_fighter_links(letter, session)
-        print(f"  Found {len(fighter_links)} fighters for '{letter.upper()}'")
-
-        for i, link in enumerate(fighter_links):
-            print(f"  Scraping fighter {i+1}/{len(fighter_links)}: {link}")
+        for letter in letters_to_scrape:
+            print(f"Fetching links for '{letter.upper()}'...")
             try:
-                data = parse_fighter_details(link, session)
-                all_fighters.append(data)
+                fighter_links = get_fighter_links(letter, page)
+                print(f"  Found {len(fighter_links)} fighters for '{letter.upper()}'")
             except Exception as e:
-                print(f"  Error scraping {link}: {e}")
+                print(f"  Error fetching links for '{letter.upper()}': {e}")
+                continue
 
-            time.sleep(0.5)
+            for i, link in enumerate(fighter_links):
+                print(f"  Scraping fighter {i+1}/{len(fighter_links)}: {link}")
+                try:
+                    data = parse_fighter_details(link, page)
+                    all_fighters.append(data)
+                except Exception as e:
+                    print(f"  Error scraping {link}: {e}")
+
+                time.sleep(0.5) # Still good practice to be polite to the server
+                
+        browser.close()
             
     df = pd.DataFrame(all_fighters)
     return df
 
 if __name__ == "__main__":
-    # Change test_letters to string.ascii_lowercase to run the full alphabet
     test_letters = string.ascii_lowercase 
     
     print("Starting scraper...")
     df_fighters = scrape_all_fighters(letters_to_scrape=test_letters)
     
+    os.makedirs('./data', exist_ok=True)
     csv_filename = './data/ufcstats_data.csv'
+    
     df_fighters.to_csv(csv_filename, index=False)
     print(f"Saved to {csv_filename}")

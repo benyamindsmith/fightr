@@ -113,8 +113,7 @@ jobs:
           Rscript -e 'install.packages(c("dplyr", "tidyr", "stringr", "lubridate", "readr", "janitor"))'
 
       - name: Run Cleaning Script
-        # Assuming you save the R cleaning script in the scripts folder
-        run: Rscript ./scripts/clean_data.R
+        run: Rscript ./scripts/cleaning_script.R
 
       - name: Commit and Push Changes
         run: |

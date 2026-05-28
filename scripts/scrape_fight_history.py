@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 import re
+import random
 import logging
+import os
 # import pyreadr
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -24,17 +26,41 @@ def clean_text(text):
         return ""
     return re.sub(r'\s+', ' ', text.strip())
 
-def get_event_links():
+def request_soup(url, session, retries=3, timeout=15):
+    """Fetches a URL and returns BeautifulSoup. Retries on failures."""
+    for attempt in range(1, retries + 1):
+        try:
+            response = session.get(url, timeout=timeout)
+            
+            if response.status_code == 200:
+                return BeautifulSoup(response.content, 'html.parser')
+                
+            logging.warning(f"Bad status {response.status_code} for {url}")
+            
+            # Stop retrying if it's a hard 404 Not Found
+            if response.status_code == 404:
+                return None
+                
+        except requests.RequestException as e:
+            logging.error(f"Attempt {attempt} failed for {url}: {e}")
+            
+        # Jittered sleep before retrying
+        time.sleep(attempt * 2 + random.uniform(0.5, 1.5))
+        
+    logging.error(f"Giving up on {url} after {retries} attempts.")
+    return None
+
+def get_event_links(session):
     """Scrapes the main page to get all completed event URLs."""
     logging.info("Fetching event list...")
-    response = requests.get(EVENTS_URL, headers=HEADERS)
-    soup = BeautifulSoup(response.content, 'html.parser')
+    soup = request_soup(EVENTS_URL, session)
+    if not soup:
+        return []
     
     event_links = []
     # Skip the first row as it's the header
     rows = soup.select('.b-statistics__table-events tbody tr')[1:] 
     for row in rows:
-        # Changed select_first to find for broader environment compatibility
         link_tag = row.find('a') 
         if link_tag and 'href' in link_tag.attrs:
             event_links.append(link_tag['href'])
@@ -42,10 +68,11 @@ def get_event_links():
     logging.info(f"Found {len(event_links)} events.")
     return event_links
 
-def get_fight_links(event_url):
+def get_fight_links(event_url, session):
     """Scrapes an event page to get URLs for all fights on the card."""
-    response = requests.get(event_url, headers=HEADERS)
-    soup = BeautifulSoup(response.content, 'html.parser')
+    soup = request_soup(event_url, session)
+    if not soup:
+        return [], "", "", ""
     
     fight_links = []
     rows = soup.select('.b-fight-details__table-row')
@@ -53,9 +80,9 @@ def get_fight_links(event_url):
         if 'data-link' in row.attrs:
             fight_links.append(row['data-link'])
             
-    # Extract event info using find
-    title_span = soup.find(class_='b-content__title')
-    event_name = clean_text(title_span.find('span').text) if title_span and title_span.find('span') else ""
+    # Fixed the class name for the event title selector
+    title_elem = soup.find(class_='b-content__title-highlight')
+    event_name = clean_text(title_elem.text) if title_elem else ""
     
     date_location_tags = soup.select('.b-list__box-list-item')
     date = clean_text(date_location_tags[0].text.replace('Date:', '')) if len(date_location_tags) > 0 else ""
@@ -63,10 +90,11 @@ def get_fight_links(event_url):
     
     return fight_links, event_name, date, location
 
-def parse_fight_details(fight_url, event_name, date, location):
-    """Extracts and flattens all details from a single fight page."""
-    response = requests.get(fight_url, headers=HEADERS)
-    soup = BeautifulSoup(response.content, 'html.parser')
+def parse_fight_details(fight_url, event_name, date, location, session):
+    """Extracts and flattens total fight details from a single fight page."""
+    soup = request_soup(fight_url, session)
+    if not soup:
+        return None
     
     fight_data = {
         'fight_url': fight_url,
@@ -117,7 +145,7 @@ def parse_fight_details(fight_url, event_name, date, location):
         if 'Details:' in section.text:
             fight_data['judging_details'] = clean_text(section.text.replace('Details:', ''))
 
-    # 3. Parse Statistical Tables
+    # 3. Parse Statistical Tables (Fight Totals Only)
     tables = soup.select('.b-fight-details__table')
     if len(tables) >= 2:
         totals_table = tables[0]
@@ -128,6 +156,7 @@ def parse_fight_details(fight_url, event_name, date, location):
             tbody = table.find('tbody')
             if not tbody: return
             
+            # Selecting [0] grabs ONLY the total fight stats, skipping round-by-round breakdown
             first_row_tds = tbody.select('tr')[0].select('td')
             
             for idx, td in enumerate(first_row_tds):
@@ -158,25 +187,32 @@ def parse_fight_details(fight_url, event_name, date, location):
     return fight_data
 
 def main():
-    event_links = get_event_links()
+    # Initialize the robust connection pool
+    session = requests.Session()
+    session.headers.update(HEADERS)
+    
+    event_links = get_event_links(session)
     all_fights_data = []
     
+    # NOTE: You can slice event_links[:5] here if you want to test a smaller batch first
     for event_idx, event_url in enumerate(event_links):
         logging.info(f"Processing Event {event_idx + 1}/{len(event_links)}: {event_url}")
-        fight_links, event_name, date, location = get_fight_links(event_url)
+        fight_links, event_name, date, location = get_fight_links(event_url, session)
         
         for fight_url in fight_links:
             try:
-                fight_data = parse_fight_details(fight_url, event_name, date, location)
+                fight_data = parse_fight_details(fight_url, event_name, date, location, session)
                 if fight_data:
                     all_fights_data.append(fight_data)
             except Exception as e:
                 logging.error(f"Error parsing {fight_url}: {e}")
             
-            time.sleep(1) 
+            # Added a slight random jitter to the sleep timer to act more human
+            time.sleep(1 + random.uniform(0.1, 0.5)) 
             
     # Export to both CSV and RData
     if all_fights_data:
+        os.makedirs('./data', exist_ok=True)
         df = pd.DataFrame(all_fights_data)
         
         csv_filename = './data/ufc_fights.csv'

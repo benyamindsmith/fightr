@@ -2,10 +2,18 @@ import os
 import re
 import time
 import random
+import logging
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+
+# Set up logging to replace print statements
+logging.basicConfig(
+    level=logging.INFO, 
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
 
 # Optional: only needed for .RData export
 # try:
@@ -13,7 +21,6 @@ from urllib.parse import urljoin
 #     HAS_PYREADR = True
 # except ImportError:
 #     HAS_PYREADR = False
-
 
 BASE_URL = "https://www.ufc.com"
 OUTPUT_DIR = "./data"
@@ -51,7 +58,12 @@ def request_soup(url, session, retries=3, timeout=25):
             if response.status_code == 200:
                 return BeautifulSoup(response.text, "html.parser")
 
-            print(f"Request failed: {response.status_code} | {url}")
+            # Explicit check for Cloudflare blocks
+            if response.status_code == 403:
+                logging.error(f"403 Forbidden at {url} - You may have been blocked by Cloudflare.")
+                return None
+
+            logging.warning(f"Request failed: {response.status_code} | {url}")
 
             # Retry only on server-side/rate-limit-ish responses
             if response.status_code in [429, 500, 502, 503, 504]:
@@ -63,26 +75,15 @@ def request_soup(url, session, retries=3, timeout=25):
 
         except Exception as e:
             last_error = e
-            print(f"Request error on attempt {attempt}: {e} | {url}")
+            logging.error(f"Request error on attempt {attempt}: {e} | {url}")
             time.sleep(attempt * 2)
 
-    print(f"Giving up on {url}. Last error: {last_error}")
+    logging.error(f"Giving up on {url}. Last error: {last_error}")
     return None
 
 
 def extract_text_by_possible_labels(soup, labels):
-    """
-    Fallback parser:
-    Searches page text for lines like:
-
-    Reach
-    70.00
-
-    or
-
-    Octagon Debut
-    Apr. 10, 2016
-    """
+    """Fallback parser for raw text extraction."""
     results = {}
     lines = [
         clean_text(line)
@@ -90,13 +91,19 @@ def extract_text_by_possible_labels(soup, labels):
         if clean_text(line)
     ]
 
+    # Pre-compute for faster O(1) lookups
+    lower_labels = {x.lower() for x in labels}
+
     for i, line in enumerate(lines):
         normalized_line = line.lower().rstrip(":")
+        
         for label in labels:
             normalized_label = label.lower().rstrip(":")
             if normalized_line == normalized_label and i + 1 < len(lines):
                 value = lines[i + 1]
-                if value and value.lower() not in [x.lower() for x in labels]:
+                
+                # Check against the pre-computed set
+                if value and value.lower() not in lower_labels:
                     results[label] = value
 
     return results
@@ -116,7 +123,7 @@ def get_fighter_bio(profile_url, session, debug=False):
     if debug:
         with open("debug_profile.html", "w", encoding="utf-8") as f:
             f.write(str(soup))
-        print("Saved debug_profile.html")
+        logging.info("Saved debug_profile.html")
 
     stats = {}
 
@@ -140,10 +147,6 @@ def get_fighter_bio(profile_url, session, debug=False):
             break
 
     # Main bio fields
-    # Common UFC structure:
-    # div.c-bio__field
-    #   div.c-bio__label
-    #   div.c-bio__text
     for field in soup.select(".c-bio__field, .c-bio__field--border-bottom"):
         label_elem = field.select_one(".c-bio__label")
         value_elem = field.select_one(".c-bio__text")
@@ -180,26 +183,15 @@ def get_fighter_bio(profile_url, session, debug=False):
             if key and value:
                 stats[key] = value
 
-    # Text fallback for the specific UFC bio fields you care about
     wanted_labels = [
-        "Age",
-        "Height",
-        "Weight",
-        "Reach",
-        "Leg reach",
-        "Leg Reach",
-        "Octagon Debut",
-        "Place of Birth",
-        "Fighting style",
-        "Fighting Style",
-        "Trains at",
-        "Trains At",
-        "Status",
+        "Age", "Height", "Weight", "Reach", "Leg reach", 
+        "Leg Reach", "Octagon Debut", "Place of Birth", 
+        "Fighting style", "Fighting Style", "Trains at", 
+        "Trains At", "Status",
     ]
 
     fallback = extract_text_by_possible_labels(soup, wanted_labels)
 
-    # Merge fallback without overwriting good selector results
     for key, value in fallback.items():
         stats.setdefault(key, value)
 
@@ -207,9 +199,7 @@ def get_fighter_bio(profile_url, session, debug=False):
 
 
 def parse_roster_card(card):
-    """
-    Extract basic fighter info from one UFC roster card.
-    """
+    """Extract basic fighter info from one UFC roster card."""
     fighter = {}
 
     name_elem = card.select_one(".c-listing-athlete__name")
@@ -218,8 +208,7 @@ def parse_roster_card(card):
     nickname_elem = card.select_one(".c-listing-athlete__nickname")
     fighter["Nickname"] = (
         clean_text(nickname_elem.get_text(" ")).replace('"', "")
-        if nickname_elem
-        else None
+        if nickname_elem else None
     )
 
     weight_elem = card.select_one(".c-listing-athlete__title")
@@ -236,29 +225,17 @@ def parse_roster_card(card):
 
 
 def scrape_roster_page(page_num, session):
-    """
-    Scrape one UFC roster page.
-
-    Uses:
-    https://www.ufc.com/athletes/all?page=0
-    https://www.ufc.com/athletes/all?page=1
-    etc.
-    """
+    """Scrape one UFC roster page."""
     url = f"{BASE_URL}/athletes/all?page={page_num}"
     soup = request_soup(url, session=session)
 
     if soup is None:
         return []
 
-    # UFC athlete cards are usually li.l-flex__item containing c-listing-athlete__name
     possible_cards = soup.select("li.l-flex__item, .view-athletes .views-row, .c-listing-athlete")
 
-    cards = []
-    for card in possible_cards:
-        if card.select_one(".c-listing-athlete__name"):
-            cards.append(card)
+    cards = [card for card in possible_cards if card.select_one(".c-listing-athlete__name")]
 
-    # De-duplicate cards by profile URL
     fighters = []
     seen_urls = set()
 
@@ -285,42 +262,28 @@ def scrape_all_ufc_fighters(
     delay_between_profiles=0.5,
     stop_after_empty_pages=3,
 ):
-    """
-    Scrape UFC athletes.
-
-    max_pages:
-        Number of roster pages to try.
-
-    scrape_deep_stats:
-        If True, visits every individual athlete page.
-
-    stop_after_empty_pages:
-        Stops after this many consecutive empty roster pages.
-    """
     all_fighters = []
     seen_urls = set()
     empty_pages = 0
 
     session = requests.Session()
-
-    print("Starting UFC roster scrape...")
+    logging.info("Starting UFC roster scrape...")
 
     for page in range(max_pages):
         fighters_on_page = scrape_roster_page(page, session=session)
 
         if not fighters_on_page:
             empty_pages += 1
-            print(f"No fighters found on page {page}. Empty streak: {empty_pages}")
+            logging.info(f"No fighters found on page {page}. Empty streak: {empty_pages}")
 
             if empty_pages >= stop_after_empty_pages:
-                print("Stopping because multiple empty pages were found.")
+                logging.info("Stopping because multiple empty pages were found.")
                 break
 
             time.sleep(delay_between_pages)
             continue
 
         empty_pages = 0
-
         new_count = 0
 
         for fighter in fighters_on_page:
@@ -335,13 +298,12 @@ def scrape_all_ufc_fighters(
             if scrape_deep_stats and profile_url:
                 deep_stats = get_fighter_bio(profile_url, session=session)
                 fighter.update(deep_stats)
-
                 time.sleep(delay_between_profiles + random.uniform(0.1, 0.4))
 
             all_fighters.append(fighter)
             new_count += 1
 
-        print(
+        logging.info(
             f"Page {page}: found {len(fighters_on_page)} fighters, "
             f"added {new_count}, total {len(all_fighters)}"
         )
@@ -349,35 +311,29 @@ def scrape_all_ufc_fighters(
         time.sleep(delay_between_pages + random.uniform(0.2, 0.8))
 
     df = pd.DataFrame(all_fighters)
-
-    # Optional cleanup: remove completely empty columns
     df = df.dropna(axis=1, how="all")
 
     return df
 
 
 def test_single_fighter():
-    """
-    Test parser on Dong Hyun Ma first.
-    """
+    """Test parser on Dong Hyun Ma first."""
     session = requests.Session()
     url = "https://www.ufc.com/athlete/dong-hyun-ma"
 
     stats = get_fighter_bio(url, session=session, debug=True)
 
-    print("\nSingle fighter test:")
-    print("-" * 60)
+    logging.info("Single fighter test:")
+    logging.info("-" * 60)
     for key, value in stats.items():
-        print(f"{key}: {value}")
+        logging.info(f"{key}: {value}")
 
 
 if __name__ == "__main__":
     # Step 1: Test one fighter first.
-    # This creates debug_profile.html so you can inspect the exact UFC HTML.
     test_single_fighter()
 
     # Step 2: Run the full scrape.
-    # Start smaller while testing, e.g. max_pages=5.
     ufc_df = scrape_all_ufc_fighters(
         max_pages=300,
         scrape_deep_stats=True,
@@ -385,22 +341,10 @@ if __name__ == "__main__":
         delay_between_profiles=0.5,
     )
 
-    print("\nPreview:")
-    print(ufc_df.head())
-    print("\nColumns:")
-    print(list(ufc_df.columns))
-    print(f"\nRows scraped: {len(ufc_df)}")
+    logging.info("\nPreview:")
+    logging.info(f"\n{ufc_df.head()}")
+    logging.info(f"\nRows scraped: {len(ufc_df)}")
 
     # Save CSV
     ufc_df.to_csv(CSV_FILENAME, index=False)
-    print(f"Saved CSV to {CSV_FILENAME}")
-
-    # # Save RData
-    # if HAS_PYREADR:
-    #     pyreadr.write_rdata(RDATA_FILENAME, ufc_df, df_name="ufc_athletes")
-    #     print(f"Saved RData to {RDATA_FILENAME}")
-    # else:
-    #     print(
-    #         "Skipped RData export because pyreadr is not installed. "
-    #         "Install it with: pip install pyreadr"
-    #     )
+    logging.info(f"Saved CSV to {CSV_FILENAME}")

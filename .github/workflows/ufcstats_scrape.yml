@@ -1,30 +1,6 @@
 name: UFCStats Scraper
 
 on:
-  # Allows you to trigger the workflow manually from the Actions tab
-  workflow_dispatch:
-  # Runs automatically at midnight on the 1st of every month
-  # schedule:
-  #   - cron: '0 0 1 * *'
-
-# Explicitly grant write permissions to the repository so the bot can push files
-permissions:
-  contents: write
-
-jobs:
-  scrape-and-commit:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.9'name: UFCStats Scraper
-
-on:
   workflow_dispatch:
   # schedule:
   #   - cron: '0 0 1 * *'
@@ -48,7 +24,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 pandas
+          pip install requests beautifulsoup4 pandas pyreadr
 
       - name: Run scraper script
         run: python ./scripts/scrape_ufcstats.py
@@ -73,34 +49,4 @@ jobs:
             git commit -m "Automated update of UFC fighter data"
             git pull --rebase origin main
             git push
-          fi
-
-      - name: Install python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 pandas pyreadr
-
-      - name: Run Scraper Script
-        run: python ./scripts/scrape_ufcstats.py
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-
-      - name: Commit and Push Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-          # Update these paths if you are saving to a data/ folder
-          git add .
-
-          # Check if there are changes to commit
-          if ! git diff --quiet || ! git diff --staged --quiet; then
-            git commit -m "Automated update of UFC fighter data"
-
-            # Pull any changes that happened during the ~40 minute scraping window
-            git pull --rebase origin main
-
-            git push
-          else
-            echo "No data changes to commit."
           fi

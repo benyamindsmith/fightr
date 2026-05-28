@@ -12,16 +12,18 @@ def get_fighter_links(letter):
     soup = BeautifulSoup(response.text, 'html.parser')
     
     links = []
-    table = soup.find('table', class_='b-statistics__table')
-    if not table:
-        return links
-        
-    rows = table.find_all('tr', class_='b-statistics__table-row')[2:] 
-    for row in rows:
-        a_tag = row.find('a', class_='b-link')
-        if a_tag and 'href' in a_tag.attrs:
-            links.append(a_tag['href'])
-            
+    seen = set()
+    # Each row has multiple <a> tags pointing to the same fighter-details URL; deduplicate
+    for a_tag in soup.find_all('a', href=re.compile(r'/fighter-details/')):
+        href = a_tag['href']
+        if href.startswith('http'):
+            full_url = href
+        else:
+            full_url = 'http://ufcstats.com' + href
+        if full_url not in seen:
+            seen.add(full_url)
+            links.append(full_url)
+
     return links
 
 def parse_fighter_details(url):

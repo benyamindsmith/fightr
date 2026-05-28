@@ -27,10 +27,15 @@ def get_event_links():
     soup = BeautifulSoup(response.content, 'html.parser')
     
     event_links = []
-    for link_tag in soup.find_all('a', href=re.compile(r'ufcstats\.com/event-details/')):
+    for link_tag in soup.find_all('a', href=re.compile(r'/event-details/')):
         href = link_tag['href']
-        if href not in event_links:
-            event_links.append(href)
+        # Normalise to full URL
+        if href.startswith('http'):
+            full_url = href
+        else:
+            full_url = 'http://ufcstats.com' + href
+        if full_url not in event_links:
+            event_links.append(full_url)
             
     logging.info(f"Found {len(event_links)} events.")
     return event_links

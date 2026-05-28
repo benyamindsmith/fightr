@@ -7,13 +7,6 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
-# Optional: only needed for .RData export
-# try:
-#     import pyreadr
-#     HAS_PYREADR = True
-# except ImportError:
-#     HAS_PYREADR = False
-
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Base URLs
@@ -25,16 +18,29 @@ def clean_text(text):
         return ""
     return re.sub(r'\s+', ' ', text.strip())
 
-def get_soup(url, page, retries=3, timeout=15000):
-    """Fetches a URL using Playwright and returns BeautifulSoup. Retries on failures."""
+def get_soup(url, page, expected_selector, retries=3, timeout=15000):
+    """
+    Fetches a URL using Playwright, explicitly waits for the target element, 
+    and returns BeautifulSoup. Retries on failures.
+    """
     for attempt in range(1, retries + 1):
         try:
-            # Wait until the DOM is loaded
+            # We still wait for the DOM to load natively
             page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+            
+            # CRITICAL FIX: Force Playwright to wait until the specific table/data actually exists
+            page.wait_for_selector(expected_selector, timeout=timeout)
+            
             return BeautifulSoup(page.content(), 'html.parser')
             
         except PlaywrightTimeoutError:
-            logging.warning(f"Timeout on attempt {attempt} for {url}")
+            page_title = page.title()
+            # Check if we are stuck on a Cloudflare anti-bot page
+            if "Just a moment" in page_title or "Cloudflare" in page_title:
+                logging.warning(f"Cloudflare block detected on attempt {attempt} for {url}. Try setting headless=False.")
+            else:
+                logging.warning(f"Timeout waiting for '{expected_selector}' on attempt {attempt} for {url}")
+                
         except Exception as e:
             logging.error(f"Attempt {attempt} failed for {url}: {e}")
             
@@ -47,13 +53,15 @@ def get_soup(url, page, retries=3, timeout=15000):
 def get_event_links(page):
     """Scrapes the main page to get all completed event URLs."""
     logging.info("Fetching event list...")
-    soup = get_soup(EVENTS_URL, page)
+    
+    # Pass the specific table selector we need to wait for
+    soup = get_soup(EVENTS_URL, page, expected_selector='.b-statistics__table-events tbody tr')
     if not soup:
         return []
     
     event_links = []
-    # Skip the first row as it's the header
-    rows = soup.select('.b-statistics__table-events tbody tr')[1:] 
+    # No longer skipping [1:] here, we will filter cleanly in the loop
+    rows = soup.select('.b-statistics__table-events tbody tr') 
     for row in rows:
         link_tag = row.find('a') 
         if link_tag and 'href' in link_tag.attrs:
@@ -64,7 +72,7 @@ def get_event_links(page):
 
 def get_fight_links(event_url, page):
     """Scrapes an event page to get URLs for all fights on the card."""
-    soup = get_soup(event_url, page)
+    soup = get_soup(event_url, page, expected_selector='.b-fight-details__table-row')
     if not soup:
         return [], "", "", ""
     
@@ -85,7 +93,7 @@ def get_fight_links(event_url, page):
 
 def parse_fight_details(fight_url, event_name, date, location, page):
     """Extracts and flattens total fight details from a single fight page."""
-    soup = get_soup(fight_url, page)
+    soup = get_soup(fight_url, page, expected_selector='.b-fight-details__person')
     if not soup:
         return None
     
@@ -183,9 +191,11 @@ def main():
     all_fights_data = []
     
     with sync_playwright() as p:
+        # If it still fails, change headless=True to headless=False so you can visually see the issue
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+            viewport={'width': 1920, 'height': 1080}
         )
         page = context.new_page()
         

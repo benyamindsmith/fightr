@@ -10,7 +10,13 @@ import string
 
 def get_fighter_links(letter):
     url = f"http://ufcstats.com/statistics/fighters?char={letter}&page=all"
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    headers = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/125.0.0.0 Safari/537.36"
+    )
+    }
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
     

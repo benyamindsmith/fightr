@@ -21,18 +21,18 @@ echo "Working Directory: $(pwd)"
 echo "Output directory: $ROOT_DIR/data"
 mkdir -p data
 
-# echo ""
-# echo "[1/3] Scraping UFC athlete bios (ufc.com)..."
-# # Add the -u flag here
-# python -u scripts/scrape_ufc.py
-
-# echo ""
-# echo "[2/3] Scraping fighter stats (ufcstats.com)..."
-# # And here
-# python -u scripts/scrape_ufcstats.py
+echo ""
+echo "[1/3] Scraping UFC athlete bios (ufc.com)..."
+# Add the -u flag here
+python -u scripts/scrape_ufc.py
 
 echo ""
-echo "[3/3] Scraping fight history (ufcstats.com)..."
+echo "[2/3] Scraping fighter stats (ufcstats.com)..."
+# And here
+python -u scripts/scrape_ufcstats.py
+
+echo ""
+# echo "[3/3] Scraping fight history (ufcstats.com)..."
 # And here
 python -u scripts/scrape_fight_history.py
 

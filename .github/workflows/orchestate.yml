@@ -2,8 +2,8 @@ name: UFC Master Data Pipeline
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 6 * * SUN'
+  # schedule:
+  #   - cron: '0 6 * * SUN'
 
 permissions:
   contents: write

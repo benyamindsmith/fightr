@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import re
 import logging
-import pyreadr  # pin to 0.4.9 — versions >=0.5.0 segfault on Linux (librdata conflict)
+
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -27,7 +27,6 @@ def get_event_links():
     soup = BeautifulSoup(response.content, 'html.parser')
     
     event_links = []
-    # Select all anchor tags that point to event detail pages
     for link_tag in soup.find_all('a', href=re.compile(r'ufcstats\.com/event-details/')):
         href = link_tag['href']
         if href not in event_links:
@@ -176,11 +175,6 @@ def main():
         csv_filename = './data/ufc_fights.csv'
         df.to_csv(csv_filename, index=False)
         logging.info(f"Data successfully saved to {csv_filename}")
-        
-        rdata_filename = './data/ufc_fights.RData'
-        pyreadr.write_rdata(rdata_filename, df, df_name='ufc_fights')
-        logging.info(f"Data successfully saved to R environment format as {rdata_filename}")
-        
         logging.info(f"Total fights extracted: {len(df)}")
     else:
         logging.warning("No data extracted.")

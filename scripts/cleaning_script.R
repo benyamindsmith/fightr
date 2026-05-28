@@ -1,7 +1,7 @@
 # Cleaning Scripts
-load("data/ufc_athletes.RData")
-load("data/ufc_fights.RData")
-load("data/ufcstats_data.RData")
+ufc_athletes <- readr::read_csv("data/ufc_athletes.csv", show_col_types = FALSE)
+ufc_fights   <- readr::read_csv("data/ufc_fights.csv",   show_col_types = FALSE)
+ufcstats_data <- readr::read_csv("data/ufcstats_data.csv", show_col_types = FALSE)
 
 ufc_athletes<-ufc_athletes|>
   dplyr::mutate(
@@ -124,6 +124,6 @@ ufcstats_data<- ufcstats_data |>
   )|>
   janitor::clean_names()
 
-write(ufc_athletes, file="data/ufc_athletes.RData")
-write(ufc_fights, file ="data/ufc_fights.RData")
-write(ufcstats_data, file = "data/ufcstats_data.RData")
+save(ufc_athletes,  file = "data/ufc_athletes.RData")
+save(ufc_fights,    file = "data/ufc_fights.RData")
+save(ufcstats_data, file = "data/ufcstats_data.RData")

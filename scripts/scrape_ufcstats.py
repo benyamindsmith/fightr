@@ -4,7 +4,6 @@ import pandas as pd
 import time
 import re
 import string
-import pyreadr  # pin to 0.4.9 — versions >=0.5.0 segfault on Linux (librdata conflict)
 
 def get_fighter_links(letter):
     url = f"http://ufcstats.com/statistics/fighters?char={letter}&page=all"
@@ -100,13 +99,6 @@ if __name__ == "__main__":
     print("Starting scraper...")
     df_fighters = scrape_all_fighters(letters_to_scrape=test_letters)
     
-    # Save as CSV
     csv_filename = './data/ufcstats_data.csv'
     df_fighters.to_csv(csv_filename, index=False)
     print(f"Saved to {csv_filename}")
-    
-    # Save as .RData
-    rdata_filename = './data/ufcstats_data.RData'
-    # df_name is the variable name that will appear in R when you run load("ufc_fighters_data.RData")
-    pyreadr.write_rdata(rdata_filename, df_fighters, df_name='ufcstats_data')
-    print(f"Saved to {rdata_filename}")

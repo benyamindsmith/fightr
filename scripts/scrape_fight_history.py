@@ -72,12 +72,12 @@ def get_event_links(page):
 
 def get_fight_links(event_url, page):
     """Scrapes an event page to get URLs for all fights on the card."""
-    soup = get_soup(event_url, page, expected_selector='.b-fight-details__table-row')
+    soup = get_soup(event_url, page, expected_selector='.b-event-details__table-row')
     if not soup:
         return [], "", "", ""
     
     fight_links = []
-    rows = soup.select('.b-fight-details__table-row')
+    rows = soup.select('.b-event-details__table-row')
     for row in rows:
         if 'data-link' in row.attrs:
             fight_links.append(row['data-link'])
@@ -93,7 +93,7 @@ def get_fight_links(event_url, page):
 
 def parse_fight_details(fight_url, event_name, date, location, page):
     """Extracts and flattens total fight details from a single fight page."""
-    soup = get_soup(fight_url, page, expected_selector='.b-fight-details__person')
+    soup = get_soup(fight_url, page, expected_selector='.b-event-details__person')
     if not soup:
         return None
     
@@ -105,16 +105,16 @@ def parse_fight_details(fight_url, event_name, date, location, page):
     }
     
     # 1. Fighter Names & Outcomes
-    persons = soup.select('.b-fight-details__person')
+    persons = soup.select('.b-event-details__person')
     if len(persons) != 2:
         return None # Incomplete data structure
         
     for i, person in enumerate(persons):
         prefix = f'f{i+1}_'
-        status_tag = person.find(class_='b-fight-details__person-status')
+        status_tag = person.find(class_='b-event-details__person-status')
         status = status_tag.text.strip() if status_tag else ""
         
-        name_container = person.find(class_='b-fight-details__person-name')
+        name_container = person.find(class_='b-event-details__person-name')
         name_tag = name_container.find('a') if name_container else None
         name = clean_text(name_tag.text) if name_tag else ""
         
@@ -122,13 +122,13 @@ def parse_fight_details(fight_url, event_name, date, location, page):
         fight_data[f'{prefix}result'] = status
 
     # 2. General Fight Details
-    weight_class_tag = soup.find(class_='b-fight-details__fight-title')
+    weight_class_tag = soup.find(class_='b-event-details__fight-title')
     fight_data['weight_class'] = clean_text(weight_class_tag.text) if weight_class_tag else ""
     
-    method_tag = soup.find('i', class_='b-fight-details__text-item_first')
+    method_tag = soup.find('i', class_='b-event-details__text-item_first')
     fight_data['method'] = clean_text(method_tag.text.replace('Method:', '')) if method_tag else ""
     
-    details_items = soup.select('.b-fight-details__text-item')
+    details_items = soup.select('.b-event-details__text-item')
     for item in details_items:
         text = clean_text(item.text)
         if 'Round:' in text:
@@ -141,13 +141,13 @@ def parse_fight_details(fight_url, event_name, date, location, page):
             fight_data['referee'] = text.replace('Referee:', '').strip()
 
     # Judging details
-    judging_section = soup.select('.b-fight-details__text')
+    judging_section = soup.select('.b-event-details__text')
     for section in judging_section:
         if 'Details:' in section.text:
             fight_data['judging_details'] = clean_text(section.text.replace('Details:', ''))
 
     # 3. Parse Statistical Tables (Fight Totals Only)
-    tables = soup.select('.b-fight-details__table')
+    tables = soup.select('.b-event-details__table')
     if len(tables) >= 2:
         totals_table = tables[0]
         sig_str_table = tables[1]

@@ -23,15 +23,18 @@ mkdir -p data
 
 echo ""
 echo "[1/3] Scraping UFC athlete bios (ufc.com)..."
-python scripts/scrape_ufc.py
+# Add the -u flag here
+python -u scripts/scrape_ufc.py
 
 echo ""
 echo "[2/3] Scraping fighter stats (ufcstats.com)..."
-python scripts/scrape_ufcstats.py
+# And here
+python -u scripts/scrape_ufcstats.py
 
 echo ""
 echo "[3/3] Scraping fight history (ufcstats.com)..."
-python scripts/scrape_fight_history.py
+# And here
+python -u scripts/scrape_fight_history.py
 
 echo ""
 echo "=== Done. Next steps: ==="

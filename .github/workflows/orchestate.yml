@@ -19,18 +19,20 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.10'
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 pandas
+          pip install pandas beautifulsoup4 playwright
+      - name: Install Playwright Browsers
+        run: playwright install --with-deps chromium
       - name: Run Scraper
         run: python ./scripts/scrape_ufc.py
       - name: Upload Raw Data
         uses: actions/upload-artifact@v4
         with:
           name: raw-athletes
-          path: data/ufc_athletes.csv # Fixed extension
+          path: data/ufc_athletes.csv
           retention-days: 1
 
   scrape_fights:
@@ -40,18 +42,20 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.10'
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 pandas
+          pip install pandas beautifulsoup4 playwright
+      - name: Install Playwright Browsers
+        run: playwright install --with-deps chromium
       - name: Run Scraper
         run: python ./scripts/scrape_fight_history.py
       - name: Upload Raw Data
         uses: actions/upload-artifact@v4
         with:
           name: raw-fights
-          path: data/ufc_fights.csv # Fixed extension
+          path: data/ufc_fights.csv
           retention-days: 1
 
   scrape_ufcstats:
@@ -61,18 +65,20 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.10'
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 pandas
+          pip install pandas beautifulsoup4 playwright
+      - name: Install Playwright Browsers
+        run: playwright install --with-deps chromium
       - name: Run Scraper
         run: python ./scripts/scrape_ufcstats.py
       - name: Upload Raw Data
         uses: actions/upload-artifact@v4
         with:
           name: raw-ufcstats
-          path: data/ufcstats_data.csv # Fixed extension
+          path: data/ufcstats_data.csv
           retention-days: 1
 
   # ==========================================
@@ -110,6 +116,7 @@ jobs:
           path: data/
 
       - name: Install R Dependencies
+        # If cleaning_script.R is written in base R, you can comment out or remove this step entirely.
         run: |
           Rscript -e 'install.packages(c("dplyr", "tidyr", "stringr", "lubridate", "readr", "janitor"))'
 

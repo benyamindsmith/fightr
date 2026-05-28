@@ -1,19 +1,16 @@
-name: UFC Master Data Pipeline
+name: Clean Data
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * MON'
+    - cron: '0 12 * * SUN'
+  push:
+    branches: [ "main" ]
 
 permissions:
   contents: write
 
 jobs:
-  # ==========================================
-  # R CLEANING AND GIT COMMIT JOB
-  # Expects CSVs to already be committed to data/
-  # by running scrape_*.py locally first.
-  # ==========================================
   clean_and_commit_data:
     runs-on: ubuntu-latest
 

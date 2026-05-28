@@ -57,8 +57,8 @@ ufc_fights <-ufc_fights |>
   dplyr::mutate(
     date = lubridate::mdy(date),
     time = lubridate::ms(time),
-    f1_ctrl_total = lubridate::ms(f1_ctrl_total),
-    f2_ctrl_total = lubridate::ms(f2_ctrl_total),
+    # f1_ctrl_total = lubridate::ms(f1_ctrl_total),
+    # f2_ctrl_total = lubridate::ms(f2_ctrl_total),
 
     # 3. Parse Percentages
     dplyr::across(

@@ -3,9 +3,9 @@ import re
 import time
 import random
 import logging
+import requests
 import pandas as pd
 from bs4 import BeautifulSoup
-from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -13,24 +13,29 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Base URL
 EVENTS_URL = "http://ufcstats.com/statistics/events/completed?page=all"
 
+# Standard headers to prevent 403 Forbidden errors
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+}
+
 def clean_text(text):
     """Removes extra whitespace and newlines from scraped text."""
     if not text:
         return ""
     return re.sub(r'\s+', ' ', text.strip())
 
-def get_soup(url, page, retries=3, timeout=15000):
-    """Fetches a URL using Playwright and returns a BeautifulSoup object. Retries on failure."""
+def get_soup(url, session, retries=3):
+    """Fetches a URL using requests and returns a BeautifulSoup object. Retries on failure."""
     for attempt in range(1, retries + 1):
         try:
-            # Wait until the DOM is fully loaded to ensure tables are present
-            page.goto(url, wait_until="domcontentloaded", timeout=timeout)
-            return BeautifulSoup(page.content(), 'html.parser')
+            response = session.get(url, headers=HEADERS, timeout=10)
+            response.raise_for_status() # Raises an HTTPError for bad responses (401, 403, 404, etc.)
+            return BeautifulSoup(response.content, 'html.parser')
             
-        except PlaywrightTimeoutError:
-            logging.warning(f"Timeout on attempt {attempt} for {url}")
-        except Exception as e:
-            logging.error(f"Attempt {attempt} failed for {url}: {e}")
+        except requests.exceptions.RequestException as e:
+            logging.warning(f"Attempt {attempt} failed for {url}: {e}")
             
         # Jittered sleep to avoid rate-limiting
         time.sleep(attempt * 2 + random.uniform(0.5, 1.5))
@@ -38,16 +43,17 @@ def get_soup(url, page, retries=3, timeout=15000):
     logging.error(f"Giving up on {url} after {retries} attempts.")
     return None
 
-def get_event_links(page):
+def get_event_links(session):
     """Scrapes the main events page to collect all completed event URLs."""
     logging.info("Fetching main event list...")
-    soup = get_soup(EVENTS_URL, page)
+    soup = get_soup(EVENTS_URL, session)
     if not soup:
         return []
     
     event_links = []
-    # Skip the first row as it contains table headers
-    rows = soup.select('.b-statistics__table-events tbody tr')[1:] 
+    # Selecting 'tr' and skipping the first header row. 
+    # This avoids 'tbody' selector issues which are sometimes missing in raw HTML.
+    rows = soup.select('.b-statistics__table-events tr')[1:] 
     for row in rows:
         link_tag = row.find('a') 
         if link_tag and 'href' in link_tag.attrs:
@@ -56,9 +62,9 @@ def get_event_links(page):
     logging.info(f"Successfully found {len(event_links)} events.")
     return event_links
 
-def get_fight_links(event_url, page):
+def get_fight_links(event_url, session):
     """Scrapes a specific event page to get URLs for all individual fights."""
-    soup = get_soup(event_url, page)
+    soup = get_soup(event_url, session)
     if not soup:
         return [], "", "", ""
     
@@ -77,9 +83,9 @@ def get_fight_links(event_url, page):
     
     return fight_links, event_name, date, location
 
-def parse_fight_details(fight_url, event_name, date, location, page):
+def parse_fight_details(fight_url, event_name, date, location, session):
     """Extracts overarching details and fight totals from a single fight page."""
-    soup = get_soup(fight_url, page)
+    soup = get_soup(fight_url, session)
     if not soup:
         return None
     
@@ -93,7 +99,7 @@ def parse_fight_details(fight_url, event_name, date, location, page):
     # 1. Fighter Names & Match Outcomes
     persons = soup.select('.b-fight-details__person')
     if len(persons) != 2:
-        return None # Skips if the data structure is incomplete/corrupted
+        return None 
         
     for i, person in enumerate(persons):
         prefix = f'f{i+1}_'
@@ -104,7 +110,7 @@ def parse_fight_details(fight_url, event_name, date, location, page):
         name_tag = name_container.find('a') if name_container else None
         fight_data[f'{prefix}name'] = clean_text(name_tag.text) if name_tag else ""
 
-    # 2. General Fight Details (Weight Class, Method, Round, Time)
+    # 2. General Fight Details
     weight_class_tag = soup.find(class_='b-fight-details__fight-title')
     fight_data['weight_class'] = clean_text(weight_class_tag.text) if weight_class_tag else ""
     
@@ -128,7 +134,7 @@ def parse_fight_details(fight_url, event_name, date, location, page):
         if 'Details:' in section.text:
             fight_data['judging_details'] = clean_text(section.text.replace('Details:', ''))
 
-    # 3. Parse Statistical Tables (Fight Totals & Significant Strikes)
+    # 3. Parse Statistical Tables
     tables = soup.select('.b-fight-details__table')
     if len(tables) >= 2:
         totals_table = tables[0]
@@ -136,16 +142,22 @@ def parse_fight_details(fight_url, event_name, date, location, page):
         
         def extract_table_stats(table, suffix_tag=""):
             headers = [clean_text(th.text) for th in table.select('thead th')]
-            tbody = table.find('tbody')
-            if not tbody: return
             
-            # Index [0] targets ONLY the overall fight stats, skipping round-by-round breakdown
-            first_row_tds = tbody.select('tr')[0].select('td')
+            # Resilient row parsing that works even if <tbody> is absent in the raw HTML
+            tbody = table.find('tbody')
+            if tbody:
+                rows = tbody.select('tr')
+            else:
+                rows = table.select('tr')[1:] if table.find('thead') else table.select('tr')
+                
+            if not rows: return
+            
+            # Index [0] grabs the overall fight stats, skipping round-by-round
+            first_row_tds = rows[0].select('td')
             
             for idx, td in enumerate(first_row_tds):
                 if idx >= len(headers):
                     break
-                # Clean header names for dictionary keys
                 header_name = headers[idx].lower().replace('.', '').replace(' ', '_').replace('%', 'pct')
                 
                 p_tags = td.select('p')
@@ -153,16 +165,20 @@ def parse_fight_details(fight_url, event_name, date, location, page):
                     fight_data[f'f1_{header_name}{suffix_tag}'] = clean_text(p_tags[0].text)
                     fight_data[f'f2_{header_name}{suffix_tag}'] = clean_text(p_tags[1].text)
 
-        # Extract Totals
         extract_table_stats(totals_table, suffix_tag="_total")
         
-        # Extract Significant Strikes
         headers = [clean_text(th.text) for th in sig_str_table.select('thead th')]
         tbody = sig_str_table.find('tbody')
+        
         if tbody:
-            first_row_tds = tbody.select('tr')[0].select('td')
+            rows = tbody.select('tr')
+        else:
+            rows = sig_str_table.select('tr')[1:] if sig_str_table.find('thead') else sig_str_table.select('tr')
+            
+        if rows:
+            first_row_tds = rows[0].select('td')
             for idx, td in enumerate(first_row_tds):
-                if idx < 3: # Skip redundant fighter identifiers
+                if idx < 3: 
                     continue
                 header_name = headers[idx].lower().replace('.', '').replace(' ', '_')
                 p_tags = td.select('p')
@@ -175,26 +191,18 @@ def parse_fight_details(fight_url, event_name, date, location, page):
 def main():
     all_fights_data = []
     
-    with sync_playwright() as p:
-        # Launch browser in headless mode
-        browser = p.chromium.launch(headless=True)
+    # Use a requests session to persist headers and keep connections alive
+    with requests.Session() as session:
+        event_links = get_event_links(session)
         
-        # Mimic a real user agent to prevent basic bot blocking
-        context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
-        )
-        page = context.new_page()
-        
-        event_links = get_event_links(page)
-        
-        # Change to `event_links[:3]` if you want to test a small batch before a full scrape
-        for event_idx, event_url in enumerate(event_links):
-            logging.info(f"Processing Event {event_idx + 1}/{len(event_links)}: {event_url}")
-            fight_links, event_name, date, location = get_fight_links(event_url, page)
+        # NOTE: Sliced for testing. Change `event_links[:3]` back to `event_links` for a full run.
+        for event_idx, event_url in enumerate(event_links[:3]):
+            logging.info(f"Processing Event {event_idx + 1}/{len(event_links[:3])}: {event_url}")
+            fight_links, event_name, date, location = get_fight_links(event_url, session)
             
             for fight_url in fight_links:
                 try:
-                    fight_data = parse_fight_details(fight_url, event_name, date, location, page)
+                    fight_data = parse_fight_details(fight_url, event_name, date, location, session)
                     if fight_data:
                         all_fights_data.append(fight_data)
                 except Exception as e:
@@ -202,10 +210,8 @@ def main():
                 
                 # Polite scraping pause
                 time.sleep(1 + random.uniform(0.1, 0.5)) 
-                
-        browser.close()
             
-    # Compile and Export Data
+    # Export data
     if all_fights_data:
         os.makedirs('./data', exist_ok=True)
         df = pd.DataFrame(all_fights_data)
@@ -214,10 +220,6 @@ def main():
         df.to_csv(csv_filename, index=False)
         logging.info(f"Data successfully saved to {csv_filename}")
         logging.info(f"Total fights extracted: {len(df)}")
-        
-        # Optional: Display a snapshot of the DataFrame
-        print("\n--- DataFrame Snapshot ---")
-        print(df.head())
     else:
         logging.warning("No data extracted. Check your connection or the target website structure.")
 

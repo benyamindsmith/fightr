@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: raw-athletes
-          path: data/ufc_athletes.RData
+          path: data/ufc_athletes.csv # Fixed extension
           retention-days: 1
 
   scrape_fights:
@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: raw-fights
-          path: data/ufc_fights.RData
+          path: data/ufc_fights.csv # Fixed extension
           retention-days: 1
 
   scrape_ufcstats:
@@ -72,7 +72,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: raw-ufcstats
-          path: data/ufcstats_data.RData
+          path: data/ufcstats_data.csv # Fixed extension
           retention-days: 1
 
   # ==========================================
@@ -86,28 +86,29 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      # Set up R instead of Python for this final step
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true # Downloads pre-compiled binaries (FAST)
 
-      # Download all 3 artifacts into the data/ folder
       - name: Download Athletes Data
         uses: actions/download-artifact@v4
         with:
           name: raw-athletes
           path: data/
+
       - name: Download Fights Data
         uses: actions/download-artifact@v4
         with:
           name: raw-fights
           path: data/
+
       - name: Download UFCStats Data
         uses: actions/download-artifact@v4
         with:
           name: raw-ufcstats
           path: data/
 
-      # Install R packages manually to avoid needing a DESCRIPTION file
       - name: Install R Dependencies
         run: |
           Rscript -e 'install.packages(c("dplyr", "tidyr", "stringr", "lubridate", "readr", "janitor"))'

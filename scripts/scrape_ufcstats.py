@@ -5,10 +5,16 @@ import time
 import re
 import string
 
-def get_fighter_links(letter):
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Connection': 'keep-alive',
+}
+
+def get_fighter_links(letter, session):
     url = f"http://ufcstats.com/statistics/fighters?char={letter}&page=all"
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    response = requests.get(url, headers=headers)
+    response = session.get(url, headers=HEADERS, timeout=30)
     soup = BeautifulSoup(response.text, 'html.parser')
     
     links = []
@@ -26,9 +32,8 @@ def get_fighter_links(letter):
 
     return links
 
-def parse_fighter_details(url):
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    response = requests.get(url, headers=headers)
+def parse_fighter_details(url, session):
+    response = session.get(url, headers=HEADERS, timeout=30)
     soup = BeautifulSoup(response.text, 'html.parser')
     
     fighter_data = {
@@ -76,20 +81,29 @@ def parse_fighter_details(url):
 
 def scrape_all_fighters(letters_to_scrape='a'):
     all_fighters = []
-    
+    session = requests.Session()
+    # Prime the session on the bare domain so Cloudflare sets cookies
+    # before we hit any parameterised (?char=X) URL
+    try:
+        session.get("http://ufcstats.com/statistics/fighters", headers=HEADERS, timeout=30)
+        time.sleep(1)
+    except Exception:
+        pass
+
     for letter in letters_to_scrape:
         print(f"Fetching links for '{letter.upper()}'...")
-        fighter_links = get_fighter_links(letter)
-        
+        fighter_links = get_fighter_links(letter, session)
+        print(f"  Found {len(fighter_links)} fighters for '{letter.upper()}'")
+
         for i, link in enumerate(fighter_links):
-            print(f"Scraping fighter {i+1}/{len(fighter_links)}: {link}")
+            print(f"  Scraping fighter {i+1}/{len(fighter_links)}: {link}")
             try:
-                data = parse_fighter_details(link)
+                data = parse_fighter_details(link, session)
                 all_fighters.append(data)
             except Exception as e:
-                print(f"Error scraping {link}: {e}")
-                
-            time.sleep(0.5) 
+                print(f"  Error scraping {link}: {e}")
+
+            time.sleep(0.5)
             
     df = pd.DataFrame(all_fighters)
     return df

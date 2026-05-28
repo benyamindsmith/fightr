@@ -3,9 +3,9 @@ import re
 import time
 import random
 import logging
-import requests
-import pandas as pd
+from curl_cffi import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -26,21 +26,24 @@ def clean_text(text):
         return ""
     return re.sub(r'\s+', ' ', text.strip())
 
-def get_soup(url, session, retries=3):
-    """Fetches a URL using requests and returns a BeautifulSoup object. Retries on failure."""
+# Create a session that impersonates a real Chrome browser
+session = requests.Session(impersonate="chrome110")
+
+def get_soup(url, retries=3):
     for attempt in range(1, retries + 1):
         try:
-            response = session.get(url, headers=HEADERS, timeout=10)
-            response.raise_for_status() # Raises an HTTPError for bad responses (401, 403, 404, etc.)
-            return BeautifulSoup(response.content, 'html.parser')
+            # curl_cffi handles the TLS spoofing automatically
+            response = session.get(url, timeout=15)
             
-        except requests.exceptions.RequestException as e:
-            logging.warning(f"Attempt {attempt} failed for {url}: {e}")
+            if response.status_code == 200:
+                return BeautifulSoup(response.content, 'html.parser')
+            elif response.status_code in [403, 503]:
+                print(f"Cloudflare blocked attempt {attempt} (Status {response.status_code})")
+                
+        except Exception as e:
+            print(f"Error on attempt {attempt}: {e}")
             
-        # Jittered sleep to avoid rate-limiting
-        time.sleep(attempt * 2 + random.uniform(0.5, 1.5))
-        
-    logging.error(f"Giving up on {url} after {retries} attempts.")
+        time.sleep(attempt * 2)
     return None
 
 def get_event_links(session):

@@ -3,10 +3,11 @@ Type: Package
 Title: Analyze Fight Probabilities and Props via Statistical Frameworks
 Version: 0.1.0
 Authors@R: c(
-    person(
-      "Benjamin", "Smith",
-      role = c("aut", "cre")
-    )
+    person(given = "Benjamin",
+             family = "Smith",
+             role = c("aut", "cre"),
+             email = "benyamin.smith@mail.utoronto.ca",
+             comment = c(ORCID = "0009-0007-2206-0177"))
   )
 Description: Provides a statistical framework for modeling combat sports 
     matchups and estimating latent fighter ability parameters. Predicts the 

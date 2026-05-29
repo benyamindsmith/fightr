@@ -5,12 +5,13 @@
 \title{Get Cached UFC Data}
 \usage{
 get_ufc_data(
-  dataset = c("ufc_athletes", "ufc_fights", "ufcstats_data"),
+  dataset = c("ufc_athletes", "ufc_fights", "ufcstats_data", "ultimate_ufc_dataset",
+    "ufc_rankings_dataset"),
   force_update = FALSE
 )
 }
 \arguments{
-\item{dataset}{Character. Which dataset to load: "ufc_athletes", "ufc_fights", or "ufcstats_data".}
+\item{dataset}{Character. Which dataset to load: "ufc_athletes", "ufc_fights", "ufcstats_data", "ultimate_ufc_dataset" or "ufc_rankings_dataset".}
 
 \item{force_update}{Logical. If TRUE, forces a fresh download from GitHub.}
 }

@@ -76,3 +76,7 @@ Future releases of `fightr` will continue to expand the analytical toolset:
 ## CRAN Compliance Note
 
 `fightr` strictly adheres to CRAN repository policies regarding user data and file system modification. The package will **never** silently download data or write to your file system upon running `library(fightr)`. All downloads require an explicit function call by the user, and all cached data is stored safely in `tools::R_user_dir("fightr", which = "cache")`.
+
+## Similar Works
+
+- [ufcscrapR](https://github.com/DavesAnalytics/ufcscrapeR)

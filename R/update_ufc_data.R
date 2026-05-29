@@ -4,7 +4,7 @@
 #' the cached data is stale (older than 7 days), it downloads the latest .RData
 #' files from GitHub.
 #'
-#' @param dataset Character. Which dataset to load: "ufc_athletes", "ufc_fights", or "ufcstats_data".
+#' @param dataset Character. Which dataset to load: "ufc_athletes", "ufc_fights", "ufcstats_data", "ultimate_ufc_dataset" or "ufc_rankings_dataset".
 #' @param force_update Logical. If TRUE, forces a fresh download from GitHub.
 #'
 #' @return A data frame of the requested dataset.
@@ -15,14 +15,16 @@
 #' athletes_df <- get_ufc_data("ufc_athletes")
 #' fights_df <- get_ufc_data("ufc_fights", force_update = TRUE)
 #' }
-get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_data"), force_update = FALSE) {
+get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_data", "ultimate_ufc_dataset", "ufc_rankings_dataset"), force_update = FALSE) {
   dataset <- match.arg(dataset)
 
   # 1. Define the raw GitHub URLs for the 3 .RData files
   urls <- c(
     ufc_athletes  = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ufc_athletes.RData",
     ufc_fights    = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ufc_fights.RData",
-    ufcstats_data = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ufcstats_data.RData"
+    ufcstats_data = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ufcstats_data.RData",
+    ultimate_ufc_dataset = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ultimate_ufc_dataset.RData",
+    ufc_rankings_dataset = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ufc_rankings_dataset.RData"
   )
 
   # 2. Safely create a CRAN-compliant cache directory
@@ -91,7 +93,7 @@ get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_dat
 #' @return Invisibly returns a list containing the file paths of the cached data.
 #' @export
 update_all_ufc_data <- function() {
-  datasets <- c("ufc_athletes", "ufc_fights", "ufcstats_data")
+  datasets <- c("ufc_athletes", "ufc_fights", "ufcstats_data", "ultimate_ufc_dataset", "ufc_rankings_dataset")
   paths <- list()
 
   for (ds in datasets) {

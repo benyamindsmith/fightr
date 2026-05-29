@@ -1,5 +1,3 @@
-# tests/testthat/test-get_ufc_data.R
-
 test_that("get_ufc_data validates arguments", {
   # Should fail if given a non-existent dataset name
   expect_error(
@@ -33,5 +31,5 @@ test_that("update_all_ufc_data returns paths invisibly", {
 
   expect_false(res$visible)
   expect_type(res$value, "list")
-  expect_true(all(c("ufc_athletes", "ufc_fights", "ufcstats_data") %in% names(res$value)))
+  expect_true(all(c("ufc_athletes", "ufc_fights", "ufcstats_data","ultimate_ufc_dataset","ufc_rankings_dataset") %in% names(res$value)))
 })

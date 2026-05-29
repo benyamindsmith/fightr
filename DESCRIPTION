@@ -8,10 +8,16 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: Predicts the probability of a win and method of victory for a 
-    matchup between two fighters. Features multiple statistical frameworks 
-    including multinomial logistic regression, Bradley-Terry, and 
-    Thurstone-Mosteller network models.
+Description: Provides a statistical framework for modeling combat sports 
+    matchups and estimating latent fighter ability parameters. Predicts the 
+    probability of a win and the specific method of victory using historical 
+    bout data and biometric differentials. Implements multiple maximum 
+    likelihood estimation approaches, including multinomial logistic regression 
+    and degree-two pairwise comparison network models (Bradley-Terry and 
+    Thurstone-Mosteller). To ensure analytical relevance in a continuously 
+    updating sport, the package utilizes a CRAN-compliant dynamic caching 
+    architecture to seamlessly retrieve and update the latest athlete profiles, 
+    performance metrics, and fight outcomes.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

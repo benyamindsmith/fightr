@@ -4,6 +4,7 @@
 ^\.claude$
 ^data$
 ^data-raw$
-^.*\.RData$
 ^.*\.Rhistory$
 ^\.github$
+^LICENSE\.md$
+^scripts$

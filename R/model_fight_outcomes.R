@@ -38,39 +38,55 @@
 #'
 #' print(my_model)
 #' }
-model_fight_outcome <- function(
-    fighter1,
-    fighter2,
-    method_type = "multinomial",
-    fights_data = ufc_fights,
-    athletes_data = ufc_athletes,
-    predictors = NULL,
-    plot_chart = TRUE
-) {
-
+model_fight_outcome <- function(fighter1,
+                                fighter2,
+                                method_type = "multinomial",
+                                fights_data = ufc_fights,
+                                athletes_data = ufc_athletes,
+                                predictors = NULL,
+                                plot_chart = TRUE) {
   # --- 1. CORE DEPENDENCIES & CHECKS ---
   stopifnot(
-    is.character(fighter1), length(fighter1) == 1,
-    is.character(fighter2), length(fighter2) == 1,
-    is.data.frame(fights_data), is.data.frame(athletes_data),
+    is.character(fighter1),
+    length(fighter1) == 1,
+    is.character(fighter2),
+    length(fighter2) == 1,
+    is.data.frame(fights_data),
+    is.data.frame(athletes_data),
     method_type %in% c("multinomial", "bradley-terry", "thurstone-mosteller")
   )
 
-  if (!(fighter1 %in% athletes_data$name)) stop(paste("Fighter not found:", fighter1))
-  if (!(fighter2 %in% athletes_data$name)) stop(paste("Fighter not found:", fighter2))
+  if (!(fighter1 %in% athletes_data$name))
+    stop(paste("Fighter not found:", fighter1))
+  if (!(fighter2 %in% athletes_data$name))
+    stop(paste("Fighter not found:", fighter2))
 
   # Ensure cli is available for internal logging, fallback to message if not
   has_cli <- requireNamespace("cli", quietly = TRUE)
-  log_info <- function(msg) if (has_cli) cli::cli_alert_info(msg) else message("[i] ", msg)
+  log_info <- function(msg)
+    if (has_cli)
+      cli::cli_alert_info(msg)
+  else
+    message("[i] ", msg)
 
   safe_num <- function(x) {
-    if (is.character(x) || is.factor(x)) return(readr::parse_number(as.character(x)))
+    if (is.character(x) ||
+        is.factor(x))
+      return(readr::parse_number(as.character(x)))
     return(as.numeric(x))
+  }
+
+  # --- NEW: FIX FOR R CMD CHECK ---
+  # Drop any lubridate <Period> objects before running distinct()
+  # This entirely prevents the `$ operator is invalid for atomic vectors` crash
+  for (col in names(athletes_data)) {
+    if (inherits(athletes_data[[col]], "Period")) {
+      athletes_data[[col]] <- NULL
+    }
   }
 
   clean_athletes <- athletes_data |> dplyr::distinct(name, .keep_all = TRUE)
   model_name_label <- ""
-
   # =========================================================================
   # METHOD 1: MULTINOMIAL LOGISTIC REGRESSION
   # =========================================================================
@@ -81,22 +97,32 @@ model_fight_outcome <- function(
     multinomial_fights <- fights_data |>
       dplyr::filter(
         f1_result %in% c("W", "L"),
-        method %in% c("KO/TKO", "TKO - Doctor's Stoppage", "Submission",
-                      "Decision - Unanimous", "Decision - Split", "Decision - Majority")
+        method %in% c(
+          "KO/TKO",
+          "TKO - Doctor's Stoppage",
+          "Submission",
+          "Decision - Unanimous",
+          "Decision - Split",
+          "Decision - Majority"
+        )
       ) |>
       dplyr::mutate(
         fight_outcome = dplyr::case_when(
-          f1_result == "W" & method %in% c("KO/TKO", "TKO - Doctor's Stoppage") ~ "F1_KO",
+          f1_result == "W" &
+            method %in% c("KO/TKO", "TKO - Doctor's Stoppage") ~ "F1_KO",
           f1_result == "W" & method == "Submission" ~ "F1_SUB",
-          f1_result == "W" & stringr::str_detect(method, "Decision") ~ "F1_DEC",
-          f1_result == "L" & method %in% c("KO/TKO", "TKO - Doctor's Stoppage") ~ "F2_KO",
+          f1_result == "W" &
+            stringr::str_detect(method, "Decision") ~ "F1_DEC",
+          f1_result == "L" &
+            method %in% c("KO/TKO", "TKO - Doctor's Stoppage") ~ "F2_KO",
           f1_result == "L" & method == "Submission" ~ "F2_SUB",
-          f1_result == "L" & stringr::str_detect(method, "Decision") ~ "F2_DEC"
+          f1_result == "L" &
+            stringr::str_detect(method, "Decision") ~ "F2_DEC"
         ) |> as.factor()
       )
 
-    f1_join_stats <- clean_athletes |> dplyr::rename_with(~paste0(., "_f1"), -name)
-    f2_join_stats <- clean_athletes |> dplyr::rename_with(~paste0(., "_f2"), -name)
+    f1_join_stats <- clean_athletes |> dplyr::rename_with( ~ paste0(., "_f1"), -name)
+    f2_join_stats <- clean_athletes |> dplyr::rename_with( ~ paste0(., "_f2"), -name)
 
     fights_with_stats <- multinomial_fights |>
       dplyr::left_join(f1_join_stats, by = c("f1_name" = "name")) |>
@@ -105,8 +131,14 @@ model_fight_outcome <- function(
 
     model_data <- fights_with_stats |>
       dplyr::mutate(
-        win_pct_f1 = safe_num(wins_f1) / pmax(safe_num(wins_f1) + safe_num(losses_f1) + safe_num(draws_f1), 1),
-        win_pct_f2 = safe_num(wins_f2) / pmax(safe_num(wins_f2) + safe_num(losses_f2) + safe_num(draws_f2), 1)
+        win_pct_f1 = safe_num(wins_f1) / pmax(
+          safe_num(wins_f1) + safe_num(losses_f1) + safe_num(draws_f1),
+          1
+        ),
+        win_pct_f2 = safe_num(wins_f2) / pmax(
+          safe_num(wins_f2) + safe_num(losses_f2) + safe_num(draws_f2),
+          1
+        )
       ) |>
       dplyr::transmute(
         fight_outcome,
@@ -116,7 +148,7 @@ model_fight_outcome <- function(
         height_diff     = safe_num(height_f1) - safe_num(height_f2),
         reach_diff      = safe_num(reach_f1) - safe_num(reach_f2),
         leg_reach_diff  = safe_num(leg_reach_f1) - safe_num(leg_reach_f2),
-        fight_time_diff = safe_num(average_fight_time_f1) - safe_num(average_fight_time_f2),
+        # fight_time_diff = safe_num(average_fight_time_f1) - safe_num(average_fight_time_f2),
         win_pct_diff    = win_pct_f1 - win_pct_f2,
         str_landed_diff = safe_num(sig_str_landed_f1) - safe_num(sig_str_landed_f2),
         str_abs_diff    = safe_num(sig_str_absorbed_f1) - safe_num(sig_str_absorbed_f2),
@@ -136,10 +168,27 @@ model_fight_outcome <- function(
     model_data[numeric_cols][is.na(model_data[numeric_cols])] <- 0
 
     if (is.null(predictors)) {
-      predictors <- c("weight_class", "age_diff", "weight_diff", "height_diff", "reach_diff", "leg_reach_diff",
-                      "fight_time_diff", "win_pct_diff", "str_landed_diff", "str_abs_diff", "kd_avg_diff",
-                      "str_def_diff", "td_avg_diff", "td_def_diff", "sub_avg_diff", "standing_pct_diff",
-                      "ground_pct_diff", "ko_pct_diff", "sub_pct_diff")
+      predictors <- c(
+        "weight_class",
+        "age_diff",
+        "weight_diff",
+        "height_diff",
+        "reach_diff",
+        "leg_reach_diff",
+        # "fight_time_diff",
+        "win_pct_diff",
+        "str_landed_diff",
+        "str_abs_diff",
+        "kd_avg_diff",
+        "str_def_diff",
+        "td_avg_diff",
+        "td_def_diff",
+        "sub_avg_diff",
+        "standing_pct_diff",
+        "ground_pct_diff",
+        "ko_pct_diff",
+        "sub_pct_diff"
+      )
     }
 
     formula_str <- paste("fight_outcome ~", paste(predictors, collapse = " + "))
@@ -147,14 +196,22 @@ model_fight_outcome <- function(
 
     model_obj <- nnet::multinom(
       stats::as.formula(formula_str),
-      data = model_data, maxit = 1500, trace = FALSE
+      data = model_data,
+      maxit = 1500,
+      trace = FALSE
     )
 
     f1_stats <- clean_athletes |> dplyr::filter(name == fighter1) |> dplyr::slice(1)
     f2_stats <- clean_athletes |> dplyr::filter(name == fighter2) |> dplyr::slice(1)
 
-    f1_win_pct <- safe_num(f1_stats$wins) / max(safe_num(f1_stats$wins) + safe_num(f1_stats$losses) + safe_num(f1_stats$draws), 1)
-    f2_win_pct <- safe_num(f2_stats$wins) / max(safe_num(f2_stats$wins) + safe_num(f2_stats$losses) + safe_num(f2_stats$draws), 1)
+    f1_win_pct <- safe_num(f1_stats$wins) / max(
+      safe_num(f1_stats$wins) + safe_num(f1_stats$losses) + safe_num(f1_stats$draws),
+      1
+    )
+    f2_win_pct <- safe_num(f2_stats$wins) / max(
+      safe_num(f2_stats$wins) + safe_num(f2_stats$losses) + safe_num(f2_stats$draws),
+      1
+    )
 
     matchup_data <- data.frame(
       weight_class    = factor(f1_stats$weight_class, levels = levels(model_data$weight_class)),
@@ -163,7 +220,7 @@ model_fight_outcome <- function(
       height_diff     = safe_num(f1_stats$height) - safe_num(f2_stats$height),
       reach_diff      = safe_num(f1_stats$reach) - safe_num(f2_stats$reach),
       leg_reach_diff  = safe_num(f1_stats$leg_reach) - safe_num(f2_stats$leg_reach),
-      fight_time_diff = safe_num(f1_stats$average_fight_time) - safe_num(f2_stats$average_fight_time),
+      # fight_time_diff = safe_num(f1_stats$average_fight_time) - safe_num(f2_stats$average_fight_time),
       win_pct_diff    = f1_win_pct - f2_win_pct,
       str_landed_diff = safe_num(f1_stats$sig_str_landed) - safe_num(f2_stats$sig_str_landed),
       str_abs_diff    = safe_num(f1_stats$sig_str_absorbed) - safe_num(f2_stats$sig_str_absorbed),
@@ -187,7 +244,9 @@ model_fight_outcome <- function(
       dplyr::mutate(
         Fighter = ifelse(grepl("F1", group), fighter1, fighter2),
         Method = dplyr::case_when(
-          grepl("DEC", group) ~ "Decision", grepl("KO", group) ~ "KO/TKO", grepl("SUB", group) ~ "Submission"
+          grepl("DEC", group) ~ "Decision",
+          grepl("KO", group) ~ "KO/TKO",
+          grepl("SUB", group) ~ "Submission"
         ),
         Method = factor(Method, levels = c("KO/TKO", "Submission", "Decision"))
       ) |>
@@ -200,33 +259,48 @@ model_fight_outcome <- function(
     # METHOD 2: PAIRWISE COMPARISONS (Bradley-Terry, Thurstone-Mosteller)
     # =========================================================================
   } else if (method_type %in% c("bradley-terry", "thurstone-mosteller")) {
-
     model_name_label <- switch(method_type,
                                "bradley-terry" = "Subgraph Bradley-Terry (Logit)",
-                               "thurstone-mosteller" = "Thurstone-Mosteller (Probit)"
-    )
-    log_info(paste("Truncating graph structures and fitting", model_name_label, "..."))
+                               "thurstone-mosteller" = "Thurstone-Mosteller (Probit)")
+    log_info(paste(
+      "Truncating graph structures and fitting",
+      model_name_label,
+      "..."
+    ))
 
     fights_base <- fights_data |>
       dplyr::transmute(
-        player1 = dplyr::case_when(f1_result == "W" ~ f1_name, f2_result == "W" ~ f2_name, .default = ""),
-        player2 = dplyr::case_when(f1_result == "L" ~ f1_name, f2_result == "L" ~ f2_name, .default = ""),
+        player1 = dplyr::case_when(
+          f1_result == "W" ~ f1_name,
+          f2_result == "W" ~ f2_name,
+          .default = ""
+        ),
+        player2 = dplyr::case_when(
+          f1_result == "L" ~ f1_name,
+          f2_result == "L" ~ f2_name,
+          .default = ""
+        ),
         result_val = dplyr::case_when(f1_result == "W" ~ 1, f1_result == "L" ~ -1, .default = 0)
       ) |>
       dplyr::filter(player1 != "", player2 != "")
 
-    deg1_fights <- fights_base |> dplyr::filter(player1 %in% c(fighter1, fighter2) | player2 %in% c(fighter1, fighter2))
+    deg1_fights <- fights_base |> dplyr::filter(player1 %in% c(fighter1, fighter2) |
+                                                  player2 %in% c(fighter1, fighter2))
     deg1_fighters <- unique(c(deg1_fights$player1, deg1_fights$player2))
-    if(length(deg1_fighters) == 0) stop("Neither fighter features records inside historical tables.")
+    if (length(deg1_fighters) == 0)
+      stop("Neither fighter features records inside historical tables.")
 
-    deg2_fights <- fights_base |> dplyr::filter(player1 %in% deg1_fighters | player2 %in% deg1_fighters)
+    deg2_fights <- fights_base |> dplyr::filter(player1 %in% deg1_fighters |
+                                                  player2 %in% deg1_fighters)
     relevant_fighters <- unique(c(deg2_fights$player1, deg2_fights$player2))
 
-    fights_subgraph <- fights_base |> dplyr::filter(player1 %in% relevant_fighters, player2 %in% relevant_fighters)
+    fights_subgraph <- fights_base |> dplyr::filter(player1 %in% relevant_fighters,
+                                                    player2 %in% relevant_fighters)
     available_fighters <- intersect(relevant_fighters, clean_athletes$name)
 
     fights <- fights_subgraph |>
-      dplyr::filter(player1 %in% available_fighters, player2 %in% available_fighters) |>
+      dplyr::filter(player1 %in% available_fighters,
+                    player2 %in% available_fighters) |>
       dplyr::mutate(
         player1 = factor(player1, levels = available_fighters),
         player2 = factor(player2, levels = available_fighters),
@@ -243,7 +317,10 @@ model_fight_outcome <- function(
       reach = safe_num(fighter_stats$reach),
       leg_reach = safe_num(fighter_stats$leg_reach),
       height = safe_num(fighter_stats$height),
-      win_pct = safe_num(fighter_stats$wins) / pmax(safe_num(fighter_stats$wins) + safe_num(fighter_stats$losses) + safe_num(fighter_stats$draws), 1),
+      win_pct = safe_num(fighter_stats$wins) / pmax(
+        safe_num(fighter_stats$wins) + safe_num(fighter_stats$losses) + safe_num(fighter_stats$draws),
+        1
+      ),
       sig_str_landed = safe_num(fighter_stats$sig_str_landed),
       sig_str_absorbed = safe_num(fighter_stats$sig_str_absorbed),
       standing_pct = safe_num(fighter_stats$standing_pct),
@@ -252,7 +329,7 @@ model_fight_outcome <- function(
       submission_avg = safe_num(fighter_stats$submission_avg),
       sig_str_defense = safe_num(fighter_stats$sig_str_defense),
       takedown_defense = safe_num(fighter_stats$takedown_defense),
-      average_fight_time = safe_num(fighter_stats$average_fight_time),
+      # average_fight_time = safe_num(fighter_stats$average_fight_time),
       ko_tko_win = safe_num(fighter_stats$ko_tko_win)
     )
 
@@ -263,10 +340,24 @@ model_fight_outcome <- function(
     fights_binary <- fights |> dplyr::filter(result_val != 0)
 
     if (is.null(predictors)) {
-      predictors <- c("age", "weight", "reach", "leg_reach", "height", "win_pct", "sig_str_landed",
-                      "sig_str_absorbed", "standing_pct", "ground_percent", "takedown_avg",
-                      "submission_avg", "sig_str_defense", "takedown_defense", "average_fight_time",
-                      "ko_tko_win")
+      predictors <- c(
+        "age",
+        "weight",
+        "reach",
+        "leg_reach",
+        "height",
+        "win_pct",
+        "sig_str_landed",
+        "sig_str_absorbed",
+        "standing_pct",
+        "ground_percent",
+        "takedown_avg",
+        "submission_avg",
+        "sig_str_defense",
+        "takedown_defense",
+        # "average_fight_time",
+        "ko_tko_win"
+      )
     }
 
     bt_predictors <- paste0(predictors, "[player]")
@@ -274,9 +365,12 @@ model_fight_outcome <- function(
     log_info(paste("Using formula: outcome", formula_str))
 
     model_obj <- BradleyTerry2::BTm(
-      outcome = rep(1, nrow(fights_binary)), player1 = player1, player2 = player2,
+      outcome = rep(1, nrow(fights_binary)),
+      player1 = player1,
+      player2 = player2,
       formula = stats::as.formula(formula_str),
-      id = "player", data = list(fights = fights_binary, predictors = predictors_df),
+      id = "player",
+      data = list(fights = fights_binary, predictors = predictors_df),
       family = stats::binomial(link = link_func)
     )
 
@@ -299,20 +393,45 @@ model_fight_outcome <- function(
     f1_tw <- sum(f1_s$ko_tko_win, f1_s$sub_wins, f1_s$dec_wins, na.rm = TRUE)
     f2_tw <- sum(f2_s$ko_tko_win, f2_s$sub_wins, f2_s$dec_wins, na.rm = TRUE)
 
-    f1_p_ko  <- if(f1_tw > 0) f1_s$ko_tko_win / f1_tw else 0
-    f1_p_sub <- if(f1_tw > 0) f1_s$sub_wins / f1_tw else 0
-    f1_p_dec <- if(f1_tw > 0) f1_s$dec_wins / f1_tw else 0
+    f1_p_ko  <- if (f1_tw > 0)
+      f1_s$ko_tko_win / f1_tw
+    else
+      0
+    f1_p_sub <- if (f1_tw > 0)
+      f1_s$sub_wins / f1_tw
+    else
+      0
+    f1_p_dec <- if (f1_tw > 0)
+      f1_s$dec_wins / f1_tw
+    else
+      0
 
-    f2_p_ko  <- if(f2_tw > 0) f2_s$ko_tko_win / f2_tw else 0
-    f2_p_sub <- if(f2_tw > 0) f2_s$sub_wins / f2_tw else 0
-    f2_p_dec <- if(f2_tw > 0) f2_s$dec_wins / f2_tw else 0
+    f2_p_ko  <- if (f2_tw > 0)
+      f2_s$ko_tko_win / f2_tw
+    else
+      0
+    f2_p_sub <- if (f2_tw > 0)
+      f2_s$sub_wins / f2_tw
+    else
+      0
+    f2_p_dec <- if (f2_tw > 0)
+      f2_s$dec_wins / f2_tw
+    else
+      0
 
     plot_data <- data.frame(
       Fighter = rep(c(fighter1, fighter2), each = 3),
-      Method = factor(rep(c("KO/TKO", "Submission", "Decision"), times = 2), levels = c("KO/TKO", "Submission", "Decision")),
+      Method = factor(
+        rep(c("KO/TKO", "Submission", "Decision"), times = 2),
+        levels = c("KO/TKO", "Submission", "Decision")
+      ),
       estimate = c(
-        prob_f1_wins * f1_p_ko, prob_f1_wins * f1_p_sub, prob_f1_wins * f1_p_dec,
-        prob_f2_wins * f2_p_ko, prob_f2_wins * f2_p_sub, prob_f2_wins * f2_p_dec
+        prob_f1_wins * f1_p_ko,
+        prob_f1_wins * f1_p_sub,
+        prob_f1_wins * f1_p_dec,
+        prob_f2_wins * f2_p_ko,
+        prob_f2_wins * f2_p_sub,
+        prob_f2_wins * f2_p_dec
       )
     )
   }
@@ -322,15 +441,34 @@ model_fight_outcome <- function(
   # =========================================================================
   p1 <- NULL
   if (requireNamespace("ggplot2", quietly = TRUE)) {
-    p1 <- ggplot2::ggplot(plot_data, ggplot2::aes(x = Fighter, y = estimate, fill = Method)) +
-      ggplot2::geom_bar(stat = "identity", position = ggplot2::position_dodge(width = 0.8), width = 0.7, color = "black", alpha = 0.85) +
+    p1 <- ggplot2::ggplot(plot_data,
+                          ggplot2::aes(x = Fighter, y = estimate, fill = Method)) +
+      ggplot2::geom_bar(
+        stat = "identity",
+        position = ggplot2::position_dodge(width = 0.8),
+        width = 0.7,
+        color = "black",
+        alpha = 0.85
+      ) +
       ggplot2::scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
-      ggplot2::scale_fill_manual(values = c("KO/TKO" = "#d7191c", "Submission" = "#2b83ba", "Decision" = "#abdda4")) +
+      ggplot2::scale_fill_manual(values = c(
+        "KO/TKO" = "#d7191c",
+        "Submission" = "#2b83ba",
+        "Decision" = "#abdda4"
+      )) +
       ggplot2::theme_minimal(base_size = 14) +
-      ggplot2::labs(title = paste("Matchup Prop Odds Spread:\n", fighter1, "vs", fighter2),
-                    subtitle = paste("Derived via", model_name_label),
-                    x = "Fighter", y = "Implied Probability", fill = "Method of Victory") +
-      ggplot2::theme(plot.title = ggplot2::element_text(face = "bold"), legend.position = "bottom", panel.grid.major.x = ggplot2::element_blank())
+      ggplot2::labs(
+        title = paste("Matchup Prop Odds Spread:\n", fighter1, "vs", fighter2),
+        subtitle = paste("Derived via", model_name_label),
+        x = "Fighter",
+        y = "Implied Probability",
+        fill = "Method of Victory"
+      ) +
+      ggplot2::theme(
+        plot.title = ggplot2::element_text(face = "bold"),
+        legend.position = "bottom",
+        panel.grid.major.x = ggplot2::element_blank()
+      )
   }
 
   # =========================================================================

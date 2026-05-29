@@ -50,7 +50,7 @@ get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_dat
 
     # Use mode = "wb" (write binary) - CRITICAL for .RData files, especially on Windows
     dl_status <- tryCatch({
-      download.file(urls[[dataset]], destfile = cache_file, mode = "wb", quiet = TRUE)
+      utils::download.file(urls[[dataset]], destfile = cache_file, mode = "wb", quiet = TRUE)
     }, error = function(e) {
       return(1) # Return non-zero status on error
     })

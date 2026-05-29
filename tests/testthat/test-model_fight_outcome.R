@@ -6,9 +6,9 @@ skip_if_offline(host = "github.com")
 # Fetch the Live Data
 # wrapped in suppressMessages so the test output console remains clean
 suppressMessages({
-  real_athletes <- fightr::get_ufc_data("ufc_athletes")
-  real_fights   <- fightr::get_ufc_data("ufc_fights")
-})
+  real_athletes <- readRDS(test_path("fixtures/athletes.RData"))
+  real_fights   <- readRDS(test_path("fixtures/fights.RData"))
+  })
 
 # --- Tests ---
 

@@ -13,7 +13,7 @@ ufc_athletes<-ufc_athletes|>
       readr::parse_number()*0.01,
     `Takedown Defense` = stringr::str_remove(`Takedown Defense`, ' ')|>
       readr::parse_number()*0.01,
-    `Average fight time` = lubridate::ms(`Average fight time` ),
+    `Average fight time` = lubridate::ms(stringr::str_sub(`Average fight time`, 1, 5)),
     `Standing Count` = readr::parse_number(Standing),
     `Standing Pct` = stringr::str_extract(Standing, "\\((\\d+)\\s*%\\)", group = 1) |>
       readr::parse_number() * 0.01,
@@ -67,7 +67,7 @@ ufc_fights <-ufc_fights |>
   # 2. Parse Dates and Times safely
   dplyr::mutate(
     date = lubridate::mdy(date),
-    time = lubridate::ms(time),
+    time = lubridate::ms(stringr::str_sub(time, 1, 5)),
     # f1_ctrl_total = lubridate::ms(f1_ctrl_total),
     # f2_ctrl_total = lubridate::ms(f2_ctrl_total),
 

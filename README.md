@@ -1,6 +1,6 @@
 
 # fightr
-<img align="right" height="300"  alt="fightr_logo" src="https://github.com/user-attachments/assets/6762a070-a4fa-426c-9f6e-05ca5613bb8b" />
+<img align="right" height="200"  alt="fightr_logo" src="https://github.com/user-attachments/assets/6762a070-a4fa-426c-9f6e-05ca5613bb8b" />
 
 **fightr** is a statistical framework for analyzing combat sports data in R. 
 

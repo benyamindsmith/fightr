@@ -1,6 +1,7 @@
-<img align="right" height="300"  alt="fightr_logo" src="https://github.com/user-attachments/assets/3675ac06-b941-47bc-b927-2b980000e0ff" />
 
 # fightr
+<img align="right" height="300"  alt="fightr_logo" src="https://github.com/user-attachments/assets/6762a070-a4fa-426c-9f6e-05ca5613bb8b" />
+
 **fightr** is a statistical framework for analyzing combat sports data in R. 
 
 Because the landscape of mixed martial arts changes weekly, shipping static data inside a package quickly becomes obsolete. `fightr` solves this by utilizing a CRAN-compliant local caching architecture to dynamically fetch the latest UFC data from GitHub. 

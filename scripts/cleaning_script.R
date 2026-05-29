@@ -40,7 +40,18 @@ ufc_athletes<-ufc_athletes|>
       readr::parse_number() * 0.01
   )|>
   dplyr::select(!c(Record, Standing, Clinch, Ground, `KO/TKO`, DEC, SUB ))|>
-  janitor::clean_names()
+  janitor::clean_names()|>
+  dplyr::mutate(
+    # Combine duplicate columns before cleaning names
+    fighting_style = dplyr::coalesce(fighting_style, fighting_style_2),
+    leg_reach = dplyr::coalesce(leg_reach, leg_reach_2),
+    trains_at = dplyr::coalesce(trains_at, trains_at_2)
+  )|>
+  dplyr::select(
+    -fighting_style_2,
+    -leg_reach_2,
+    -trains_at_2
+  )
 
 
 ufc_fights <-ufc_fights |>

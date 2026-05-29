@@ -2,3 +2,7 @@
 ^\.Rproj\.user$
 ^\.positai$
 ^\.claude$
+^data$
+^data-raw$
+^.*\.RData$
+^.*\.Rhistory$

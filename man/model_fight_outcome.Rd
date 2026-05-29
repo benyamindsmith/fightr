@@ -9,7 +9,9 @@ model_fight_outcome(
   fighter2,
   method_type = "multinomial",
   fights_data = ufc_fights,
-  athletes_data = ufc_athletes
+  athletes_data = ufc_athletes,
+  predictors = NULL,
+  plot_chart = TRUE
 )
 }
 \arguments{
@@ -23,12 +25,17 @@ model_fight_outcome(
 \item{fights_data}{A data frame containing historical fight records. Default is `ufc_fights`.}
 
 \item{athletes_data}{A data frame containing athlete statistics. Default is `ufc_athletes`.}
+
+\item{predictors}{A character vector of variables to use in the model formula. If `NULL`,
+a robust default set is used based on the `method_type`.}
+
+\item{plot_chart}{A logical indicating whether to draw the probability chart. Defaults to `TRUE`.}
 }
 \value{
-Invisibly returns a list containing two elements:
+Returns an object of class \code{fight_prediction} containing:
   \item{model}{The fitted model object (`multinom` or `BTm`).}
   \item{method_probs}{A data frame of predicted probabilities for each fighter and method of victory.}
-  The function also prints the predicted odds to the console and generates a ggplot2 visualization.
+  \item{plot}{The generated ggplot2 object (if ggplot2 is available).}
 }
 \description{
 Predicts the probability of a win and method of victory for a matchup between two fighters.
@@ -37,13 +44,16 @@ It supports three statistical frameworks: a multinomial logistic regression, a B
 }
 \examples{
 \dontrun{
-# Robust Multinomial framework
-model_fight_outcome("Sean Strickland", "Khamzat Chimaev", method_type = "multinomial")
+# Standard Execution
+model_fight_outcome("Islam Makhachev", "Alexander Volkanovski", method_type = "multinomial")
 
-# Bradley-Terry (Logit) Network
-model_fight_outcome("Sean Strickland", "Khamzat Chimaev", method_type = "bradley-terry")
+# Assigned to a Variable (Hidden Output, can be printed later)
+my_model <- model_fight_outcome(
+  "Max Holloway", "Justin Gaethje",
+  method_type = "multinomial",
+  plot_chart = FALSE
+)
 
-# Thurstone-Mosteller (Probit) Network
-model_fight_outcome("Sean Strickland", "Khamzat Chimaev", method_type = "thurstone-mosteller")
+print(my_model)
 }
 }

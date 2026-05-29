@@ -1,10 +1,10 @@
-# 1. CRAN & Offline Protections
-# These ensure your package doesn't fail CRAN checks due to network timeouts
+# CRAN & Offline Protections
+# These ensure the package doesn't fail CRAN checks due to network timeouts
 skip_on_cran()
 skip_if_offline(host = "github.com")
 
-# 2. Fetch the Live Data
-# We wrap this in suppressMessages so the test output console remains clean
+# Fetch the Live Data
+# wrapped in suppressMessages so the test output console remains clean
 suppressMessages({
   real_athletes <- fightr::get_ufc_data("ufc_athletes")
   real_fights   <- fightr::get_ufc_data("ufc_fights")

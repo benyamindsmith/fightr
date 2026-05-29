@@ -18,7 +18,6 @@
 get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_data", "ultimate_ufc_dataset", "ufc_rankings_dataset"), force_update = FALSE) {
   dataset <- match.arg(dataset)
 
-  # 1. Define the raw GitHub URLs for the 3 .RData files
   urls <- c(
     ufc_athletes  = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ufc_athletes.RData",
     ufc_fights    = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ufc_fights.RData",
@@ -27,7 +26,7 @@ get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_dat
     ufc_rankings_dataset = "https://raw.githubusercontent.com/benyamindsmith/fightr/main/data/ufc_rankings_dataset.RData"
   )
 
-  # 2. Safely create a CRAN-compliant cache directory
+  # Safely create a CRAN-compliant cache directory
   cache_dir <- tools::R_user_dir("fightr", which = "cache")
   if (!dir.exists(cache_dir)) {
     dir.create(cache_dir, recursive = TRUE, showWarnings = FALSE)
@@ -35,7 +34,7 @@ get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_dat
 
   cache_file <- file.path(cache_dir, paste0(dataset, ".RData"))
 
-  # 3. Determine if a download is necessary
+  # Determine if a download is necessary
   needs_download <- force_update || !file.exists(cache_file)
 
   if (!needs_download) {
@@ -45,7 +44,7 @@ get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_dat
     }
   }
 
-  # 4. Download if necessary
+  # Download if necessary
   if (needs_download) {
     message(sprintf("Downloading the latest '%s' dataset from GitHub...", dataset))
 
@@ -65,11 +64,11 @@ get_ufc_data <- function(dataset = c("ufc_athletes", "ufc_fights", "ufcstats_dat
     }
   }
 
-  # 5. Safely load the .RData file into an isolated environment
+  # Safely load the .RData file into an isolated environment
   temp_env <- new.env()
   load(cache_file, envir = temp_env)
 
-  # 6. Extract the object and return it
+  # Extract the object and return it
   # Assuming the object inside the .RData file is named the same as the dataset
   if (exists(dataset, envir = temp_env)) {
     dat <- get(dataset, envir = temp_env)

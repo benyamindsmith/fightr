@@ -22,3 +22,14 @@
     }
   }
 }
+
+.onLoad <- function(libname, pkgname) {
+  if (!requireNamespace("lubridate", quietly = TRUE)) {
+    stop(
+      "Package 'lubridate' is required by fightr. ",
+      "Please install it with install.packages('lubridate').",
+      call. = FALSE
+    )
+  }
+  invisible(lubridate::is.Date(Sys.Date()))
+}

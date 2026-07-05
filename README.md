@@ -1,6 +1,6 @@
 
 # fightr
-[![Featured on TidyTuesday](https://img.shields.io/badge/TidyTuesday-2026/07/07-276DC3?style=for-the-badge&logo=r&logoColor=white&labelColor=1A162D)](https://github.com/rfordatascience/tidytuesday/tree/main/data/2026/2026-07-07)
+[![Featured on TidyTuesday](https://img.shields.io/badge/TidyTuesday-2026/07/07-276DC3?style=flat-square&logo=r&logoColor=white&labelColor=1A162D)](https://github.com/rfordatascience/tidytuesday/tree/main/data/2026/2026-07-07)
 <img align="right" height="200"  alt="fightr_logo" src="https://github.com/user-attachments/assets/6762a070-a4fa-426c-9f6e-05ca5613bb8b" />
 
 **fightr** is a statistical framework for analyzing combat sports data in R. 

@@ -2,6 +2,7 @@
 
 S3method(print,fight_prediction)
 export(get_ufc_data)
+export(get_upcoming_fight_probs)
 export(model_fight_outcome)
 export(update_all_ufc_data)
 importFrom(cli,cli_alert_danger)

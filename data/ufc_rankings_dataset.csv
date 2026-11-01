@@ -94197,9 +94197,7 @@ date,weightclass,fighter,rank
 2025-09-16,Heavyweight,Waldo Cortes-Acosta,6
 2025-09-16,Heavyweight,Serghei Spivac,7
 2025-09-16,Heavyweight,Derrick Lewis,8
-2025-09-16,Heavyweight,Marcin Tybura,9
 2025-09-16,Heavyweight,Ante Delija,9
-2025-09-16,Heavyweight,Ante Delija,10
 2025-09-16,Heavyweight,Marcin Tybura,10
 2025-09-16,Heavyweight,Tai Tuivasa,11
 2025-09-16,Heavyweight,Shamil Gaziev,12
@@ -99735,9 +99733,7 @@ date,weightclass,fighter,rank
 2026-05-19,Middleweight,Gregory Rodrigues,12
 2026-05-19,Middleweight,Christian Leroy Duncan,13
 2026-05-19,Middleweight,Paulo Costa,14
-2026-05-19,Middleweight,Roman Dolidze,14
 2026-05-19,Middleweight,Roman Dolidze,15
-2026-05-19,Middleweight,Ikram Aliskerov,15
 2026-05-19,Light Heavyweight,Carlos Ulberg,0
 2026-05-19,Light Heavyweight,Magomed Ankalaev,1
 2026-05-19,Light Heavyweight,Alex Pereira,2
@@ -99808,24 +99804,15 @@ date,weightclass,fighter,rank
 2026-05-19,Women's Bantamweight,Joselyne Edwards,3
 2026-05-19,Women's Bantamweight,Norma Dumont,4
 2026-05-19,Women's Bantamweight,Ketlen Vieira,5
-2026-05-19,Women's Bantamweight,Ailin Perez,5
 2026-05-19,Women's Bantamweight,Ailin Perez,6
-2026-05-19,Women's Bantamweight,Irene Aldana,6
 2026-05-19,Women's Bantamweight,Irene Aldana,7
-2026-05-19,Women's Bantamweight,Yana Santos,7
 2026-05-19,Women's Bantamweight,Yana Santos,8
-2026-05-19,Women's Bantamweight,Macy Chiasson,8
 2026-05-19,Women's Bantamweight,Macy Chiasson,9
-2026-05-19,Women's Bantamweight,Jacqueline Cavalcanti,9
 2026-05-19,Women's Bantamweight,Jacqueline Cavalcanti,10
 2026-05-19,Women's Bantamweight,Karol Rosa,10
-2026-05-19,Women's Bantamweight,Michelle Montague,11
 2026-05-19,Women's Bantamweight,Michelle Montague,12
-2026-05-19,Women's Bantamweight,Nora Cornolle,12
 2026-05-19,Women's Bantamweight,Nora Cornolle,13
-2026-05-19,Women's Bantamweight,Luana Santos,13
 2026-05-19,Women's Bantamweight,Luana Santos,14
-2026-05-19,Women's Bantamweight,Bia Mesquita,14
 2026-05-19,Women's Bantamweight,Bia Mesquita,15
 2026-05-19,Women's Bantamweight,Miesha Tate,15
 2026-05-19,Men's Pound-for-Pound,Islam Makhachev,1
@@ -100476,3 +100463,3513 @@ date,weightclass,fighter,rank
 2026-06-16,Women's Pound-for-Pound,Yan Xiaonan,13
 2026-06-16,Women's Pound-for-Pound,Rose Namajunas,14
 2026-06-16,Women's Pound-for-Pound,Maycee Barber,15
+2026-06-23,Flyweight,Joshua Van,0
+2026-06-23,Flyweight,Alexandre Pantoja,1
+2026-06-23,Flyweight,Manel Kape,2
+2026-06-23,Flyweight,Tatsuro Taira,3
+2026-06-23,Flyweight,Brandon Royval,4
+2026-06-23,Flyweight,Kyoji Horiguchi,5
+2026-06-23,Flyweight,Lone'er Kavanagh,6
+2026-06-23,Flyweight,Amir Albazi,7
+2026-06-23,Flyweight,Brandon Moreno,8
+2026-06-23,Flyweight,Asu Almabayev,9
+2026-06-23,Flyweight,Steve Erceg,10
+2026-06-23,Flyweight,Alex Perez,11
+2026-06-23,Flyweight,Tim Elliott,12
+2026-06-23,Flyweight,Tagir Ulanbekov,13
+2026-06-23,Flyweight,Charles Johnson,14
+2026-06-23,Flyweight,Edgar Chairez,15
+2026-06-23,Bantamweight,Petr Yan,0
+2026-06-23,Bantamweight,Merab Dvalishvili,1
+2026-06-23,Bantamweight,Sean O'Malley,2
+2026-06-23,Bantamweight,Umar Nurmagomedov,3
+2026-06-23,Bantamweight,Cory Sandhagen,4
+2026-06-23,Bantamweight,Song Yadong,5
+2026-06-23,Bantamweight,Aiemann Zahabi,6
+2026-06-23,Bantamweight,Mario Bautista,7
+2026-06-23,Bantamweight,David Martinez,8
+2026-06-23,Bantamweight,Deiveson Figueiredo,9
+2026-06-23,Bantamweight,Marlon Vera,10
+2026-06-23,Bantamweight,Payton Talbott,11
+2026-06-23,Bantamweight,Raul Rosas Jr.,12
+2026-06-23,Bantamweight,Vinicius Oliveira,13
+2026-06-23,Bantamweight,Raoni Barcelos,14
+2026-06-23,Bantamweight,Marcus McGhee,15
+2026-06-23,Featherweight,Alexander Volkanovski,0
+2026-06-23,Featherweight,Movsar Evloev,1
+2026-06-23,Featherweight,Diego Lopes,2
+2026-06-23,Featherweight,Lerone Murphy,3
+2026-06-23,Featherweight,Aljamain Sterling,4
+2026-06-23,Featherweight,Yair Rodriguez,5
+2026-06-23,Featherweight,Jean Silva,6
+2026-06-23,Featherweight,Arnold Allen,7
+2026-06-23,Featherweight,Youssef Zalal,8
+2026-06-23,Featherweight,Kevin Vallejos,9
+2026-06-23,Featherweight,Steve Garcia,10
+2026-06-23,Featherweight,Brian Ortega,11
+2026-06-23,Featherweight,Aaron Pico,12
+2026-06-23,Featherweight,Melquizael Costa,13
+2026-06-23,Featherweight,David Onama,14
+2026-06-23,Featherweight,Josh Emmett,15
+2026-06-23,Lightweight,Justin Gaethje,0
+2026-06-23,Lightweight,Ilia Topuria,1
+2026-06-23,Lightweight,Arman Tsarukyan,2
+2026-06-23,Lightweight,Charles Oliveira,3
+2026-06-23,Lightweight,Max Holloway,4
+2026-06-23,Lightweight,Benoit Saint Denis,5
+2026-06-23,Lightweight,Paddy Pimblett,6
+2026-06-23,Lightweight,Mauricio Ruffy,7
+2026-06-23,Lightweight,Mateusz Gamrot,8
+2026-06-23,Lightweight,Dan Hooker,9
+2026-06-23,Lightweight,Renato Moicano,10
+2026-06-23,Lightweight,Rafael Fiziev,11
+2026-06-23,Lightweight,Quillan Salkilld,12
+2026-06-23,Lightweight,Tom Nolan,13
+2026-06-23,Lightweight,Beneil Dariush,14
+2026-06-23,Lightweight,Manuel Torres,15
+2026-06-23,Welterweight,Islam Makhachev,0
+2026-06-23,Welterweight,Ian Machado Garry,1
+2026-06-23,Welterweight,Carlos Prates,2
+2026-06-23,Welterweight,Michael Morales,3
+2026-06-23,Welterweight,Jack Della Maddalena,4
+2026-06-23,Welterweight,Gabriel Bonfim,5
+2026-06-23,Welterweight,Sean Brady,6
+2026-06-23,Welterweight,Belal Muhammad,7
+2026-06-23,Welterweight,Leon Edwards,8
+2026-06-23,Welterweight,Kamaru Usman,9
+2026-06-23,Welterweight,Joaquin Buckley,10
+2026-06-23,Welterweight,Yaroslav Amosov,11
+2026-06-23,Welterweight,Mike Malott,12
+2026-06-23,Welterweight,Michael Page,13
+2026-06-23,Welterweight,Uros Medic,14
+2026-06-23,Welterweight,Daniel Rodriguez,15
+2026-06-23,Middleweight,Sean Strickland,0
+2026-06-23,Middleweight,Khamzat Chimaev,1
+2026-06-23,Middleweight,Dricus Du Plessis,2
+2026-06-23,Middleweight,Nassourdine Imavov,3
+2026-06-23,Middleweight,Brendan Allen,4
+2026-06-23,Middleweight,Caio Borralho,5
+2026-06-23,Middleweight,Anthony Hernandez,6
+2026-06-23,Middleweight,Joe Pyfer,7
+2026-06-23,Middleweight,Reinier de Ridder,8
+2026-06-23,Middleweight,Israel Adesanya,9
+2026-06-23,Middleweight,Robert Whittaker,10
+2026-06-23,Middleweight,Jared Cannonier,11
+2026-06-23,Middleweight,Gregory Rodrigues,12
+2026-06-23,Middleweight,Christian Leroy Duncan,13
+2026-06-23,Middleweight,Roman Dolidze,14
+2026-06-23,Middleweight,Bo Nickal,15
+2026-06-23,Light Heavyweight,Carlos Ulberg,0
+2026-06-23,Light Heavyweight,Magomed Ankalaev,1
+2026-06-23,Light Heavyweight,Jiri Prochazka,2
+2026-06-23,Light Heavyweight,Alex Pereira,3
+2026-06-23,Light Heavyweight,Jan Blachowicz,4
+2026-06-23,Light Heavyweight,Khalil Rountree Jr.,5
+2026-06-23,Light Heavyweight,Jamahal Hill,6
+2026-06-23,Light Heavyweight,Paulo Costa,7
+2026-06-23,Light Heavyweight,Azamat Murzakanov,8
+2026-06-23,Light Heavyweight,Volkan Oezdemir,9
+2026-06-23,Light Heavyweight,Bogdan Guskov,10
+2026-06-23,Light Heavyweight,Dominick Reyes,11
+2026-06-23,Light Heavyweight,Nikita Krylov,12
+2026-06-23,Light Heavyweight,Johnny Walker,13
+2026-06-23,Light Heavyweight,Alonzo Menifield,14
+2026-06-23,Light Heavyweight,Aleksandar Rakic,15
+2026-06-23,Heavyweight,Tom Aspinall,0
+2026-06-23,Heavyweight,Ciryl Gane,1
+2026-06-23,Heavyweight,Alexander Volkov,2
+2026-06-23,Heavyweight,Sergei Pavlovich,3
+2026-06-23,Heavyweight,Josh Hokit,4
+2026-06-23,Heavyweight,Waldo Cortes-Acosta,5
+2026-06-23,Heavyweight,Serghei Spivac,6
+2026-06-23,Heavyweight,Curtis Blaydes,7
+2026-06-23,Heavyweight,Rizvan Kuniev,8
+2026-06-23,Heavyweight,Tyrell Fortune,9
+2026-06-23,Heavyweight,Ante Delija,10
+2026-06-23,Heavyweight,Derrick Lewis,11
+2026-06-23,Heavyweight,Marcin Tybura,12
+2026-06-23,Heavyweight,Brando Pericic,13
+2026-06-23,Heavyweight,Valter Walker,14
+2026-06-23,Heavyweight,Mick Parkin,15
+2026-06-23,Women's Strawweight,Mackenzie Dern,0
+2026-06-23,Women's Strawweight,Zhang Weili,1
+2026-06-23,Women's Strawweight,Tatiana Suarez,2
+2026-06-23,Women's Strawweight,Virna Jandiroba,3
+2026-06-23,Women's Strawweight,Yan Xiaonan,4
+2026-06-23,Women's Strawweight,Gillian Robertson,5
+2026-06-23,Women's Strawweight,Loopy Godinez,6
+2026-06-23,Women's Strawweight,Amanda Lemos,7
+2026-06-23,Women's Strawweight,Tabatha Ricci,8
+2026-06-23,Women's Strawweight,Jessica Andrade,9
+2026-06-23,Women's Strawweight,Amanda Ribas,10
+2026-06-23,Women's Strawweight,Fatima Kline,11
+2026-06-23,Women's Strawweight,Angela Hill,12
+2026-06-23,Women's Strawweight,Denise Gomes,13
+2026-06-23,Women's Strawweight,Alexia Thainara,14
+2026-06-23,Women's Strawweight,Mizuki,15
+2026-06-23,Women's Flyweight,Valentina Shevchenko,0
+2026-06-23,Women's Flyweight,Natalia Silva,1
+2026-06-23,Women's Flyweight,Manon Fiorot,2
+2026-06-23,Women's Flyweight,Alexa Grasso,3
+2026-06-23,Women's Flyweight,Erin Blanchfield,4
+2026-06-23,Women's Flyweight,Rose Namajunas,5
+2026-06-23,Women's Flyweight,Maycee Barber,6
+2026-06-23,Women's Flyweight,Jasmine Jasudavicius,7
+2026-06-23,Women's Flyweight,Tracy Cortez,8
+2026-06-23,Women's Flyweight,Miranda Maverick,9
+2026-06-23,Women's Flyweight,Karine Silva,10
+2026-06-23,Women's Flyweight,Casey O'Neill,11
+2026-06-23,Women's Flyweight,Wang Cong,12
+2026-06-23,Women's Flyweight,Eduarda Moura,13
+2026-06-23,Women's Flyweight,JJ Aldrich,14
+2026-06-23,Women's Flyweight,Gabriella Fernandes,15
+2026-06-23,Women's Bantamweight,Kayla Harrison,0
+2026-06-23,Women's Bantamweight,Julianna Pena,1
+2026-06-23,Women's Bantamweight,Raquel Pennington,2
+2026-06-23,Women's Bantamweight,Joselyne Edwards,3
+2026-06-23,Women's Bantamweight,Norma Dumont,4
+2026-06-23,Women's Bantamweight,Ailin Perez,5
+2026-06-23,Women's Bantamweight,Irene Aldana,6
+2026-06-23,Women's Bantamweight,Yana Santos,7
+2026-06-23,Women's Bantamweight,Macy Chiasson,8
+2026-06-23,Women's Bantamweight,Luana Santos,9
+2026-06-23,Women's Bantamweight,Jacqueline Cavalcanti,10
+2026-06-23,Women's Bantamweight,Karol Rosa,11
+2026-06-23,Women's Bantamweight,Bia Mesquita,12
+2026-06-23,Women's Bantamweight,Nora Cornolle,13
+2026-06-23,Women's Bantamweight,Michelle Montague,14
+2026-06-23,Women's Bantamweight,Miesha Tate,15
+2026-06-23,Men's Pound-for-Pound,Islam Makhachev,1
+2026-06-23,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-06-23,Men's Pound-for-Pound,Petr Yan,3
+2026-06-23,Men's Pound-for-Pound,Justin Gaethje,4
+2026-06-23,Men's Pound-for-Pound,Ilia Topuria,5
+2026-06-23,Men's Pound-for-Pound,Tom Aspinall,6
+2026-06-23,Men's Pound-for-Pound,Sean Strickland,7
+2026-06-23,Men's Pound-for-Pound,Alex Pereira,8
+2026-06-23,Men's Pound-for-Pound,Merab Dvalishvili,9
+2026-06-23,Men's Pound-for-Pound,Ciryl Gane,10
+2026-06-23,Men's Pound-for-Pound,Joshua Van,11
+2026-06-23,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-06-23,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-06-23,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-06-23,Men's Pound-for-Pound,Charles Oliveira,15
+2026-06-23,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-06-23,Women's Pound-for-Pound,Kayla Harrison,2
+2026-06-23,Women's Pound-for-Pound,Zhang Weili,3
+2026-06-23,Women's Pound-for-Pound,Natalia Silva,4
+2026-06-23,Women's Pound-for-Pound,Manon Fiorot,5
+2026-06-23,Women's Pound-for-Pound,Mackenzie Dern,6
+2026-06-23,Women's Pound-for-Pound,Alexa Grasso,7
+2026-06-23,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-06-23,Women's Pound-for-Pound,Julianna Pena,9
+2026-06-23,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-06-23,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-06-23,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-06-23,Women's Pound-for-Pound,Raquel Pennington,13
+2026-06-23,Women's Pound-for-Pound,Rose Namajunas,14
+2026-06-23,Women's Pound-for-Pound,Maycee Barber,15
+2026-06-30,Flyweight,Joshua Van,0
+2026-06-30,Flyweight,Alexandre Pantoja,1
+2026-06-30,Flyweight,Manel Kape,2
+2026-06-30,Flyweight,Tatsuro Taira,3
+2026-06-30,Flyweight,Brandon Royval,4
+2026-06-30,Flyweight,Kyoji Horiguchi,5
+2026-06-30,Flyweight,Lone'er Kavanagh,6
+2026-06-30,Flyweight,Asu Almabayev,7
+2026-06-30,Flyweight,Amir Albazi,8
+2026-06-30,Flyweight,Brandon Moreno,9
+2026-06-30,Flyweight,Steve Erceg,10
+2026-06-30,Flyweight,Alex Perez,11
+2026-06-30,Flyweight,Tim Elliott,12
+2026-06-30,Flyweight,Tagir Ulanbekov,13
+2026-06-30,Flyweight,Charles Johnson,14
+2026-06-30,Flyweight,Edgar Chairez,15
+2026-06-30,Bantamweight,Petr Yan,0
+2026-06-30,Bantamweight,Merab Dvalishvili,1
+2026-06-30,Bantamweight,Sean O'Malley,2
+2026-06-30,Bantamweight,Umar Nurmagomedov,3
+2026-06-30,Bantamweight,Cory Sandhagen,4
+2026-06-30,Bantamweight,Song Yadong,5
+2026-06-30,Bantamweight,Aiemann Zahabi,6
+2026-06-30,Bantamweight,Mario Bautista,7
+2026-06-30,Bantamweight,David Martinez,8
+2026-06-30,Bantamweight,Deiveson Figueiredo,9
+2026-06-30,Bantamweight,Marlon Vera,10
+2026-06-30,Bantamweight,Payton Talbott,11
+2026-06-30,Bantamweight,Raul Rosas Jr.,12
+2026-06-30,Bantamweight,Raoni Barcelos,13
+2026-06-30,Bantamweight,Marcus McGhee,14
+2026-06-30,Bantamweight,Farid Basharat,15
+2026-06-30,Featherweight,Alexander Volkanovski,0
+2026-06-30,Featherweight,Movsar Evloev,1
+2026-06-30,Featherweight,Diego Lopes,2
+2026-06-30,Featherweight,Lerone Murphy,3
+2026-06-30,Featherweight,Aljamain Sterling,4
+2026-06-30,Featherweight,Yair Rodriguez,5
+2026-06-30,Featherweight,Jean Silva,6
+2026-06-30,Featherweight,Arnold Allen,7
+2026-06-30,Featherweight,Youssef Zalal,8
+2026-06-30,Featherweight,Kevin Vallejos,9
+2026-06-30,Featherweight,Steve Garcia,10
+2026-06-30,Featherweight,Brian Ortega,11
+2026-06-30,Featherweight,Aaron Pico,12
+2026-06-30,Featherweight,Melquizael Costa,13
+2026-06-30,Featherweight,David Onama,14
+2026-06-30,Featherweight,Patricio Freire,15
+2026-06-30,Lightweight,Justin Gaethje,0
+2026-06-30,Lightweight,Ilia Topuria,1
+2026-06-30,Lightweight,Arman Tsarukyan,2
+2026-06-30,Lightweight,Charles Oliveira,3
+2026-06-30,Lightweight,Max Holloway,4
+2026-06-30,Lightweight,Benoit Saint Denis,5
+2026-06-30,Lightweight,Paddy Pimblett,6
+2026-06-30,Lightweight,Mauricio Ruffy,7
+2026-06-30,Lightweight,Mateusz Gamrot,8
+2026-06-30,Lightweight,Dan Hooker,9
+2026-06-30,Lightweight,Rafael Fiziev,10
+2026-06-30,Lightweight,Renato Moicano,10
+2026-06-30,Lightweight,Quillan Salkilld,12
+2026-06-30,Lightweight,Tom Nolan,13
+2026-06-30,Lightweight,Beneil Dariush,14
+2026-06-30,Lightweight,Manuel Torres,15
+2026-06-30,Welterweight,Islam Makhachev,0
+2026-06-30,Welterweight,Ian Machado Garry,1
+2026-06-30,Welterweight,Carlos Prates,2
+2026-06-30,Welterweight,Michael Morales,3
+2026-06-30,Welterweight,Jack Della Maddalena,4
+2026-06-30,Welterweight,Gabriel Bonfim,5
+2026-06-30,Welterweight,Sean Brady,6
+2026-06-30,Welterweight,Belal Muhammad,7
+2026-06-30,Welterweight,Leon Edwards,8
+2026-06-30,Welterweight,Kamaru Usman,9
+2026-06-30,Welterweight,Joaquin Buckley,10
+2026-06-30,Welterweight,Yaroslav Amosov,11
+2026-06-30,Welterweight,Mike Malott,12
+2026-06-30,Welterweight,Michael Page,13
+2026-06-30,Welterweight,Uros Medic,14
+2026-06-30,Welterweight,Daniel Rodriguez,15
+2026-06-30,Middleweight,Sean Strickland,0
+2026-06-30,Middleweight,Khamzat Chimaev,1
+2026-06-30,Middleweight,Dricus Du Plessis,2
+2026-06-30,Middleweight,Nassourdine Imavov,3
+2026-06-30,Middleweight,Brendan Allen,4
+2026-06-30,Middleweight,Caio Borralho,5
+2026-06-30,Middleweight,Anthony Hernandez,6
+2026-06-30,Middleweight,Joe Pyfer,7
+2026-06-30,Middleweight,Reinier de Ridder,8
+2026-06-30,Middleweight,Israel Adesanya,9
+2026-06-30,Middleweight,Robert Whittaker,10
+2026-06-30,Middleweight,Jared Cannonier,11
+2026-06-30,Middleweight,Gregory Rodrigues,12
+2026-06-30,Middleweight,Christian Leroy Duncan,13
+2026-06-30,Middleweight,Roman Dolidze,14
+2026-06-30,Middleweight,Ikram Aliskerov,15
+2026-06-30,Middleweight,Bo Nickal,15
+2026-06-30,Light Heavyweight,Carlos Ulberg,0
+2026-06-30,Light Heavyweight,Magomed Ankalaev,1
+2026-06-30,Light Heavyweight,Jiri Prochazka,2
+2026-06-30,Light Heavyweight,Alex Pereira,3
+2026-06-30,Light Heavyweight,Jan Blachowicz,4
+2026-06-30,Light Heavyweight,Khalil Rountree Jr.,5
+2026-06-30,Light Heavyweight,Jamahal Hill,6
+2026-06-30,Light Heavyweight,Paulo Costa,7
+2026-06-30,Light Heavyweight,Azamat Murzakanov,7
+2026-06-30,Light Heavyweight,Volkan Oezdemir,9
+2026-06-30,Light Heavyweight,Bogdan Guskov,10
+2026-06-30,Light Heavyweight,Dominick Reyes,11
+2026-06-30,Light Heavyweight,Nikita Krylov,12
+2026-06-30,Light Heavyweight,Johnny Walker,13
+2026-06-30,Light Heavyweight,Aleksandar Rakic,14
+2026-06-30,Light Heavyweight,Alonzo Menifield,15
+2026-06-30,Heavyweight,Tom Aspinall,0
+2026-06-30,Heavyweight,Ciryl Gane,1
+2026-06-30,Heavyweight,Alexander Volkov,2
+2026-06-30,Heavyweight,Sergei Pavlovich,3
+2026-06-30,Heavyweight,Josh Hokit,4
+2026-06-30,Heavyweight,Waldo Cortes-Acosta,5
+2026-06-30,Heavyweight,Serghei Spivac,6
+2026-06-30,Heavyweight,Curtis Blaydes,7
+2026-06-30,Heavyweight,Rizvan Kuniev,8
+2026-06-30,Heavyweight,Tyrell Fortune,9
+2026-06-30,Heavyweight,Ante Delija,10
+2026-06-30,Heavyweight,Derrick Lewis,11
+2026-06-30,Heavyweight,Marcin Tybura,12
+2026-06-30,Heavyweight,Brando Pericic,13
+2026-06-30,Heavyweight,Valter Walker,14
+2026-06-30,Heavyweight,Mick Parkin,15
+2026-06-30,Women's Strawweight,Mackenzie Dern,0
+2026-06-30,Women's Strawweight,Zhang Weili,1
+2026-06-30,Women's Strawweight,Tatiana Suarez,2
+2026-06-30,Women's Strawweight,Virna Jandiroba,3
+2026-06-30,Women's Strawweight,Yan Xiaonan,4
+2026-06-30,Women's Strawweight,Gillian Robertson,5
+2026-06-30,Women's Strawweight,Loopy Godinez,6
+2026-06-30,Women's Strawweight,Amanda Lemos,7
+2026-06-30,Women's Strawweight,Tabatha Ricci,8
+2026-06-30,Women's Strawweight,Jessica Andrade,9
+2026-06-30,Women's Strawweight,Amanda Ribas,10
+2026-06-30,Women's Strawweight,Fatima Kline,11
+2026-06-30,Women's Strawweight,Angela Hill,12
+2026-06-30,Women's Strawweight,Denise Gomes,13
+2026-06-30,Women's Strawweight,Alexia Thainara,14
+2026-06-30,Women's Strawweight,Mizuki,15
+2026-06-30,Women's Flyweight,Valentina Shevchenko,0
+2026-06-30,Women's Flyweight,Natalia Silva,1
+2026-06-30,Women's Flyweight,Manon Fiorot,2
+2026-06-30,Women's Flyweight,Alexa Grasso,3
+2026-06-30,Women's Flyweight,Erin Blanchfield,4
+2026-06-30,Women's Flyweight,Rose Namajunas,5
+2026-06-30,Women's Flyweight,Maycee Barber,6
+2026-06-30,Women's Flyweight,Jasmine Jasudavicius,7
+2026-06-30,Women's Flyweight,Tracy Cortez,8
+2026-06-30,Women's Flyweight,Miranda Maverick,9
+2026-06-30,Women's Flyweight,Karine Silva,10
+2026-06-30,Women's Flyweight,Casey O'Neill,11
+2026-06-30,Women's Flyweight,Wang Cong,12
+2026-06-30,Women's Flyweight,Eduarda Moura,13
+2026-06-30,Women's Flyweight,JJ Aldrich,14
+2026-06-30,Women's Flyweight,Gabriella Fernandes,15
+2026-06-30,Women's Bantamweight,Kayla Harrison,0
+2026-06-30,Women's Bantamweight,Julianna Pena,1
+2026-06-30,Women's Bantamweight,Raquel Pennington,2
+2026-06-30,Women's Bantamweight,Joselyne Edwards,3
+2026-06-30,Women's Bantamweight,Norma Dumont,4
+2026-06-30,Women's Bantamweight,Ailin Perez,5
+2026-06-30,Women's Bantamweight,Yana Santos,6
+2026-06-30,Women's Bantamweight,Irene Aldana,7
+2026-06-30,Women's Bantamweight,Macy Chiasson,8
+2026-06-30,Women's Bantamweight,Luana Santos,9
+2026-06-30,Women's Bantamweight,Jacqueline Cavalcanti,10
+2026-06-30,Women's Bantamweight,Karol Rosa,11
+2026-06-30,Women's Bantamweight,Bia Mesquita,12
+2026-06-30,Women's Bantamweight,Nora Cornolle,13
+2026-06-30,Women's Bantamweight,Michelle Montague,14
+2026-06-30,Women's Bantamweight,Miesha Tate,15
+2026-06-30,Men's Pound-for-Pound,Islam Makhachev,1
+2026-06-30,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-06-30,Men's Pound-for-Pound,Petr Yan,3
+2026-06-30,Men's Pound-for-Pound,Justin Gaethje,4
+2026-06-30,Men's Pound-for-Pound,Ilia Topuria,5
+2026-06-30,Men's Pound-for-Pound,Tom Aspinall,6
+2026-06-30,Men's Pound-for-Pound,Sean Strickland,7
+2026-06-30,Men's Pound-for-Pound,Alex Pereira,8
+2026-06-30,Men's Pound-for-Pound,Merab Dvalishvili,9
+2026-06-30,Men's Pound-for-Pound,Ciryl Gane,10
+2026-06-30,Men's Pound-for-Pound,Joshua Van,11
+2026-06-30,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-06-30,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-06-30,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-06-30,Men's Pound-for-Pound,Charles Oliveira,15
+2026-06-30,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-06-30,Women's Pound-for-Pound,Kayla Harrison,2
+2026-06-30,Women's Pound-for-Pound,Zhang Weili,3
+2026-06-30,Women's Pound-for-Pound,Natalia Silva,4
+2026-06-30,Women's Pound-for-Pound,Manon Fiorot,5
+2026-06-30,Women's Pound-for-Pound,Mackenzie Dern,6
+2026-06-30,Women's Pound-for-Pound,Alexa Grasso,7
+2026-06-30,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-06-30,Women's Pound-for-Pound,Julianna Pena,9
+2026-06-30,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-06-30,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-06-30,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-06-30,Women's Pound-for-Pound,Raquel Pennington,13
+2026-06-30,Women's Pound-for-Pound,Rose Namajunas,14
+2026-06-30,Women's Pound-for-Pound,Maycee Barber,15
+2026-07-14,Flyweight,Joshua Van,0
+2026-07-14,Flyweight,Alexandre Pantoja,1
+2026-07-14,Flyweight,Manel Kape,2
+2026-07-14,Flyweight,Brandon Royval,3
+2026-07-14,Flyweight,Tatsuro Taira,4
+2026-07-14,Flyweight,Kyoji Horiguchi,5
+2026-07-14,Flyweight,Lone'er Kavanagh,6
+2026-07-14,Flyweight,Asu Almabayev,7
+2026-07-14,Flyweight,Amir Albazi,8
+2026-07-14,Flyweight,Brandon Moreno,9
+2026-07-14,Flyweight,Steve Erceg,10
+2026-07-14,Flyweight,Alex Perez,11
+2026-07-14,Flyweight,Tim Elliott,12
+2026-07-14,Flyweight,Tagir Ulanbekov,13
+2026-07-14,Flyweight,Charles Johnson,14
+2026-07-14,Flyweight,Edgar Chairez,15
+2026-07-14,Bantamweight,Petr Yan,0
+2026-07-14,Bantamweight,Merab Dvalishvili,1
+2026-07-14,Bantamweight,Sean O'Malley,2
+2026-07-14,Bantamweight,Umar Nurmagomedov,3
+2026-07-14,Bantamweight,Mario Bautista,4
+2026-07-14,Bantamweight,Cory Sandhagen,5
+2026-07-14,Bantamweight,Song Yadong,6
+2026-07-14,Bantamweight,Aiemann Zahabi,7
+2026-07-14,Bantamweight,David Martinez,8
+2026-07-14,Bantamweight,Deiveson Figueiredo,9
+2026-07-14,Bantamweight,Marlon Vera,10
+2026-07-14,Bantamweight,Payton Talbott,11
+2026-07-14,Bantamweight,Raul Rosas Jr.,12
+2026-07-14,Bantamweight,Raoni Barcelos,13
+2026-07-14,Bantamweight,Farid Basharat,14
+2026-07-14,Bantamweight,Marcus McGhee,15
+2026-07-14,Featherweight,Alexander Volkanovski,0
+2026-07-14,Featherweight,Movsar Evloev,1
+2026-07-14,Featherweight,Diego Lopes,2
+2026-07-14,Featherweight,Lerone Murphy,3
+2026-07-14,Featherweight,Aljamain Sterling,4
+2026-07-14,Featherweight,Yair Rodriguez,5
+2026-07-14,Featherweight,Jean Silva,6
+2026-07-14,Featherweight,Arnold Allen,7
+2026-07-14,Featherweight,Youssef Zalal,8
+2026-07-14,Featherweight,Kevin Vallejos,9
+2026-07-14,Featherweight,Steve Garcia,10
+2026-07-14,Featherweight,Brian Ortega,11
+2026-07-14,Featherweight,Aaron Pico,12
+2026-07-14,Featherweight,Melquizael Costa,13
+2026-07-14,Featherweight,David Onama,14
+2026-07-14,Featherweight,Patricio Freire,15
+2026-07-14,Lightweight,Justin Gaethje,0
+2026-07-14,Lightweight,Ilia Topuria,1
+2026-07-14,Lightweight,Arman Tsarukyan,2
+2026-07-14,Lightweight,Charles Oliveira,3
+2026-07-14,Lightweight,Max Holloway,4
+2026-07-14,Lightweight,Paddy Pimblett,5
+2026-07-14,Lightweight,Benoit Saint Denis,6
+2026-07-14,Lightweight,Mauricio Ruffy,7
+2026-07-14,Lightweight,Mateusz Gamrot,8
+2026-07-14,Lightweight,Dan Hooker,9
+2026-07-14,Lightweight,Renato Moicano,10
+2026-07-14,Lightweight,Rafael Fiziev,11
+2026-07-14,Lightweight,Quillan Salkilld,12
+2026-07-14,Lightweight,Tom Nolan,13
+2026-07-14,Lightweight,Beneil Dariush,14
+2026-07-14,Lightweight,Manuel Torres,15
+2026-07-14,Welterweight,Islam Makhachev,0
+2026-07-14,Welterweight,Ian Machado Garry,1
+2026-07-14,Welterweight,Carlos Prates,2
+2026-07-14,Welterweight,Michael Morales,3
+2026-07-14,Welterweight,Jack Della Maddalena,4
+2026-07-14,Welterweight,Gabriel Bonfim,5
+2026-07-14,Welterweight,Sean Brady,6
+2026-07-14,Welterweight,Belal Muhammad,7
+2026-07-14,Welterweight,Leon Edwards,8
+2026-07-14,Welterweight,Kamaru Usman,9
+2026-07-14,Welterweight,Joaquin Buckley,10
+2026-07-14,Welterweight,Yaroslav Amosov,11
+2026-07-14,Welterweight,Mike Malott,12
+2026-07-14,Welterweight,Michael Page,13
+2026-07-14,Welterweight,Uros Medic,14
+2026-07-14,Welterweight,Daniel Rodriguez,15
+2026-07-14,Middleweight,Sean Strickland,0
+2026-07-14,Middleweight,Khamzat Chimaev,1
+2026-07-14,Middleweight,Dricus Du Plessis,2
+2026-07-14,Middleweight,Nassourdine Imavov,3
+2026-07-14,Middleweight,Brendan Allen,4
+2026-07-14,Middleweight,Caio Borralho,5
+2026-07-14,Middleweight,Anthony Hernandez,6
+2026-07-14,Middleweight,Joe Pyfer,7
+2026-07-14,Middleweight,Reinier de Ridder,8
+2026-07-14,Middleweight,Israel Adesanya,9
+2026-07-14,Middleweight,Jared Cannonier,10
+2026-07-14,Middleweight,Gregory Rodrigues,11
+2026-07-14,Middleweight,Christian Leroy Duncan,12
+2026-07-14,Middleweight,Ikram Aliskerov,13
+2026-07-14,Middleweight,Bo Nickal,14
+2026-07-14,Middleweight,Roman Dolidze,15
+2026-07-14,Light Heavyweight,Carlos Ulberg,0
+2026-07-14,Light Heavyweight,Magomed Ankalaev,1
+2026-07-14,Light Heavyweight,Jiri Prochazka,2
+2026-07-14,Light Heavyweight,Alex Pereira,3
+2026-07-14,Light Heavyweight,Jan Blachowicz,4
+2026-07-14,Light Heavyweight,Khalil Rountree Jr.,5
+2026-07-14,Light Heavyweight,Paulo Costa,6
+2026-07-14,Light Heavyweight,Jamahal Hill,7
+2026-07-14,Light Heavyweight,Azamat Murzakanov,8
+2026-07-14,Light Heavyweight,Bogdan Guskov,9
+2026-07-14,Light Heavyweight,Volkan Oezdemir,9
+2026-07-14,Light Heavyweight,Dominick Reyes,11
+2026-07-14,Light Heavyweight,Robert Whittaker,12
+2026-07-14,Light Heavyweight,Johnny Walker,13
+2026-07-14,Light Heavyweight,Aleksandar Rakic,14
+2026-07-14,Light Heavyweight,Nikita Krylov,15
+2026-07-14,Heavyweight,Tom Aspinall,0
+2026-07-14,Heavyweight,Ciryl Gane,1
+2026-07-14,Heavyweight,Alexander Volkov,2
+2026-07-14,Heavyweight,Sergei Pavlovich,3
+2026-07-14,Heavyweight,Josh Hokit,4
+2026-07-14,Heavyweight,Waldo Cortes-Acosta,5
+2026-07-14,Heavyweight,Serghei Spivac,6
+2026-07-14,Heavyweight,Curtis Blaydes,7
+2026-07-14,Heavyweight,Rizvan Kuniev,8
+2026-07-14,Heavyweight,Tyrell Fortune,9
+2026-07-14,Heavyweight,Ante Delija,9
+2026-07-14,Heavyweight,Derrick Lewis,11
+2026-07-14,Heavyweight,Marcin Tybura,12
+2026-07-14,Heavyweight,Valter Walker,13
+2026-07-14,Heavyweight,Brando Pericic,14
+2026-07-14,Heavyweight,Mick Parkin,15
+2026-07-14,Women's Strawweight,Mackenzie Dern,0
+2026-07-14,Women's Strawweight,Zhang Weili,1
+2026-07-14,Women's Strawweight,Tatiana Suarez,2
+2026-07-14,Women's Strawweight,Virna Jandiroba,3
+2026-07-14,Women's Strawweight,Yan Xiaonan,4
+2026-07-14,Women's Strawweight,Gillian Robertson,5
+2026-07-14,Women's Strawweight,Loopy Godinez,6
+2026-07-14,Women's Strawweight,Amanda Lemos,7
+2026-07-14,Women's Strawweight,Tabatha Ricci,8
+2026-07-14,Women's Strawweight,Jessica Andrade,9
+2026-07-14,Women's Strawweight,Amanda Ribas,10
+2026-07-14,Women's Strawweight,Fatima Kline,11
+2026-07-14,Women's Strawweight,Alexia Thainara,12
+2026-07-14,Women's Strawweight,Denise Gomes,13
+2026-07-14,Women's Strawweight,Angela Hill,14
+2026-07-14,Women's Strawweight,Mizuki,15
+2026-07-14,Women's Flyweight,Valentina Shevchenko,0
+2026-07-14,Women's Flyweight,Natalia Silva,1
+2026-07-14,Women's Flyweight,Manon Fiorot,2
+2026-07-14,Women's Flyweight,Alexa Grasso,3
+2026-07-14,Women's Flyweight,Erin Blanchfield,4
+2026-07-14,Women's Flyweight,Rose Namajunas,5
+2026-07-14,Women's Flyweight,Maycee Barber,6
+2026-07-14,Women's Flyweight,Jasmine Jasudavicius,7
+2026-07-14,Women's Flyweight,Wang Cong,8
+2026-07-14,Women's Flyweight,Tracy Cortez,9
+2026-07-14,Women's Flyweight,Miranda Maverick,10
+2026-07-14,Women's Flyweight,Karine Silva,11
+2026-07-14,Women's Flyweight,Casey O'Neill,12
+2026-07-14,Women's Flyweight,Eduarda Moura,13
+2026-07-14,Women's Flyweight,JJ Aldrich,14
+2026-07-14,Women's Flyweight,Gabriella Fernandes,15
+2026-07-14,Women's Bantamweight,Kayla Harrison,0
+2026-07-14,Women's Bantamweight,Julianna Pena,1
+2026-07-14,Women's Bantamweight,Raquel Pennington,2
+2026-07-14,Women's Bantamweight,Joselyne Edwards,3
+2026-07-14,Women's Bantamweight,Norma Dumont,4
+2026-07-14,Women's Bantamweight,Ailin Perez,5
+2026-07-14,Women's Bantamweight,Yana Santos,6
+2026-07-14,Women's Bantamweight,Irene Aldana,7
+2026-07-14,Women's Bantamweight,Macy Chiasson,8
+2026-07-14,Women's Bantamweight,Luana Santos,9
+2026-07-14,Women's Bantamweight,Jacqueline Cavalcanti,10
+2026-07-14,Women's Bantamweight,Karol Rosa,11
+2026-07-14,Women's Bantamweight,Bia Mesquita,12
+2026-07-14,Women's Bantamweight,Nora Cornolle,13
+2026-07-14,Women's Bantamweight,Michelle Montague,14
+2026-07-14,Women's Bantamweight,Miesha Tate,15
+2026-07-14,Men's Pound-for-Pound,Islam Makhachev,1
+2026-07-14,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-07-14,Men's Pound-for-Pound,Petr Yan,3
+2026-07-14,Men's Pound-for-Pound,Justin Gaethje,4
+2026-07-14,Men's Pound-for-Pound,Ilia Topuria,5
+2026-07-14,Men's Pound-for-Pound,Tom Aspinall,6
+2026-07-14,Men's Pound-for-Pound,Sean Strickland,7
+2026-07-14,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-07-14,Men's Pound-for-Pound,Alex Pereira,9
+2026-07-14,Men's Pound-for-Pound,Ciryl Gane,10
+2026-07-14,Men's Pound-for-Pound,Joshua Van,11
+2026-07-14,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-07-14,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-07-14,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-07-14,Men's Pound-for-Pound,Charles Oliveira,15
+2026-07-14,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-07-14,Women's Pound-for-Pound,Kayla Harrison,2
+2026-07-14,Women's Pound-for-Pound,Zhang Weili,3
+2026-07-14,Women's Pound-for-Pound,Natalia Silva,4
+2026-07-14,Women's Pound-for-Pound,Manon Fiorot,5
+2026-07-14,Women's Pound-for-Pound,Mackenzie Dern,6
+2026-07-14,Women's Pound-for-Pound,Alexa Grasso,7
+2026-07-14,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-07-14,Women's Pound-for-Pound,Julianna Pena,9
+2026-07-14,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-07-14,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-07-14,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-07-14,Women's Pound-for-Pound,Raquel Pennington,13
+2026-07-14,Women's Pound-for-Pound,Rose Namajunas,14
+2026-07-14,Women's Pound-for-Pound,Maycee Barber,15
+2026-07-21,Flyweight,Joshua Van,0
+2026-07-21,Flyweight,Alexandre Pantoja,1
+2026-07-21,Flyweight,Manel Kape,2
+2026-07-21,Flyweight,Brandon Royval,3
+2026-07-21,Flyweight,Tatsuro Taira,4
+2026-07-21,Flyweight,Kyoji Horiguchi,5
+2026-07-21,Flyweight,Lone'er Kavanagh,6
+2026-07-21,Flyweight,Asu Almabayev,7
+2026-07-21,Flyweight,Amir Albazi,8
+2026-07-21,Flyweight,Brandon Moreno,9
+2026-07-21,Flyweight,Steve Erceg,10
+2026-07-21,Flyweight,Alex Perez,11
+2026-07-21,Flyweight,Tim Elliott,12
+2026-07-21,Flyweight,Tagir Ulanbekov,13
+2026-07-21,Flyweight,Charles Johnson,14
+2026-07-21,Flyweight,Edgar Chairez,15
+2026-07-21,Bantamweight,Petr Yan,0
+2026-07-21,Bantamweight,Merab Dvalishvili,1
+2026-07-21,Bantamweight,Sean O'Malley,2
+2026-07-21,Bantamweight,Umar Nurmagomedov,3
+2026-07-21,Bantamweight,Mario Bautista,4
+2026-07-21,Bantamweight,Cory Sandhagen,5
+2026-07-21,Bantamweight,Song Yadong,6
+2026-07-21,Bantamweight,Aiemann Zahabi,7
+2026-07-21,Bantamweight,David Martinez,8
+2026-07-21,Bantamweight,Deiveson Figueiredo,9
+2026-07-21,Bantamweight,Marlon Vera,10
+2026-07-21,Bantamweight,Payton Talbott,11
+2026-07-21,Bantamweight,Raul Rosas Jr.,12
+2026-07-21,Bantamweight,Raoni Barcelos,13
+2026-07-21,Bantamweight,Farid Basharat,14
+2026-07-21,Bantamweight,Marcus McGhee,15
+2026-07-21,Featherweight,Alexander Volkanovski,0
+2026-07-21,Featherweight,Movsar Evloev,1
+2026-07-21,Featherweight,Diego Lopes,2
+2026-07-21,Featherweight,Lerone Murphy,3
+2026-07-21,Featherweight,Aljamain Sterling,4
+2026-07-21,Featherweight,Yair Rodriguez,5
+2026-07-21,Featherweight,Jean Silva,6
+2026-07-21,Featherweight,Arnold Allen,7
+2026-07-21,Featherweight,Youssef Zalal,8
+2026-07-21,Featherweight,Kevin Vallejos,9
+2026-07-21,Featherweight,Steve Garcia,10
+2026-07-21,Featherweight,Brian Ortega,11
+2026-07-21,Featherweight,Aaron Pico,12
+2026-07-21,Featherweight,Melquizael Costa,13
+2026-07-21,Featherweight,David Onama,14
+2026-07-21,Featherweight,Patricio Freire,15
+2026-07-21,Lightweight,Justin Gaethje,0
+2026-07-21,Lightweight,Ilia Topuria,1
+2026-07-21,Lightweight,Arman Tsarukyan,2
+2026-07-21,Lightweight,Charles Oliveira,3
+2026-07-21,Lightweight,Max Holloway,4
+2026-07-21,Lightweight,Paddy Pimblett,5
+2026-07-21,Lightweight,Benoit Saint Denis,6
+2026-07-21,Lightweight,Mauricio Ruffy,7
+2026-07-21,Lightweight,Mateusz Gamrot,8
+2026-07-21,Lightweight,Dan Hooker,9
+2026-07-21,Lightweight,Renato Moicano,10
+2026-07-21,Lightweight,Rafael Fiziev,11
+2026-07-21,Lightweight,Quillan Salkilld,12
+2026-07-21,Lightweight,Tom Nolan,13
+2026-07-21,Lightweight,Beneil Dariush,14
+2026-07-21,Lightweight,Manuel Torres,15
+2026-07-21,Welterweight,Islam Makhachev,0
+2026-07-21,Welterweight,Ian Machado Garry,1
+2026-07-21,Welterweight,Carlos Prates,2
+2026-07-21,Welterweight,Michael Morales,3
+2026-07-21,Welterweight,Jack Della Maddalena,4
+2026-07-21,Welterweight,Gabriel Bonfim,5
+2026-07-21,Welterweight,Sean Brady,6
+2026-07-21,Welterweight,Belal Muhammad,7
+2026-07-21,Welterweight,Leon Edwards,8
+2026-07-21,Welterweight,Kamaru Usman,9
+2026-07-21,Welterweight,Joaquin Buckley,10
+2026-07-21,Welterweight,Yaroslav Amosov,11
+2026-07-21,Welterweight,Mike Malott,12
+2026-07-21,Welterweight,Michael Page,13
+2026-07-21,Welterweight,Uros Medic,14
+2026-07-21,Welterweight,Daniel Rodriguez,15
+2026-07-21,Middleweight,Sean Strickland,0
+2026-07-21,Middleweight,Khamzat Chimaev,1
+2026-07-21,Middleweight,Dricus Du Plessis,2
+2026-07-21,Middleweight,Nassourdine Imavov,3
+2026-07-21,Middleweight,Brendan Allen,4
+2026-07-21,Middleweight,Caio Borralho,5
+2026-07-21,Middleweight,Anthony Hernandez,6
+2026-07-21,Middleweight,Joe Pyfer,7
+2026-07-21,Middleweight,Israel Adesanya,8
+2026-07-21,Middleweight,Reinier de Ridder,9
+2026-07-21,Middleweight,Christian Leroy Duncan,10
+2026-07-21,Middleweight,Gregory Rodrigues,11
+2026-07-21,Middleweight,Jared Cannonier,12
+2026-07-21,Middleweight,Ikram Aliskerov,13
+2026-07-21,Middleweight,Bo Nickal,14
+2026-07-21,Middleweight,Roman Dolidze,15
+2026-07-21,Light Heavyweight,Carlos Ulberg,0
+2026-07-21,Light Heavyweight,Magomed Ankalaev,1
+2026-07-21,Light Heavyweight,Jiri Prochazka,2
+2026-07-21,Light Heavyweight,Alex Pereira,3
+2026-07-21,Light Heavyweight,Jan Blachowicz,4
+2026-07-21,Light Heavyweight,Khalil Rountree Jr.,5
+2026-07-21,Light Heavyweight,Paulo Costa,6
+2026-07-21,Light Heavyweight,Jamahal Hill,7
+2026-07-21,Light Heavyweight,Azamat Murzakanov,8
+2026-07-21,Light Heavyweight,Bogdan Guskov,9
+2026-07-21,Light Heavyweight,Dominick Reyes,10
+2026-07-21,Light Heavyweight,Robert Whittaker,11
+2026-07-21,Light Heavyweight,Johnny Walker,12
+2026-07-21,Light Heavyweight,Aleksandar Rakic,13
+2026-07-21,Light Heavyweight,Alonzo Menifield,14
+2026-07-21,Light Heavyweight,Navajo Stirling,15
+2026-07-21,Heavyweight,Tom Aspinall,0
+2026-07-21,Heavyweight,Ciryl Gane,1
+2026-07-21,Heavyweight,Alexander Volkov,2
+2026-07-21,Heavyweight,Sergei Pavlovich,3
+2026-07-21,Heavyweight,Josh Hokit,4
+2026-07-21,Heavyweight,Waldo Cortes-Acosta,5
+2026-07-21,Heavyweight,Serghei Spivac,6
+2026-07-21,Heavyweight,Curtis Blaydes,7
+2026-07-21,Heavyweight,Rizvan Kuniev,8
+2026-07-21,Heavyweight,Ante Delija,9
+2026-07-21,Heavyweight,Tyrell Fortune,9
+2026-07-21,Heavyweight,Derrick Lewis,11
+2026-07-21,Heavyweight,Marcin Tybura,12
+2026-07-21,Heavyweight,Valter Walker,13
+2026-07-21,Heavyweight,Brando Pericic,14
+2026-07-21,Heavyweight,Mick Parkin,15
+2026-07-21,Women's Strawweight,Mackenzie Dern,0
+2026-07-21,Women's Strawweight,Zhang Weili,1
+2026-07-21,Women's Strawweight,Tatiana Suarez,2
+2026-07-21,Women's Strawweight,Virna Jandiroba,3
+2026-07-21,Women's Strawweight,Yan Xiaonan,4
+2026-07-21,Women's Strawweight,Gillian Robertson,5
+2026-07-21,Women's Strawweight,Fatima Kline,6
+2026-07-21,Women's Strawweight,Loopy Godinez,7
+2026-07-21,Women's Strawweight,Amanda Lemos,8
+2026-07-21,Women's Strawweight,Jessica Andrade,9
+2026-07-21,Women's Strawweight,Tabatha Ricci,10
+2026-07-21,Women's Strawweight,Amanda Ribas,11
+2026-07-21,Women's Strawweight,Alexia Thainara,12
+2026-07-21,Women's Strawweight,Denise Gomes,13
+2026-07-21,Women's Strawweight,Angela Hill,14
+2026-07-21,Women's Strawweight,Mizuki,15
+2026-07-21,Women's Flyweight,Valentina Shevchenko,0
+2026-07-21,Women's Flyweight,Natalia Silva,1
+2026-07-21,Women's Flyweight,Manon Fiorot,2
+2026-07-21,Women's Flyweight,Alexa Grasso,3
+2026-07-21,Women's Flyweight,Erin Blanchfield,4
+2026-07-21,Women's Flyweight,Rose Namajunas,5
+2026-07-21,Women's Flyweight,Maycee Barber,6
+2026-07-21,Women's Flyweight,Jasmine Jasudavicius,7
+2026-07-21,Women's Flyweight,Wang Cong,8
+2026-07-21,Women's Flyweight,Tracy Cortez,9
+2026-07-21,Women's Flyweight,Miranda Maverick,10
+2026-07-21,Women's Flyweight,Karine Silva,11
+2026-07-21,Women's Flyweight,Casey O'Neill,12
+2026-07-21,Women's Flyweight,Eduarda Moura,13
+2026-07-21,Women's Flyweight,JJ Aldrich,14
+2026-07-21,Women's Flyweight,Gabriella Fernandes,15
+2026-07-21,Women's Bantamweight,Kayla Harrison,0
+2026-07-21,Women's Bantamweight,Julianna Pena,1
+2026-07-21,Women's Bantamweight,Raquel Pennington,2
+2026-07-21,Women's Bantamweight,Joselyne Edwards,3
+2026-07-21,Women's Bantamweight,Norma Dumont,4
+2026-07-21,Women's Bantamweight,Ailin Perez,5
+2026-07-21,Women's Bantamweight,Yana Santos,6
+2026-07-21,Women's Bantamweight,Luana Santos,7
+2026-07-21,Women's Bantamweight,Macy Chiasson,8
+2026-07-21,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-07-21,Women's Bantamweight,Karol Rosa,10
+2026-07-21,Women's Bantamweight,Bia Mesquita,11
+2026-07-21,Women's Bantamweight,Michelle Montague,12
+2026-07-21,Women's Bantamweight,Nora Cornolle,13
+2026-07-21,Women's Bantamweight,Miesha Tate,14
+2026-07-21,Women's Bantamweight,Melissa Croden,15
+2026-07-21,Men's Pound-for-Pound,Islam Makhachev,1
+2026-07-21,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-07-21,Men's Pound-for-Pound,Petr Yan,3
+2026-07-21,Men's Pound-for-Pound,Justin Gaethje,4
+2026-07-21,Men's Pound-for-Pound,Ilia Topuria,5
+2026-07-21,Men's Pound-for-Pound,Tom Aspinall,6
+2026-07-21,Men's Pound-for-Pound,Sean Strickland,7
+2026-07-21,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-07-21,Men's Pound-for-Pound,Alex Pereira,9
+2026-07-21,Men's Pound-for-Pound,Ciryl Gane,10
+2026-07-21,Men's Pound-for-Pound,Joshua Van,11
+2026-07-21,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-07-21,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-07-21,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-07-21,Men's Pound-for-Pound,Charles Oliveira,15
+2026-07-21,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-07-21,Women's Pound-for-Pound,Kayla Harrison,2
+2026-07-21,Women's Pound-for-Pound,Zhang Weili,3
+2026-07-21,Women's Pound-for-Pound,Natalia Silva,4
+2026-07-21,Women's Pound-for-Pound,Manon Fiorot,5
+2026-07-21,Women's Pound-for-Pound,Mackenzie Dern,6
+2026-07-21,Women's Pound-for-Pound,Alexa Grasso,7
+2026-07-21,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-07-21,Women's Pound-for-Pound,Julianna Pena,9
+2026-07-21,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-07-21,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-07-21,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-07-21,Women's Pound-for-Pound,Raquel Pennington,13
+2026-07-21,Women's Pound-for-Pound,Rose Namajunas,14
+2026-07-21,Women's Pound-for-Pound,Maycee Barber,15
+2026-07-28,Flyweight,Joshua Van,0
+2026-07-28,Flyweight,Alexandre Pantoja,1
+2026-07-28,Flyweight,Manel Kape,2
+2026-07-28,Flyweight,Brandon Royval,3
+2026-07-28,Flyweight,Tatsuro Taira,4
+2026-07-28,Flyweight,Kyoji Horiguchi,5
+2026-07-28,Flyweight,Lone'er Kavanagh,6
+2026-07-28,Flyweight,Asu Almabayev,7
+2026-07-28,Flyweight,Amir Albazi,8
+2026-07-28,Flyweight,Brandon Moreno,9
+2026-07-28,Flyweight,Alex Perez,10
+2026-07-28,Flyweight,Steve Erceg,11
+2026-07-28,Flyweight,Tim Elliott,12
+2026-07-28,Flyweight,Tagir Ulanbekov,13
+2026-07-28,Flyweight,Ramazan Temirov,13
+2026-07-28,Flyweight,Edgar Chairez,15
+2026-07-28,Bantamweight,Petr Yan,0
+2026-07-28,Bantamweight,Merab Dvalishvili,1
+2026-07-28,Bantamweight,Sean O'Malley,2
+2026-07-28,Bantamweight,Umar Nurmagomedov,3
+2026-07-28,Bantamweight,Mario Bautista,4
+2026-07-28,Bantamweight,Cory Sandhagen,5
+2026-07-28,Bantamweight,Song Yadong,6
+2026-07-28,Bantamweight,Aiemann Zahabi,7
+2026-07-28,Bantamweight,David Martinez,8
+2026-07-28,Bantamweight,Deiveson Figueiredo,9
+2026-07-28,Bantamweight,Marlon Vera,10
+2026-07-28,Bantamweight,Payton Talbott,11
+2026-07-28,Bantamweight,Raul Rosas Jr.,12
+2026-07-28,Bantamweight,Raoni Barcelos,13
+2026-07-28,Bantamweight,Farid Basharat,14
+2026-07-28,Bantamweight,Marcus McGhee,15
+2026-07-28,Featherweight,Alexander Volkanovski,0
+2026-07-28,Featherweight,Movsar Evloev,1
+2026-07-28,Featherweight,Diego Lopes,2
+2026-07-28,Featherweight,Lerone Murphy,3
+2026-07-28,Featherweight,Aljamain Sterling,4
+2026-07-28,Featherweight,Yair Rodriguez,5
+2026-07-28,Featherweight,Jean Silva,6
+2026-07-28,Featherweight,Arnold Allen,7
+2026-07-28,Featherweight,Youssef Zalal,8
+2026-07-28,Featherweight,Kevin Vallejos,9
+2026-07-28,Featherweight,Steve Garcia,10
+2026-07-28,Featherweight,Brian Ortega,11
+2026-07-28,Featherweight,Aaron Pico,12
+2026-07-28,Featherweight,Melquizael Costa,13
+2026-07-28,Featherweight,David Onama,14
+2026-07-28,Featherweight,Patricio Freire,15
+2026-07-28,Lightweight,Justin Gaethje,0
+2026-07-28,Lightweight,Ilia Topuria,1
+2026-07-28,Lightweight,Arman Tsarukyan,2
+2026-07-28,Lightweight,Charles Oliveira,3
+2026-07-28,Lightweight,Max Holloway,4
+2026-07-28,Lightweight,Paddy Pimblett,5
+2026-07-28,Lightweight,Benoit Saint Denis,6
+2026-07-28,Lightweight,Mauricio Ruffy,7
+2026-07-28,Lightweight,Mateusz Gamrot,8
+2026-07-28,Lightweight,Dan Hooker,9
+2026-07-28,Lightweight,Renato Moicano,10
+2026-07-28,Lightweight,Rafael Fiziev,11
+2026-07-28,Lightweight,Quillan Salkilld,12
+2026-07-28,Lightweight,Tom Nolan,13
+2026-07-28,Lightweight,Beneil Dariush,14
+2026-07-28,Lightweight,Manuel Torres,15
+2026-07-28,Welterweight,Islam Makhachev,0
+2026-07-28,Welterweight,Ian Machado Garry,1
+2026-07-28,Welterweight,Carlos Prates,2
+2026-07-28,Welterweight,Michael Morales,3
+2026-07-28,Welterweight,Jack Della Maddalena,4
+2026-07-28,Welterweight,Gabriel Bonfim,5
+2026-07-28,Welterweight,Sean Brady,6
+2026-07-28,Welterweight,Belal Muhammad,7
+2026-07-28,Welterweight,Leon Edwards,8
+2026-07-28,Welterweight,Kamaru Usman,9
+2026-07-28,Welterweight,Joaquin Buckley,10
+2026-07-28,Welterweight,Yaroslav Amosov,11
+2026-07-28,Welterweight,Mike Malott,12
+2026-07-28,Welterweight,Michael Page,13
+2026-07-28,Welterweight,Uros Medic,14
+2026-07-28,Welterweight,Daniel Rodriguez,15
+2026-07-28,Middleweight,Sean Strickland,0
+2026-07-28,Middleweight,Khamzat Chimaev,1
+2026-07-28,Middleweight,Dricus Du Plessis,2
+2026-07-28,Middleweight,Nassourdine Imavov,3
+2026-07-28,Middleweight,Brendan Allen,4
+2026-07-28,Middleweight,Caio Borralho,5
+2026-07-28,Middleweight,Anthony Hernandez,6
+2026-07-28,Middleweight,Joe Pyfer,7
+2026-07-28,Middleweight,Israel Adesanya,8
+2026-07-28,Middleweight,Reinier de Ridder,9
+2026-07-28,Middleweight,Christian Leroy Duncan,10
+2026-07-28,Middleweight,Gregory Rodrigues,11
+2026-07-28,Middleweight,Jared Cannonier,12
+2026-07-28,Middleweight,Ikram Aliskerov,13
+2026-07-28,Middleweight,Bo Nickal,14
+2026-07-28,Middleweight,Roman Dolidze,15
+2026-07-28,Light Heavyweight,Carlos Ulberg,0
+2026-07-28,Light Heavyweight,Magomed Ankalaev,1
+2026-07-28,Light Heavyweight,Jiri Prochazka,2
+2026-07-28,Light Heavyweight,Alex Pereira,3
+2026-07-28,Light Heavyweight,Jan Blachowicz,4
+2026-07-28,Light Heavyweight,Khalil Rountree Jr.,5
+2026-07-28,Light Heavyweight,Paulo Costa,6
+2026-07-28,Light Heavyweight,Jamahal Hill,7
+2026-07-28,Light Heavyweight,Azamat Murzakanov,8
+2026-07-28,Light Heavyweight,Dominick Reyes,9
+2026-07-28,Light Heavyweight,Bogdan Guskov,10
+2026-07-28,Light Heavyweight,Robert Whittaker,11
+2026-07-28,Light Heavyweight,Johnny Walker,12
+2026-07-28,Light Heavyweight,Aleksandar Rakic,13
+2026-07-28,Light Heavyweight,Alonzo Menifield,14
+2026-07-28,Light Heavyweight,Navajo Stirling,15
+2026-07-28,Heavyweight,Tom Aspinall,0
+2026-07-28,Heavyweight,Ciryl Gane,1
+2026-07-28,Heavyweight,Alexander Volkov,2
+2026-07-28,Heavyweight,Sergei Pavlovich,3
+2026-07-28,Heavyweight,Josh Hokit,4
+2026-07-28,Heavyweight,Waldo Cortes-Acosta,5
+2026-07-28,Heavyweight,Serghei Spivac,6
+2026-07-28,Heavyweight,Curtis Blaydes,7
+2026-07-28,Heavyweight,Rizvan Kuniev,8
+2026-07-28,Heavyweight,Ante Delija,9
+2026-07-28,Heavyweight,Valter Walker,10
+2026-07-28,Heavyweight,Tyrell Fortune,11
+2026-07-28,Heavyweight,Derrick Lewis,12
+2026-07-28,Heavyweight,Marcin Tybura,13
+2026-07-28,Heavyweight,Brando Pericic,14
+2026-07-28,Heavyweight,Mick Parkin,15
+2026-07-28,Women's Strawweight,Mackenzie Dern,0
+2026-07-28,Women's Strawweight,Zhang Weili,1
+2026-07-28,Women's Strawweight,Tatiana Suarez,2
+2026-07-28,Women's Strawweight,Virna Jandiroba,3
+2026-07-28,Women's Strawweight,Yan Xiaonan,4
+2026-07-28,Women's Strawweight,Gillian Robertson,5
+2026-07-28,Women's Strawweight,Fatima Kline,6
+2026-07-28,Women's Strawweight,Loopy Godinez,7
+2026-07-28,Women's Strawweight,Amanda Lemos,8
+2026-07-28,Women's Strawweight,Jessica Andrade,9
+2026-07-28,Women's Strawweight,Tabatha Ricci,10
+2026-07-28,Women's Strawweight,Amanda Ribas,11
+2026-07-28,Women's Strawweight,Alexia Thainara,12
+2026-07-28,Women's Strawweight,Denise Gomes,13
+2026-07-28,Women's Strawweight,Angela Hill,14
+2026-07-28,Women's Strawweight,Mizuki,15
+2026-07-28,Women's Flyweight,Valentina Shevchenko,0
+2026-07-28,Women's Flyweight,Natalia Silva,1
+2026-07-28,Women's Flyweight,Manon Fiorot,2
+2026-07-28,Women's Flyweight,Alexa Grasso,3
+2026-07-28,Women's Flyweight,Erin Blanchfield,4
+2026-07-28,Women's Flyweight,Rose Namajunas,5
+2026-07-28,Women's Flyweight,Maycee Barber,6
+2026-07-28,Women's Flyweight,Jasmine Jasudavicius,7
+2026-07-28,Women's Flyweight,Wang Cong,8
+2026-07-28,Women's Flyweight,Tracy Cortez,9
+2026-07-28,Women's Flyweight,Miranda Maverick,10
+2026-07-28,Women's Flyweight,Karine Silva,11
+2026-07-28,Women's Flyweight,Casey O'Neill,12
+2026-07-28,Women's Flyweight,Eduarda Moura,13
+2026-07-28,Women's Flyweight,JJ Aldrich,14
+2026-07-28,Women's Flyweight,Gabriella Fernandes,15
+2026-07-28,Women's Bantamweight,Kayla Harrison,0
+2026-07-28,Women's Bantamweight,Julianna Pena,1
+2026-07-28,Women's Bantamweight,Raquel Pennington,2
+2026-07-28,Women's Bantamweight,Joselyne Edwards,3
+2026-07-28,Women's Bantamweight,Norma Dumont,4
+2026-07-28,Women's Bantamweight,Ailin Perez,5
+2026-07-28,Women's Bantamweight,Yana Santos,6
+2026-07-28,Women's Bantamweight,Luana Santos,7
+2026-07-28,Women's Bantamweight,Macy Chiasson,8
+2026-07-28,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-07-28,Women's Bantamweight,Karol Rosa,10
+2026-07-28,Women's Bantamweight,Bia Mesquita,11
+2026-07-28,Women's Bantamweight,Michelle Montague,12
+2026-07-28,Women's Bantamweight,Nora Cornolle,13
+2026-07-28,Women's Bantamweight,Miesha Tate,14
+2026-07-28,Women's Bantamweight,Melissa Croden,15
+2026-07-28,Men's Pound-for-Pound,Islam Makhachev,1
+2026-07-28,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-07-28,Men's Pound-for-Pound,Petr Yan,3
+2026-07-28,Men's Pound-for-Pound,Justin Gaethje,4
+2026-07-28,Men's Pound-for-Pound,Ilia Topuria,5
+2026-07-28,Men's Pound-for-Pound,Tom Aspinall,6
+2026-07-28,Men's Pound-for-Pound,Sean Strickland,7
+2026-07-28,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-07-28,Men's Pound-for-Pound,Alex Pereira,9
+2026-07-28,Men's Pound-for-Pound,Ciryl Gane,10
+2026-07-28,Men's Pound-for-Pound,Joshua Van,11
+2026-07-28,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-07-28,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-07-28,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-07-28,Men's Pound-for-Pound,Charles Oliveira,15
+2026-07-28,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-07-28,Women's Pound-for-Pound,Kayla Harrison,2
+2026-07-28,Women's Pound-for-Pound,Zhang Weili,3
+2026-07-28,Women's Pound-for-Pound,Natalia Silva,4
+2026-07-28,Women's Pound-for-Pound,Manon Fiorot,5
+2026-07-28,Women's Pound-for-Pound,Mackenzie Dern,6
+2026-07-28,Women's Pound-for-Pound,Alexa Grasso,7
+2026-07-28,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-07-28,Women's Pound-for-Pound,Julianna Pena,9
+2026-07-28,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-07-28,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-07-28,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-07-28,Women's Pound-for-Pound,Raquel Pennington,13
+2026-07-28,Women's Pound-for-Pound,Rose Namajunas,14
+2026-07-28,Women's Pound-for-Pound,Maycee Barber,15
+2026-08-04,Flyweight,Joshua Van,0
+2026-08-04,Flyweight,Alexandre Pantoja,1
+2026-08-04,Flyweight,Manel Kape,2
+2026-08-04,Flyweight,Brandon Royval,3
+2026-08-04,Flyweight,Tatsuro Taira,4
+2026-08-04,Flyweight,Kyoji Horiguchi,5
+2026-08-04,Flyweight,Lone'er Kavanagh,6
+2026-08-04,Flyweight,Asu Almabayev,7
+2026-08-04,Flyweight,Brandon Moreno,8
+2026-08-04,Flyweight,Amir Albazi,9
+2026-08-04,Flyweight,Ramazan Temirov,10
+2026-08-04,Flyweight,Alex Perez,11
+2026-08-04,Flyweight,Steve Erceg,12
+2026-08-04,Flyweight,Tim Elliott,13
+2026-08-04,Flyweight,Tagir Ulanbekov,14
+2026-08-04,Flyweight,Edgar Chairez,15
+2026-08-04,Bantamweight,Petr Yan,0
+2026-08-04,Bantamweight,Merab Dvalishvili,1
+2026-08-04,Bantamweight,Sean O'Malley,2
+2026-08-04,Bantamweight,Umar Nurmagomedov,3
+2026-08-04,Bantamweight,Mario Bautista,4
+2026-08-04,Bantamweight,Cory Sandhagen,5
+2026-08-04,Bantamweight,Song Yadong,6
+2026-08-04,Bantamweight,Aiemann Zahabi,7
+2026-08-04,Bantamweight,David Martinez,8
+2026-08-04,Bantamweight,Deiveson Figueiredo,9
+2026-08-04,Bantamweight,Marlon Vera,10
+2026-08-04,Bantamweight,Payton Talbott,11
+2026-08-04,Bantamweight,Raul Rosas Jr.,12
+2026-08-04,Bantamweight,Raoni Barcelos,13
+2026-08-04,Bantamweight,Farid Basharat,14
+2026-08-04,Bantamweight,Marcus McGhee,15
+2026-08-04,Featherweight,Alexander Volkanovski,0
+2026-08-04,Featherweight,Movsar Evloev,1
+2026-08-04,Featherweight,Diego Lopes,2
+2026-08-04,Featherweight,Lerone Murphy,3
+2026-08-04,Featherweight,Aljamain Sterling,4
+2026-08-04,Featherweight,Yair Rodriguez,5
+2026-08-04,Featherweight,Jean Silva,6
+2026-08-04,Featherweight,Arnold Allen,7
+2026-08-04,Featherweight,Youssef Zalal,8
+2026-08-04,Featherweight,Kevin Vallejos,9
+2026-08-04,Featherweight,Steve Garcia,10
+2026-08-04,Featherweight,Brian Ortega,11
+2026-08-04,Featherweight,Aaron Pico,12
+2026-08-04,Featherweight,Melquizael Costa,13
+2026-08-04,Featherweight,David Onama,14
+2026-08-04,Featherweight,Patricio Freire,15
+2026-08-04,Lightweight,Justin Gaethje,0
+2026-08-04,Lightweight,Ilia Topuria,1
+2026-08-04,Lightweight,Arman Tsarukyan,2
+2026-08-04,Lightweight,Charles Oliveira,3
+2026-08-04,Lightweight,Max Holloway,4
+2026-08-04,Lightweight,Paddy Pimblett,5
+2026-08-04,Lightweight,Benoit Saint Denis,6
+2026-08-04,Lightweight,Mauricio Ruffy,7
+2026-08-04,Lightweight,Mateusz Gamrot,8
+2026-08-04,Lightweight,Dan Hooker,9
+2026-08-04,Lightweight,Renato Moicano,10
+2026-08-04,Lightweight,Rafael Fiziev,11
+2026-08-04,Lightweight,Quillan Salkilld,12
+2026-08-04,Lightweight,Tom Nolan,13
+2026-08-04,Lightweight,Beneil Dariush,14
+2026-08-04,Lightweight,Manuel Torres,15
+2026-08-04,Welterweight,Islam Makhachev,0
+2026-08-04,Welterweight,Ian Machado Garry,1
+2026-08-04,Welterweight,Carlos Prates,2
+2026-08-04,Welterweight,Michael Morales,3
+2026-08-04,Welterweight,Jack Della Maddalena,4
+2026-08-04,Welterweight,Gabriel Bonfim,5
+2026-08-04,Welterweight,Sean Brady,6
+2026-08-04,Welterweight,Belal Muhammad,7
+2026-08-04,Welterweight,Leon Edwards,8
+2026-08-04,Welterweight,Kamaru Usman,9
+2026-08-04,Welterweight,Joaquin Buckley,10
+2026-08-04,Welterweight,Yaroslav Amosov,11
+2026-08-04,Welterweight,Uros Medic,12
+2026-08-04,Welterweight,Mike Malott,13
+2026-08-04,Welterweight,Michael Page,14
+2026-08-04,Welterweight,Daniel Rodriguez,15
+2026-08-04,Middleweight,Sean Strickland,0
+2026-08-04,Middleweight,Khamzat Chimaev,1
+2026-08-04,Middleweight,Dricus Du Plessis,2
+2026-08-04,Middleweight,Nassourdine Imavov,3
+2026-08-04,Middleweight,Brendan Allen,4
+2026-08-04,Middleweight,Caio Borralho,5
+2026-08-04,Middleweight,Anthony Hernandez,6
+2026-08-04,Middleweight,Joe Pyfer,7
+2026-08-04,Middleweight,Israel Adesanya,8
+2026-08-04,Middleweight,Reinier de Ridder,9
+2026-08-04,Middleweight,Christian Leroy Duncan,10
+2026-08-04,Middleweight,Gregory Rodrigues,11
+2026-08-04,Middleweight,Jared Cannonier,12
+2026-08-04,Middleweight,Ikram Aliskerov,13
+2026-08-04,Middleweight,Bo Nickal,14
+2026-08-04,Middleweight,Roman Dolidze,15
+2026-08-04,Light Heavyweight,Carlos Ulberg,0
+2026-08-04,Light Heavyweight,Magomed Ankalaev,1
+2026-08-04,Light Heavyweight,Jiri Prochazka,2
+2026-08-04,Light Heavyweight,Alex Pereira,3
+2026-08-04,Light Heavyweight,Khalil Rountree Jr.,4
+2026-08-04,Light Heavyweight,Navajo Stirling,5
+2026-08-04,Light Heavyweight,Paulo Costa,6
+2026-08-04,Light Heavyweight,Jamahal Hill,7
+2026-08-04,Light Heavyweight,Azamat Murzakanov,8
+2026-08-04,Light Heavyweight,Jan Blachowicz,9
+2026-08-04,Light Heavyweight,Dominick Reyes,10
+2026-08-04,Light Heavyweight,Bogdan Guskov,11
+2026-08-04,Light Heavyweight,Robert Whittaker,12
+2026-08-04,Light Heavyweight,Johnny Walker,13
+2026-08-04,Light Heavyweight,Alonzo Menifield,14
+2026-08-04,Light Heavyweight,Nikita Krylov,15
+2026-08-04,Heavyweight,Tom Aspinall,0
+2026-08-04,Heavyweight,Ciryl Gane,1
+2026-08-04,Heavyweight,Alexander Volkov,2
+2026-08-04,Heavyweight,Sergei Pavlovich,3
+2026-08-04,Heavyweight,Josh Hokit,4
+2026-08-04,Heavyweight,Waldo Cortes-Acosta,5
+2026-08-04,Heavyweight,Serghei Spivac,6
+2026-08-04,Heavyweight,Curtis Blaydes,7
+2026-08-04,Heavyweight,Rizvan Kuniev,8
+2026-08-04,Heavyweight,Ante Delija,9
+2026-08-04,Heavyweight,Valter Walker,10
+2026-08-04,Heavyweight,Tyrell Fortune,11
+2026-08-04,Heavyweight,Aleksandar Rakic,11
+2026-08-04,Heavyweight,Derrick Lewis,13
+2026-08-04,Heavyweight,Marcin Tybura,14
+2026-08-04,Heavyweight,Brando Pericic,15
+2026-08-04,Women's Strawweight,Mackenzie Dern,0
+2026-08-04,Women's Strawweight,Zhang Weili,1
+2026-08-04,Women's Strawweight,Tatiana Suarez,2
+2026-08-04,Women's Strawweight,Virna Jandiroba,3
+2026-08-04,Women's Strawweight,Yan Xiaonan,4
+2026-08-04,Women's Strawweight,Gillian Robertson,5
+2026-08-04,Women's Strawweight,Fatima Kline,6
+2026-08-04,Women's Strawweight,Loopy Godinez,7
+2026-08-04,Women's Strawweight,Amanda Lemos,8
+2026-08-04,Women's Strawweight,Jessica Andrade,9
+2026-08-04,Women's Strawweight,Tabatha Ricci,10
+2026-08-04,Women's Strawweight,Amanda Ribas,11
+2026-08-04,Women's Strawweight,Alexia Thainara,12
+2026-08-04,Women's Strawweight,Denise Gomes,13
+2026-08-04,Women's Strawweight,Angela Hill,14
+2026-08-04,Women's Strawweight,Mizuki,15
+2026-08-04,Women's Flyweight,Valentina Shevchenko,0
+2026-08-04,Women's Flyweight,Natalia Silva,1
+2026-08-04,Women's Flyweight,Manon Fiorot,2
+2026-08-04,Women's Flyweight,Alexa Grasso,3
+2026-08-04,Women's Flyweight,Erin Blanchfield,4
+2026-08-04,Women's Flyweight,Rose Namajunas,5
+2026-08-04,Women's Flyweight,Maycee Barber,6
+2026-08-04,Women's Flyweight,Jasmine Jasudavicius,7
+2026-08-04,Women's Flyweight,Wang Cong,8
+2026-08-04,Women's Flyweight,Tracy Cortez,9
+2026-08-04,Women's Flyweight,Miranda Maverick,10
+2026-08-04,Women's Flyweight,Karine Silva,11
+2026-08-04,Women's Flyweight,Casey O'Neill,12
+2026-08-04,Women's Flyweight,Eduarda Moura,13
+2026-08-04,Women's Flyweight,JJ Aldrich,14
+2026-08-04,Women's Flyweight,Gabriella Fernandes,15
+2026-08-04,Women's Bantamweight,Kayla Harrison,0
+2026-08-04,Women's Bantamweight,Julianna Pena,1
+2026-08-04,Women's Bantamweight,Raquel Pennington,2
+2026-08-04,Women's Bantamweight,Joselyne Edwards,3
+2026-08-04,Women's Bantamweight,Norma Dumont,4
+2026-08-04,Women's Bantamweight,Ailin Perez,5
+2026-08-04,Women's Bantamweight,Yana Santos,6
+2026-08-04,Women's Bantamweight,Luana Santos,7
+2026-08-04,Women's Bantamweight,Macy Chiasson,8
+2026-08-04,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-08-04,Women's Bantamweight,Karol Rosa,10
+2026-08-04,Women's Bantamweight,Bia Mesquita,11
+2026-08-04,Women's Bantamweight,Michelle Montague,12
+2026-08-04,Women's Bantamweight,Nora Cornolle,13
+2026-08-04,Women's Bantamweight,Miesha Tate,14
+2026-08-04,Women's Bantamweight,Melissa Croden,15
+2026-08-04,Men's Pound-for-Pound,Islam Makhachev,1
+2026-08-04,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-08-04,Men's Pound-for-Pound,Petr Yan,3
+2026-08-04,Men's Pound-for-Pound,Justin Gaethje,4
+2026-08-04,Men's Pound-for-Pound,Ilia Topuria,5
+2026-08-04,Men's Pound-for-Pound,Tom Aspinall,6
+2026-08-04,Men's Pound-for-Pound,Sean Strickland,7
+2026-08-04,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-08-04,Men's Pound-for-Pound,Alex Pereira,9
+2026-08-04,Men's Pound-for-Pound,Ciryl Gane,10
+2026-08-04,Men's Pound-for-Pound,Joshua Van,11
+2026-08-04,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-08-04,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-08-04,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-08-04,Men's Pound-for-Pound,Charles Oliveira,15
+2026-08-04,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-08-04,Women's Pound-for-Pound,Kayla Harrison,2
+2026-08-04,Women's Pound-for-Pound,Zhang Weili,3
+2026-08-04,Women's Pound-for-Pound,Natalia Silva,4
+2026-08-04,Women's Pound-for-Pound,Manon Fiorot,5
+2026-08-04,Women's Pound-for-Pound,Mackenzie Dern,6
+2026-08-04,Women's Pound-for-Pound,Alexa Grasso,7
+2026-08-04,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-08-04,Women's Pound-for-Pound,Julianna Pena,9
+2026-08-04,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-08-04,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-08-04,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-08-04,Women's Pound-for-Pound,Raquel Pennington,13
+2026-08-04,Women's Pound-for-Pound,Rose Namajunas,14
+2026-08-04,Women's Pound-for-Pound,Maycee Barber,15
+2026-08-11,Flyweight,Joshua Van,0
+2026-08-11,Flyweight,Alexandre Pantoja,1
+2026-08-11,Flyweight,Manel Kape,2
+2026-08-11,Flyweight,Brandon Royval,3
+2026-08-11,Flyweight,Tatsuro Taira,4
+2026-08-11,Flyweight,Kyoji Horiguchi,5
+2026-08-11,Flyweight,Lone'er Kavanagh,6
+2026-08-11,Flyweight,Asu Almabayev,7
+2026-08-11,Flyweight,Brandon Moreno,8
+2026-08-11,Flyweight,Amir Albazi,9
+2026-08-11,Flyweight,Ramazan Temirov,10
+2026-08-11,Flyweight,Alex Perez,11
+2026-08-11,Flyweight,Steve Erceg,12
+2026-08-11,Flyweight,Tim Elliott,13
+2026-08-11,Flyweight,Tagir Ulanbekov,14
+2026-08-11,Flyweight,Edgar Chairez,15
+2026-08-11,Bantamweight,Petr Yan,0
+2026-08-11,Bantamweight,Merab Dvalishvili,1
+2026-08-11,Bantamweight,Sean O'Malley,2
+2026-08-11,Bantamweight,Umar Nurmagomedov,3
+2026-08-11,Bantamweight,Mario Bautista,4
+2026-08-11,Bantamweight,Cory Sandhagen,5
+2026-08-11,Bantamweight,Song Yadong,6
+2026-08-11,Bantamweight,Aiemann Zahabi,7
+2026-08-11,Bantamweight,David Martinez,8
+2026-08-11,Bantamweight,Deiveson Figueiredo,9
+2026-08-11,Bantamweight,Marlon Vera,10
+2026-08-11,Bantamweight,Payton Talbott,11
+2026-08-11,Bantamweight,Raul Rosas Jr.,12
+2026-08-11,Bantamweight,Raoni Barcelos,13
+2026-08-11,Bantamweight,Farid Basharat,14
+2026-08-11,Bantamweight,Marcus McGhee,15
+2026-08-11,Featherweight,Alexander Volkanovski,0
+2026-08-11,Featherweight,Movsar Evloev,1
+2026-08-11,Featherweight,Diego Lopes,2
+2026-08-11,Featherweight,Lerone Murphy,3
+2026-08-11,Featherweight,Aljamain Sterling,4
+2026-08-11,Featherweight,Yair Rodriguez,5
+2026-08-11,Featherweight,Jean Silva,6
+2026-08-11,Featherweight,Arnold Allen,7
+2026-08-11,Featherweight,Youssef Zalal,8
+2026-08-11,Featherweight,Kevin Vallejos,9
+2026-08-11,Featherweight,Steve Garcia,10
+2026-08-11,Featherweight,Brian Ortega,11
+2026-08-11,Featherweight,Aaron Pico,12
+2026-08-11,Featherweight,Melquizael Costa,13
+2026-08-11,Featherweight,David Onama,14
+2026-08-11,Featherweight,Patricio Freire,15
+2026-08-11,Lightweight,Justin Gaethje,0
+2026-08-11,Lightweight,Ilia Topuria,1
+2026-08-11,Lightweight,Arman Tsarukyan,2
+2026-08-11,Lightweight,Charles Oliveira,3
+2026-08-11,Lightweight,Max Holloway,4
+2026-08-11,Lightweight,Paddy Pimblett,5
+2026-08-11,Lightweight,Benoit Saint Denis,6
+2026-08-11,Lightweight,Mauricio Ruffy,7
+2026-08-11,Lightweight,Quillan Salkilld,8
+2026-08-11,Lightweight,Mateusz Gamrot,9
+2026-08-11,Lightweight,Dan Hooker,10
+2026-08-11,Lightweight,Renato Moicano,11
+2026-08-11,Lightweight,Rafael Fiziev,12
+2026-08-11,Lightweight,Tom Nolan,13
+2026-08-11,Lightweight,Beneil Dariush,14
+2026-08-11,Lightweight,Manuel Torres,15
+2026-08-11,Welterweight,Islam Makhachev,0
+2026-08-11,Welterweight,Ian Machado Garry,1
+2026-08-11,Welterweight,Carlos Prates,2
+2026-08-11,Welterweight,Michael Morales,3
+2026-08-11,Welterweight,Jack Della Maddalena,4
+2026-08-11,Welterweight,Gabriel Bonfim,5
+2026-08-11,Welterweight,Sean Brady,6
+2026-08-11,Welterweight,Belal Muhammad,7
+2026-08-11,Welterweight,Leon Edwards,8
+2026-08-11,Welterweight,Kamaru Usman,9
+2026-08-11,Welterweight,Joaquin Buckley,10
+2026-08-11,Welterweight,Yaroslav Amosov,11
+2026-08-11,Welterweight,Uros Medic,12
+2026-08-11,Welterweight,Mike Malott,13
+2026-08-11,Welterweight,Michael Page,14
+2026-08-11,Welterweight,Daniel Rodriguez,15
+2026-08-11,Middleweight,Sean Strickland,0
+2026-08-11,Middleweight,Khamzat Chimaev,1
+2026-08-11,Middleweight,Dricus Du Plessis,2
+2026-08-11,Middleweight,Nassourdine Imavov,3
+2026-08-11,Middleweight,Brendan Allen,4
+2026-08-11,Middleweight,Caio Borralho,5
+2026-08-11,Middleweight,Anthony Hernandez,6
+2026-08-11,Middleweight,Joe Pyfer,7
+2026-08-11,Middleweight,Israel Adesanya,8
+2026-08-11,Middleweight,Reinier de Ridder,9
+2026-08-11,Middleweight,Christian Leroy Duncan,10
+2026-08-11,Middleweight,Gregory Rodrigues,11
+2026-08-11,Middleweight,Jared Cannonier,12
+2026-08-11,Middleweight,Ikram Aliskerov,13
+2026-08-11,Middleweight,Bo Nickal,14
+2026-08-11,Middleweight,Roman Dolidze,15
+2026-08-11,Light Heavyweight,Carlos Ulberg,0
+2026-08-11,Light Heavyweight,Magomed Ankalaev,1
+2026-08-11,Light Heavyweight,Jiri Prochazka,2
+2026-08-11,Light Heavyweight,Alex Pereira,3
+2026-08-11,Light Heavyweight,Khalil Rountree Jr.,4
+2026-08-11,Light Heavyweight,Navajo Stirling,5
+2026-08-11,Light Heavyweight,Paulo Costa,6
+2026-08-11,Light Heavyweight,Jamahal Hill,7
+2026-08-11,Light Heavyweight,Azamat Murzakanov,8
+2026-08-11,Light Heavyweight,Jan Blachowicz,9
+2026-08-11,Light Heavyweight,Dominick Reyes,10
+2026-08-11,Light Heavyweight,Bogdan Guskov,11
+2026-08-11,Light Heavyweight,Robert Whittaker,12
+2026-08-11,Light Heavyweight,Johnny Walker,13
+2026-08-11,Light Heavyweight,Alonzo Menifield,14
+2026-08-11,Light Heavyweight,Nikita Krylov,15
+2026-08-11,Heavyweight,Tom Aspinall,0
+2026-08-11,Heavyweight,Ciryl Gane,1
+2026-08-11,Heavyweight,Alexander Volkov,2
+2026-08-11,Heavyweight,Sergei Pavlovich,3
+2026-08-11,Heavyweight,Josh Hokit,4
+2026-08-11,Heavyweight,Waldo Cortes-Acosta,5
+2026-08-11,Heavyweight,Serghei Spivac,6
+2026-08-11,Heavyweight,Curtis Blaydes,7
+2026-08-11,Heavyweight,Rizvan Kuniev,8
+2026-08-11,Heavyweight,Ante Delija,9
+2026-08-11,Heavyweight,Aleksandar Rakic,10
+2026-08-11,Heavyweight,Valter Walker,11
+2026-08-11,Heavyweight,Tyrell Fortune,12
+2026-08-11,Heavyweight,Derrick Lewis,13
+2026-08-11,Heavyweight,Marcin Tybura,14
+2026-08-11,Heavyweight,Brando Pericic,15
+2026-08-11,Women's Strawweight,Mackenzie Dern,0
+2026-08-11,Women's Strawweight,Zhang Weili,1
+2026-08-11,Women's Strawweight,Tatiana Suarez,2
+2026-08-11,Women's Strawweight,Virna Jandiroba,3
+2026-08-11,Women's Strawweight,Yan Xiaonan,4
+2026-08-11,Women's Strawweight,Gillian Robertson,5
+2026-08-11,Women's Strawweight,Fatima Kline,6
+2026-08-11,Women's Strawweight,Loopy Godinez,7
+2026-08-11,Women's Strawweight,Alexia Thainara,8
+2026-08-11,Women's Strawweight,Jessica Andrade,9
+2026-08-11,Women's Strawweight,Tabatha Ricci,10
+2026-08-11,Women's Strawweight,Amanda Lemos,11
+2026-08-11,Women's Strawweight,Amanda Ribas,12
+2026-08-11,Women's Strawweight,Angela Hill,13
+2026-08-11,Women's Strawweight,Denise Gomes,14
+2026-08-11,Women's Strawweight,Mizuki,15
+2026-08-11,Women's Flyweight,Valentina Shevchenko,0
+2026-08-11,Women's Flyweight,Natalia Silva,1
+2026-08-11,Women's Flyweight,Manon Fiorot,2
+2026-08-11,Women's Flyweight,Alexa Grasso,3
+2026-08-11,Women's Flyweight,Erin Blanchfield,4
+2026-08-11,Women's Flyweight,Rose Namajunas,5
+2026-08-11,Women's Flyweight,Maycee Barber,6
+2026-08-11,Women's Flyweight,Jasmine Jasudavicius,7
+2026-08-11,Women's Flyweight,Wang Cong,8
+2026-08-11,Women's Flyweight,Tracy Cortez,9
+2026-08-11,Women's Flyweight,Miranda Maverick,10
+2026-08-11,Women's Flyweight,Karine Silva,11
+2026-08-11,Women's Flyweight,Casey O'Neill,12
+2026-08-11,Women's Flyweight,Eduarda Moura,13
+2026-08-11,Women's Flyweight,JJ Aldrich,14
+2026-08-11,Women's Flyweight,Gabriella Fernandes,15
+2026-08-11,Women's Bantamweight,Kayla Harrison,0
+2026-08-11,Women's Bantamweight,Julianna Pena,1
+2026-08-11,Women's Bantamweight,Raquel Pennington,2
+2026-08-11,Women's Bantamweight,Joselyne Edwards,3
+2026-08-11,Women's Bantamweight,Norma Dumont,4
+2026-08-11,Women's Bantamweight,Ailin Perez,5
+2026-08-11,Women's Bantamweight,Yana Santos,6
+2026-08-11,Women's Bantamweight,Luana Santos,7
+2026-08-11,Women's Bantamweight,Macy Chiasson,8
+2026-08-11,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-08-11,Women's Bantamweight,Karol Rosa,10
+2026-08-11,Women's Bantamweight,Bia Mesquita,11
+2026-08-11,Women's Bantamweight,Michelle Montague,12
+2026-08-11,Women's Bantamweight,Nora Cornolle,13
+2026-08-11,Women's Bantamweight,Miesha Tate,14
+2026-08-11,Women's Bantamweight,Melissa Croden,15
+2026-08-11,Men's Pound-for-Pound,Islam Makhachev,1
+2026-08-11,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-08-11,Men's Pound-for-Pound,Petr Yan,3
+2026-08-11,Men's Pound-for-Pound,Justin Gaethje,4
+2026-08-11,Men's Pound-for-Pound,Ilia Topuria,5
+2026-08-11,Men's Pound-for-Pound,Tom Aspinall,6
+2026-08-11,Men's Pound-for-Pound,Sean Strickland,7
+2026-08-11,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-08-11,Men's Pound-for-Pound,Alex Pereira,9
+2026-08-11,Men's Pound-for-Pound,Ciryl Gane,10
+2026-08-11,Men's Pound-for-Pound,Joshua Van,11
+2026-08-11,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-08-11,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-08-11,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-08-11,Men's Pound-for-Pound,Charles Oliveira,15
+2026-08-11,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-08-11,Women's Pound-for-Pound,Kayla Harrison,2
+2026-08-11,Women's Pound-for-Pound,Zhang Weili,3
+2026-08-11,Women's Pound-for-Pound,Natalia Silva,4
+2026-08-11,Women's Pound-for-Pound,Manon Fiorot,5
+2026-08-11,Women's Pound-for-Pound,Mackenzie Dern,6
+2026-08-11,Women's Pound-for-Pound,Alexa Grasso,7
+2026-08-11,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-08-11,Women's Pound-for-Pound,Julianna Pena,9
+2026-08-11,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-08-11,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-08-11,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-08-11,Women's Pound-for-Pound,Raquel Pennington,13
+2026-08-11,Women's Pound-for-Pound,Rose Namajunas,14
+2026-08-11,Women's Pound-for-Pound,Maycee Barber,15
+2026-08-18,Flyweight,Joshua Van,0
+2026-08-18,Flyweight,Alexandre Pantoja,1
+2026-08-18,Flyweight,Manel Kape,2
+2026-08-18,Flyweight,Brandon Royval,3
+2026-08-18,Flyweight,Tatsuro Taira,4
+2026-08-18,Flyweight,Kyoji Horiguchi,5
+2026-08-18,Flyweight,Lone'er Kavanagh,6
+2026-08-18,Flyweight,Asu Almabayev,7
+2026-08-18,Flyweight,Brandon Moreno,8
+2026-08-18,Flyweight,Amir Albazi,9
+2026-08-18,Flyweight,Ramazan Temirov,10
+2026-08-18,Flyweight,Alex Perez,11
+2026-08-18,Flyweight,Steve Erceg,12
+2026-08-18,Flyweight,Tim Elliott,13
+2026-08-18,Flyweight,Tagir Ulanbekov,14
+2026-08-18,Flyweight,Charles Johnson,15
+2026-08-18,Bantamweight,Petr Yan,0
+2026-08-18,Bantamweight,Merab Dvalishvili,1
+2026-08-18,Bantamweight,Sean O'Malley,2
+2026-08-18,Bantamweight,Umar Nurmagomedov,3
+2026-08-18,Bantamweight,Mario Bautista,4
+2026-08-18,Bantamweight,Cory Sandhagen,5
+2026-08-18,Bantamweight,Song Yadong,6
+2026-08-18,Bantamweight,Aiemann Zahabi,7
+2026-08-18,Bantamweight,David Martinez,8
+2026-08-18,Bantamweight,Deiveson Figueiredo,9
+2026-08-18,Bantamweight,Marlon Vera,10
+2026-08-18,Bantamweight,Payton Talbott,11
+2026-08-18,Bantamweight,Raul Rosas Jr.,12
+2026-08-18,Bantamweight,Raoni Barcelos,13
+2026-08-18,Bantamweight,Farid Basharat,14
+2026-08-18,Bantamweight,Marcus McGhee,15
+2026-08-18,Featherweight,Alexander Volkanovski,0
+2026-08-18,Featherweight,Movsar Evloev,1
+2026-08-18,Featherweight,Diego Lopes,2
+2026-08-18,Featherweight,Lerone Murphy,3
+2026-08-18,Featherweight,Aljamain Sterling,4
+2026-08-18,Featherweight,Yair Rodriguez,5
+2026-08-18,Featherweight,Jean Silva,6
+2026-08-18,Featherweight,Arnold Allen,7
+2026-08-18,Featherweight,Youssef Zalal,8
+2026-08-18,Featherweight,Kevin Vallejos,9
+2026-08-18,Featherweight,Steve Garcia,10
+2026-08-18,Featherweight,Brian Ortega,11
+2026-08-18,Featherweight,Aaron Pico,12
+2026-08-18,Featherweight,Melquizael Costa,13
+2026-08-18,Featherweight,David Onama,14
+2026-08-18,Featherweight,Patricio Freire,15
+2026-08-18,Lightweight,Justin Gaethje,0
+2026-08-18,Lightweight,Ilia Topuria,1
+2026-08-18,Lightweight,Arman Tsarukyan,2
+2026-08-18,Lightweight,Charles Oliveira,3
+2026-08-18,Lightweight,Max Holloway,4
+2026-08-18,Lightweight,Paddy Pimblett,5
+2026-08-18,Lightweight,Benoit Saint Denis,6
+2026-08-18,Lightweight,Mauricio Ruffy,7
+2026-08-18,Lightweight,Quillan Salkilld,8
+2026-08-18,Lightweight,Mateusz Gamrot,9
+2026-08-18,Lightweight,Dan Hooker,10
+2026-08-18,Lightweight,Renato Moicano,11
+2026-08-18,Lightweight,Rafael Fiziev,12
+2026-08-18,Lightweight,Tom Nolan,13
+2026-08-18,Lightweight,Beneil Dariush,14
+2026-08-18,Lightweight,Manuel Torres,15
+2026-08-18,Welterweight,Islam Makhachev,0
+2026-08-18,Welterweight,Ian Machado Garry,1
+2026-08-18,Welterweight,Carlos Prates,2
+2026-08-18,Welterweight,Michael Morales,3
+2026-08-18,Welterweight,Jack Della Maddalena,4
+2026-08-18,Welterweight,Gabriel Bonfim,5
+2026-08-18,Welterweight,Sean Brady,6
+2026-08-18,Welterweight,Belal Muhammad,7
+2026-08-18,Welterweight,Leon Edwards,8
+2026-08-18,Welterweight,Kamaru Usman,9
+2026-08-18,Welterweight,Joaquin Buckley,10
+2026-08-18,Welterweight,Yaroslav Amosov,11
+2026-08-18,Welterweight,Uros Medic,12
+2026-08-18,Welterweight,Mike Malott,13
+2026-08-18,Welterweight,Daniel Rodriguez,14
+2026-08-18,Welterweight,Neil Magny,15
+2026-08-18,Middleweight,Sean Strickland,0
+2026-08-18,Middleweight,Khamzat Chimaev,1
+2026-08-18,Middleweight,Dricus Du Plessis,2
+2026-08-18,Middleweight,Nassourdine Imavov,3
+2026-08-18,Middleweight,Brendan Allen,4
+2026-08-18,Middleweight,Caio Borralho,5
+2026-08-18,Middleweight,Anthony Hernandez,6
+2026-08-18,Middleweight,Joe Pyfer,7
+2026-08-18,Middleweight,Israel Adesanya,8
+2026-08-18,Middleweight,Reinier de Ridder,9
+2026-08-18,Middleweight,Christian Leroy Duncan,10
+2026-08-18,Middleweight,Gregory Rodrigues,11
+2026-08-18,Middleweight,Jared Cannonier,12
+2026-08-18,Middleweight,Ikram Aliskerov,13
+2026-08-18,Middleweight,Bo Nickal,14
+2026-08-18,Middleweight,Roman Dolidze,15
+2026-08-18,Light Heavyweight,Carlos Ulberg,0
+2026-08-18,Light Heavyweight,Magomed Ankalaev,1
+2026-08-18,Light Heavyweight,Jiri Prochazka,2
+2026-08-18,Light Heavyweight,Alex Pereira,3
+2026-08-18,Light Heavyweight,Khalil Rountree Jr.,4
+2026-08-18,Light Heavyweight,Navajo Stirling,5
+2026-08-18,Light Heavyweight,Paulo Costa,6
+2026-08-18,Light Heavyweight,Jamahal Hill,7
+2026-08-18,Light Heavyweight,Azamat Murzakanov,8
+2026-08-18,Light Heavyweight,Jan Blachowicz,9
+2026-08-18,Light Heavyweight,Dominick Reyes,10
+2026-08-18,Light Heavyweight,Bogdan Guskov,11
+2026-08-18,Light Heavyweight,Robert Whittaker,12
+2026-08-18,Light Heavyweight,Johnny Walker,13
+2026-08-18,Light Heavyweight,Alonzo Menifield,14
+2026-08-18,Light Heavyweight,Nikita Krylov,15
+2026-08-18,Heavyweight,Tom Aspinall,0
+2026-08-18,Heavyweight,Ciryl Gane,1
+2026-08-18,Heavyweight,Alexander Volkov,2
+2026-08-18,Heavyweight,Sergei Pavlovich,3
+2026-08-18,Heavyweight,Josh Hokit,4
+2026-08-18,Heavyweight,Waldo Cortes-Acosta,5
+2026-08-18,Heavyweight,Serghei Spivac,6
+2026-08-18,Heavyweight,Curtis Blaydes,7
+2026-08-18,Heavyweight,Rizvan Kuniev,8
+2026-08-18,Heavyweight,Ante Delija,9
+2026-08-18,Heavyweight,Aleksandar Rakic,10
+2026-08-18,Heavyweight,Valter Walker,11
+2026-08-18,Heavyweight,Tyrell Fortune,12
+2026-08-18,Heavyweight,Derrick Lewis,13
+2026-08-18,Heavyweight,Marcin Tybura,14
+2026-08-18,Heavyweight,Brando Pericic,15
+2026-08-18,Women's Strawweight,Mackenzie Dern,0
+2026-08-18,Women's Strawweight,Zhang Weili,1
+2026-08-18,Women's Strawweight,Tatiana Suarez,2
+2026-08-18,Women's Strawweight,Virna Jandiroba,3
+2026-08-18,Women's Strawweight,Yan Xiaonan,4
+2026-08-18,Women's Strawweight,Gillian Robertson,5
+2026-08-18,Women's Strawweight,Fatima Kline,6
+2026-08-18,Women's Strawweight,Loopy Godinez,7
+2026-08-18,Women's Strawweight,Alexia Thainara,8
+2026-08-18,Women's Strawweight,Jessica Andrade,9
+2026-08-18,Women's Strawweight,Tabatha Ricci,10
+2026-08-18,Women's Strawweight,Amanda Lemos,11
+2026-08-18,Women's Strawweight,Amanda Ribas,12
+2026-08-18,Women's Strawweight,Angela Hill,13
+2026-08-18,Women's Strawweight,Denise Gomes,14
+2026-08-18,Women's Strawweight,Mizuki,15
+2026-08-18,Women's Flyweight,Valentina Shevchenko,0
+2026-08-18,Women's Flyweight,Natalia Silva,1
+2026-08-18,Women's Flyweight,Manon Fiorot,2
+2026-08-18,Women's Flyweight,Alexa Grasso,3
+2026-08-18,Women's Flyweight,Erin Blanchfield,4
+2026-08-18,Women's Flyweight,Rose Namajunas,5
+2026-08-18,Women's Flyweight,Maycee Barber,6
+2026-08-18,Women's Flyweight,Jasmine Jasudavicius,7
+2026-08-18,Women's Flyweight,Wang Cong,8
+2026-08-18,Women's Flyweight,Tracy Cortez,9
+2026-08-18,Women's Flyweight,Miranda Maverick,10
+2026-08-18,Women's Flyweight,Karine Silva,11
+2026-08-18,Women's Flyweight,Casey O'Neill,12
+2026-08-18,Women's Flyweight,Eduarda Moura,13
+2026-08-18,Women's Flyweight,JJ Aldrich,14
+2026-08-18,Women's Flyweight,Gabriella Fernandes,15
+2026-08-18,Women's Bantamweight,Kayla Harrison,0
+2026-08-18,Women's Bantamweight,Julianna Pena,1
+2026-08-18,Women's Bantamweight,Raquel Pennington,2
+2026-08-18,Women's Bantamweight,Joselyne Edwards,3
+2026-08-18,Women's Bantamweight,Norma Dumont,4
+2026-08-18,Women's Bantamweight,Ailin Perez,5
+2026-08-18,Women's Bantamweight,Yana Santos,6
+2026-08-18,Women's Bantamweight,Luana Santos,7
+2026-08-18,Women's Bantamweight,Macy Chiasson,8
+2026-08-18,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-08-18,Women's Bantamweight,Karol Rosa,10
+2026-08-18,Women's Bantamweight,Bia Mesquita,11
+2026-08-18,Women's Bantamweight,Michelle Montague,12
+2026-08-18,Women's Bantamweight,Nora Cornolle,13
+2026-08-18,Women's Bantamweight,Miesha Tate,14
+2026-08-18,Women's Bantamweight,Melissa Croden,15
+2026-08-18,Men's Pound-for-Pound,Islam Makhachev,1
+2026-08-18,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-08-18,Men's Pound-for-Pound,Petr Yan,3
+2026-08-18,Men's Pound-for-Pound,Justin Gaethje,4
+2026-08-18,Men's Pound-for-Pound,Ilia Topuria,5
+2026-08-18,Men's Pound-for-Pound,Tom Aspinall,6
+2026-08-18,Men's Pound-for-Pound,Sean Strickland,7
+2026-08-18,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-08-18,Men's Pound-for-Pound,Alex Pereira,9
+2026-08-18,Men's Pound-for-Pound,Ciryl Gane,10
+2026-08-18,Men's Pound-for-Pound,Joshua Van,11
+2026-08-18,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-08-18,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-08-18,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-08-18,Men's Pound-for-Pound,Charles Oliveira,15
+2026-08-18,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-08-18,Women's Pound-for-Pound,Kayla Harrison,2
+2026-08-18,Women's Pound-for-Pound,Zhang Weili,3
+2026-08-18,Women's Pound-for-Pound,Natalia Silva,4
+2026-08-18,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-08-18,Women's Pound-for-Pound,Manon Fiorot,6
+2026-08-18,Women's Pound-for-Pound,Alexa Grasso,7
+2026-08-18,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-08-18,Women's Pound-for-Pound,Julianna Pena,9
+2026-08-18,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-08-18,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-08-18,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-08-18,Women's Pound-for-Pound,Raquel Pennington,13
+2026-08-18,Women's Pound-for-Pound,Rose Namajunas,14
+2026-08-18,Women's Pound-for-Pound,Maycee Barber,15
+2026-08-25,Flyweight,Joshua Van,0
+2026-08-25,Flyweight,Alexandre Pantoja,1
+2026-08-25,Flyweight,Manel Kape,2
+2026-08-25,Flyweight,Brandon Royval,3
+2026-08-25,Flyweight,Tatsuro Taira,4
+2026-08-25,Flyweight,Kyoji Horiguchi,5
+2026-08-25,Flyweight,Lone'er Kavanagh,6
+2026-08-25,Flyweight,Asu Almabayev,7
+2026-08-25,Flyweight,Brandon Moreno,8
+2026-08-25,Flyweight,Amir Albazi,9
+2026-08-25,Flyweight,Ramazan Temirov,10
+2026-08-25,Flyweight,Alex Perez,11
+2026-08-25,Flyweight,Steve Erceg,12
+2026-08-25,Flyweight,Tim Elliott,13
+2026-08-25,Flyweight,Tagir Ulanbekov,14
+2026-08-25,Flyweight,Charles Johnson,15
+2026-08-25,Bantamweight,Petr Yan,0
+2026-08-25,Bantamweight,Merab Dvalishvili,1
+2026-08-25,Bantamweight,Sean O'Malley,2
+2026-08-25,Bantamweight,Umar Nurmagomedov,3
+2026-08-25,Bantamweight,Mario Bautista,4
+2026-08-25,Bantamweight,Cory Sandhagen,5
+2026-08-25,Bantamweight,Song Yadong,6
+2026-08-25,Bantamweight,Aiemann Zahabi,7
+2026-08-25,Bantamweight,David Martinez,8
+2026-08-25,Bantamweight,Deiveson Figueiredo,9
+2026-08-25,Bantamweight,Marlon Vera,10
+2026-08-25,Bantamweight,Payton Talbott,11
+2026-08-25,Bantamweight,Raul Rosas Jr.,12
+2026-08-25,Bantamweight,Raoni Barcelos,13
+2026-08-25,Bantamweight,Farid Basharat,14
+2026-08-25,Bantamweight,Marcus McGhee,15
+2026-08-25,Featherweight,Alexander Volkanovski,0
+2026-08-25,Featherweight,Movsar Evloev,1
+2026-08-25,Featherweight,Diego Lopes,2
+2026-08-25,Featherweight,Lerone Murphy,3
+2026-08-25,Featherweight,Aljamain Sterling,4
+2026-08-25,Featherweight,Yair Rodriguez,5
+2026-08-25,Featherweight,Jean Silva,6
+2026-08-25,Featherweight,Arnold Allen,7
+2026-08-25,Featherweight,Youssef Zalal,8
+2026-08-25,Featherweight,Kevin Vallejos,9
+2026-08-25,Featherweight,Steve Garcia,10
+2026-08-25,Featherweight,Brian Ortega,11
+2026-08-25,Featherweight,Aaron Pico,12
+2026-08-25,Featherweight,Melquizael Costa,13
+2026-08-25,Featherweight,David Onama,14
+2026-08-25,Featherweight,Patricio Freire,15
+2026-08-25,Lightweight,Justin Gaethje,0
+2026-08-25,Lightweight,Ilia Topuria,1
+2026-08-25,Lightweight,Arman Tsarukyan,2
+2026-08-25,Lightweight,Charles Oliveira,3
+2026-08-25,Lightweight,Max Holloway,4
+2026-08-25,Lightweight,Paddy Pimblett,5
+2026-08-25,Lightweight,Benoit Saint Denis,6
+2026-08-25,Lightweight,Mauricio Ruffy,7
+2026-08-25,Lightweight,Quillan Salkilld,8
+2026-08-25,Lightweight,Mateusz Gamrot,9
+2026-08-25,Lightweight,Dan Hooker,10
+2026-08-25,Lightweight,Renato Moicano,11
+2026-08-25,Lightweight,Rafael Fiziev,12
+2026-08-25,Lightweight,Tom Nolan,13
+2026-08-25,Lightweight,Beneil Dariush,14
+2026-08-25,Lightweight,Manuel Torres,15
+2026-08-25,Welterweight,Islam Makhachev,0
+2026-08-25,Welterweight,Ian Machado Garry,1
+2026-08-25,Welterweight,Carlos Prates,2
+2026-08-25,Welterweight,Michael Morales,3
+2026-08-25,Welterweight,Jack Della Maddalena,4
+2026-08-25,Welterweight,Gabriel Bonfim,5
+2026-08-25,Welterweight,Sean Brady,6
+2026-08-25,Welterweight,Belal Muhammad,7
+2026-08-25,Welterweight,Leon Edwards,8
+2026-08-25,Welterweight,Kamaru Usman,9
+2026-08-25,Welterweight,Joaquin Buckley,10
+2026-08-25,Welterweight,Yaroslav Amosov,11
+2026-08-25,Welterweight,Uros Medic,12
+2026-08-25,Welterweight,Mike Malott,13
+2026-08-25,Welterweight,Daniel Rodriguez,14
+2026-08-25,Welterweight,Neil Magny,15
+2026-08-25,Middleweight,Sean Strickland,0
+2026-08-25,Middleweight,Khamzat Chimaev,1
+2026-08-25,Middleweight,Dricus Du Plessis,2
+2026-08-25,Middleweight,Nassourdine Imavov,3
+2026-08-25,Middleweight,Brendan Allen,4
+2026-08-25,Middleweight,Caio Borralho,5
+2026-08-25,Middleweight,Joe Pyfer,6
+2026-08-25,Middleweight,Gregory Rodrigues,7
+2026-08-25,Middleweight,Anthony Hernandez,8
+2026-08-25,Middleweight,Israel Adesanya,9
+2026-08-25,Middleweight,Christian Leroy Duncan,10
+2026-08-25,Middleweight,Jared Cannonier,11
+2026-08-25,Middleweight,Ikram Aliskerov,12
+2026-08-25,Middleweight,Bo Nickal,13
+2026-08-25,Middleweight,Abus Magomedov,14
+2026-08-25,Middleweight,Michael Page,15
+2026-08-25,Light Heavyweight,Carlos Ulberg,0
+2026-08-25,Light Heavyweight,Magomed Ankalaev,1
+2026-08-25,Light Heavyweight,Jiri Prochazka,2
+2026-08-25,Light Heavyweight,Alex Pereira,3
+2026-08-25,Light Heavyweight,Khalil Rountree Jr.,4
+2026-08-25,Light Heavyweight,Navajo Stirling,5
+2026-08-25,Light Heavyweight,Paulo Costa,6
+2026-08-25,Light Heavyweight,Jamahal Hill,7
+2026-08-25,Light Heavyweight,Azamat Murzakanov,8
+2026-08-25,Light Heavyweight,Jan Blachowicz,9
+2026-08-25,Light Heavyweight,Dominick Reyes,10
+2026-08-25,Light Heavyweight,Bogdan Guskov,11
+2026-08-25,Light Heavyweight,Robert Whittaker,12
+2026-08-25,Light Heavyweight,Johnny Walker,13
+2026-08-25,Light Heavyweight,Alonzo Menifield,14
+2026-08-25,Light Heavyweight,Nikita Krylov,15
+2026-08-25,Heavyweight,Tom Aspinall,0
+2026-08-25,Heavyweight,Ciryl Gane,1
+2026-08-25,Heavyweight,Alexander Volkov,2
+2026-08-25,Heavyweight,Sergei Pavlovich,3
+2026-08-25,Heavyweight,Josh Hokit,4
+2026-08-25,Heavyweight,Waldo Cortes-Acosta,5
+2026-08-25,Heavyweight,Curtis Blaydes,6
+2026-08-25,Heavyweight,Rizvan Kuniev,7
+2026-08-25,Heavyweight,Vitor Petrino,8
+2026-08-25,Heavyweight,Serghei Spivac,9
+2026-08-25,Heavyweight,Ante Delija,10
+2026-08-25,Heavyweight,Valter Walker,11
+2026-08-25,Heavyweight,Derrick Lewis,12
+2026-08-25,Heavyweight,Aleksandar Rakic,13
+2026-08-25,Heavyweight,Tyrell Fortune,14
+2026-08-25,Heavyweight,Marcin Tybura,15
+2026-08-25,Women's Strawweight,Mackenzie Dern,0
+2026-08-25,Women's Strawweight,Zhang Weili,1
+2026-08-25,Women's Strawweight,Tatiana Suarez,2
+2026-08-25,Women's Strawweight,Virna Jandiroba,3
+2026-08-25,Women's Strawweight,Yan Xiaonan,4
+2026-08-25,Women's Strawweight,Gillian Robertson,5
+2026-08-25,Women's Strawweight,Fatima Kline,6
+2026-08-25,Women's Strawweight,Loopy Godinez,7
+2026-08-25,Women's Strawweight,Alexia Thainara,8
+2026-08-25,Women's Strawweight,Jessica Andrade,9
+2026-08-25,Women's Strawweight,Tabatha Ricci,10
+2026-08-25,Women's Strawweight,Amanda Lemos,11
+2026-08-25,Women's Strawweight,Amanda Ribas,12
+2026-08-25,Women's Strawweight,Angela Hill,13
+2026-08-25,Women's Strawweight,Denise Gomes,14
+2026-08-25,Women's Strawweight,Mizuki,15
+2026-08-25,Women's Flyweight,Valentina Shevchenko,0
+2026-08-25,Women's Flyweight,Natalia Silva,1
+2026-08-25,Women's Flyweight,Manon Fiorot,2
+2026-08-25,Women's Flyweight,Alexa Grasso,3
+2026-08-25,Women's Flyweight,Erin Blanchfield,4
+2026-08-25,Women's Flyweight,Rose Namajunas,5
+2026-08-25,Women's Flyweight,Maycee Barber,6
+2026-08-25,Women's Flyweight,Jasmine Jasudavicius,7
+2026-08-25,Women's Flyweight,Wang Cong,8
+2026-08-25,Women's Flyweight,Tracy Cortez,9
+2026-08-25,Women's Flyweight,Miranda Maverick,10
+2026-08-25,Women's Flyweight,Karine Silva,11
+2026-08-25,Women's Flyweight,Casey O'Neill,12
+2026-08-25,Women's Flyweight,Eduarda Moura,13
+2026-08-25,Women's Flyweight,Gabriella Fernandes,14
+2026-08-25,Women's Flyweight,JJ Aldrich,15
+2026-08-25,Women's Bantamweight,Kayla Harrison,0
+2026-08-25,Women's Bantamweight,Julianna Pena,1
+2026-08-25,Women's Bantamweight,Raquel Pennington,2
+2026-08-25,Women's Bantamweight,Joselyne Edwards,3
+2026-08-25,Women's Bantamweight,Norma Dumont,4
+2026-08-25,Women's Bantamweight,Ailin Perez,5
+2026-08-25,Women's Bantamweight,Yana Santos,6
+2026-08-25,Women's Bantamweight,Luana Santos,7
+2026-08-25,Women's Bantamweight,Macy Chiasson,8
+2026-08-25,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-08-25,Women's Bantamweight,Karol Rosa,10
+2026-08-25,Women's Bantamweight,Bia Mesquita,11
+2026-08-25,Women's Bantamweight,Michelle Montague,12
+2026-08-25,Women's Bantamweight,Nora Cornolle,13
+2026-08-25,Women's Bantamweight,Miesha Tate,14
+2026-08-25,Women's Bantamweight,Melissa Croden,15
+2026-08-25,Men's Pound-for-Pound,Islam Makhachev,1
+2026-08-25,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-08-25,Men's Pound-for-Pound,Petr Yan,3
+2026-08-25,Men's Pound-for-Pound,Justin Gaethje,4
+2026-08-25,Men's Pound-for-Pound,Ilia Topuria,5
+2026-08-25,Men's Pound-for-Pound,Tom Aspinall,6
+2026-08-25,Men's Pound-for-Pound,Sean Strickland,7
+2026-08-25,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-08-25,Men's Pound-for-Pound,Alex Pereira,9
+2026-08-25,Men's Pound-for-Pound,Ciryl Gane,10
+2026-08-25,Men's Pound-for-Pound,Joshua Van,11
+2026-08-25,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-08-25,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-08-25,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-08-25,Men's Pound-for-Pound,Charles Oliveira,15
+2026-08-25,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-08-25,Women's Pound-for-Pound,Kayla Harrison,2
+2026-08-25,Women's Pound-for-Pound,Zhang Weili,3
+2026-08-25,Women's Pound-for-Pound,Natalia Silva,4
+2026-08-25,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-08-25,Women's Pound-for-Pound,Manon Fiorot,6
+2026-08-25,Women's Pound-for-Pound,Alexa Grasso,7
+2026-08-25,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-08-25,Women's Pound-for-Pound,Julianna Pena,9
+2026-08-25,Women's Pound-for-Pound,Tatiana Suarez,10
+2026-08-25,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-08-25,Women's Pound-for-Pound,Yan Xiaonan,12
+2026-08-25,Women's Pound-for-Pound,Raquel Pennington,13
+2026-08-25,Women's Pound-for-Pound,Rose Namajunas,14
+2026-08-25,Women's Pound-for-Pound,Maycee Barber,15
+2026-09-01,Flyweight,Joshua Van,0
+2026-09-01,Flyweight,Alexandre Pantoja,1
+2026-09-01,Flyweight,Manel Kape,2
+2026-09-01,Flyweight,Brandon Royval,3
+2026-09-01,Flyweight,Tatsuro Taira,4
+2026-09-01,Flyweight,Kyoji Horiguchi,5
+2026-09-01,Flyweight,Lone'er Kavanagh,6
+2026-09-01,Flyweight,Asu Almabayev,7
+2026-09-01,Flyweight,Brandon Moreno,8
+2026-09-01,Flyweight,Amir Albazi,9
+2026-09-01,Flyweight,Ramazan Temirov,10
+2026-09-01,Flyweight,Steve Erceg,11
+2026-09-01,Flyweight,Tim Elliott,12
+2026-09-01,Flyweight,Sumudaerji,13
+2026-09-01,Flyweight,Tagir Ulanbekov,14
+2026-09-01,Flyweight,Alex Perez,15
+2026-09-01,Bantamweight,Petr Yan,0
+2026-09-01,Bantamweight,Merab Dvalishvili,1
+2026-09-01,Bantamweight,Sean O'Malley,2
+2026-09-01,Bantamweight,Song Yadong,3
+2026-09-01,Bantamweight,Umar Nurmagomedov,4
+2026-09-01,Bantamweight,Mario Bautista,5
+2026-09-01,Bantamweight,Cory Sandhagen,6
+2026-09-01,Bantamweight,Aiemann Zahabi,7
+2026-09-01,Bantamweight,David Martinez,8
+2026-09-01,Bantamweight,Deiveson Figueiredo,9
+2026-09-01,Bantamweight,Marlon Vera,10
+2026-09-01,Bantamweight,Payton Talbott,11
+2026-09-01,Bantamweight,Raul Rosas Jr.,12
+2026-09-01,Bantamweight,Raoni Barcelos,13
+2026-09-01,Bantamweight,Farid Basharat,14
+2026-09-01,Bantamweight,Marcus McGhee,15
+2026-09-01,Featherweight,Alexander Volkanovski,0
+2026-09-01,Featherweight,Movsar Evloev,1
+2026-09-01,Featherweight,Diego Lopes,2
+2026-09-01,Featherweight,Lerone Murphy,3
+2026-09-01,Featherweight,Aljamain Sterling,4
+2026-09-01,Featherweight,Yair Rodriguez,5
+2026-09-01,Featherweight,Jean Silva,6
+2026-09-01,Featherweight,Arnold Allen,7
+2026-09-01,Featherweight,Youssef Zalal,8
+2026-09-01,Featherweight,Kevin Vallejos,9
+2026-09-01,Featherweight,Steve Garcia,10
+2026-09-01,Featherweight,Brian Ortega,11
+2026-09-01,Featherweight,Aaron Pico,12
+2026-09-01,Featherweight,Melquizael Costa,13
+2026-09-01,Featherweight,David Onama,14
+2026-09-01,Featherweight,Patricio Freire,15
+2026-09-01,Lightweight,Justin Gaethje,0
+2026-09-01,Lightweight,Ilia Topuria,1
+2026-09-01,Lightweight,Arman Tsarukyan,2
+2026-09-01,Lightweight,Charles Oliveira,3
+2026-09-01,Lightweight,Max Holloway,4
+2026-09-01,Lightweight,Paddy Pimblett,5
+2026-09-01,Lightweight,Benoit Saint Denis,6
+2026-09-01,Lightweight,Mauricio Ruffy,7
+2026-09-01,Lightweight,Quillan Salkilld,8
+2026-09-01,Lightweight,Mateusz Gamrot,9
+2026-09-01,Lightweight,Dan Hooker,10
+2026-09-01,Lightweight,Renato Moicano,11
+2026-09-01,Lightweight,Rafael Fiziev,12
+2026-09-01,Lightweight,Tom Nolan,13
+2026-09-01,Lightweight,Beneil Dariush,14
+2026-09-01,Lightweight,Manuel Torres,15
+2026-09-01,Welterweight,Islam Makhachev,0
+2026-09-01,Welterweight,Ian Machado Garry,1
+2026-09-01,Welterweight,Carlos Prates,2
+2026-09-01,Welterweight,Michael Morales,3
+2026-09-01,Welterweight,Jack Della Maddalena,4
+2026-09-01,Welterweight,Gabriel Bonfim,5
+2026-09-01,Welterweight,Sean Brady,6
+2026-09-01,Welterweight,Belal Muhammad,7
+2026-09-01,Welterweight,Leon Edwards,8
+2026-09-01,Welterweight,Kamaru Usman,9
+2026-09-01,Welterweight,Joaquin Buckley,10
+2026-09-01,Welterweight,Yaroslav Amosov,11
+2026-09-01,Welterweight,Uros Medic,12
+2026-09-01,Welterweight,Mike Malott,13
+2026-09-01,Welterweight,Daniel Rodriguez,14
+2026-09-01,Welterweight,Neil Magny,15
+2026-09-01,Middleweight,Sean Strickland,0
+2026-09-01,Middleweight,Khamzat Chimaev,1
+2026-09-01,Middleweight,Dricus Du Plessis,2
+2026-09-01,Middleweight,Nassourdine Imavov,3
+2026-09-01,Middleweight,Brendan Allen,4
+2026-09-01,Middleweight,Caio Borralho,5
+2026-09-01,Middleweight,Joe Pyfer,6
+2026-09-01,Middleweight,Gregory Rodrigues,7
+2026-09-01,Middleweight,Anthony Hernandez,8
+2026-09-01,Middleweight,Israel Adesanya,9
+2026-09-01,Middleweight,Christian Leroy Duncan,10
+2026-09-01,Middleweight,Jared Cannonier,11
+2026-09-01,Middleweight,Ikram Aliskerov,12
+2026-09-01,Middleweight,Bo Nickal,13
+2026-09-01,Middleweight,Abus Magomedov,14
+2026-09-01,Middleweight,Michael Page,15
+2026-09-01,Light Heavyweight,Carlos Ulberg,0
+2026-09-01,Light Heavyweight,Magomed Ankalaev,1
+2026-09-01,Light Heavyweight,Jiri Prochazka,2
+2026-09-01,Light Heavyweight,Alex Pereira,3
+2026-09-01,Light Heavyweight,Khalil Rountree Jr.,4
+2026-09-01,Light Heavyweight,Navajo Stirling,5
+2026-09-01,Light Heavyweight,Paulo Costa,6
+2026-09-01,Light Heavyweight,Jamahal Hill,7
+2026-09-01,Light Heavyweight,Azamat Murzakanov,8
+2026-09-01,Light Heavyweight,Jan Blachowicz,9
+2026-09-01,Light Heavyweight,Dominick Reyes,10
+2026-09-01,Light Heavyweight,Bogdan Guskov,11
+2026-09-01,Light Heavyweight,Robert Whittaker,12
+2026-09-01,Light Heavyweight,Johnny Walker,13
+2026-09-01,Light Heavyweight,Alonzo Menifield,14
+2026-09-01,Light Heavyweight,Nikita Krylov,15
+2026-09-01,Heavyweight,Tom Aspinall,0
+2026-09-01,Heavyweight,Ciryl Gane,1
+2026-09-01,Heavyweight,Alexander Volkov,2
+2026-09-01,Heavyweight,Sergei Pavlovich,3
+2026-09-01,Heavyweight,Josh Hokit,4
+2026-09-01,Heavyweight,Waldo Cortes-Acosta,5
+2026-09-01,Heavyweight,Curtis Blaydes,6
+2026-09-01,Heavyweight,Rizvan Kuniev,7
+2026-09-01,Heavyweight,Vitor Petrino,8
+2026-09-01,Heavyweight,Serghei Spivac,9
+2026-09-01,Heavyweight,Ante Delija,10
+2026-09-01,Heavyweight,Valter Walker,11
+2026-09-01,Heavyweight,Derrick Lewis,12
+2026-09-01,Heavyweight,Aleksandar Rakic,13
+2026-09-01,Heavyweight,Tyrell Fortune,14
+2026-09-01,Heavyweight,Marcin Tybura,15
+2026-09-01,Women's Strawweight,Mackenzie Dern,0
+2026-09-01,Women's Strawweight,Zhang Weili,1
+2026-09-01,Women's Strawweight,Tatiana Suarez,2
+2026-09-01,Women's Strawweight,Virna Jandiroba,3
+2026-09-01,Women's Strawweight,Gillian Robertson,4
+2026-09-01,Women's Strawweight,Yan Xiaonan,5
+2026-09-01,Women's Strawweight,Fatima Kline,6
+2026-09-01,Women's Strawweight,Denise Gomes,7
+2026-09-01,Women's Strawweight,Loopy Godinez,8
+2026-09-01,Women's Strawweight,Alexia Thainara,9
+2026-09-01,Women's Strawweight,Jessica Andrade,10
+2026-09-01,Women's Strawweight,Tabatha Ricci,11
+2026-09-01,Women's Strawweight,Amanda Lemos,12
+2026-09-01,Women's Strawweight,Amanda Ribas,13
+2026-09-01,Women's Strawweight,Angela Hill,14
+2026-09-01,Women's Strawweight,Mizuki,15
+2026-09-01,Women's Flyweight,Valentina Shevchenko,0
+2026-09-01,Women's Flyweight,Natalia Silva,1
+2026-09-01,Women's Flyweight,Manon Fiorot,2
+2026-09-01,Women's Flyweight,Alexa Grasso,3
+2026-09-01,Women's Flyweight,Erin Blanchfield,4
+2026-09-01,Women's Flyweight,Rose Namajunas,5
+2026-09-01,Women's Flyweight,Maycee Barber,6
+2026-09-01,Women's Flyweight,Jasmine Jasudavicius,7
+2026-09-01,Women's Flyweight,Wang Cong,8
+2026-09-01,Women's Flyweight,Tracy Cortez,9
+2026-09-01,Women's Flyweight,Miranda Maverick,10
+2026-09-01,Women's Flyweight,Karine Silva,11
+2026-09-01,Women's Flyweight,Casey O'Neill,12
+2026-09-01,Women's Flyweight,Eduarda Moura,13
+2026-09-01,Women's Flyweight,Gabriella Fernandes,14
+2026-09-01,Women's Flyweight,JJ Aldrich,15
+2026-09-01,Women's Bantamweight,Kayla Harrison,0
+2026-09-01,Women's Bantamweight,Julianna Pena,1
+2026-09-01,Women's Bantamweight,Raquel Pennington,2
+2026-09-01,Women's Bantamweight,Joselyne Edwards,3
+2026-09-01,Women's Bantamweight,Norma Dumont,4
+2026-09-01,Women's Bantamweight,Ailin Perez,5
+2026-09-01,Women's Bantamweight,Yana Santos,6
+2026-09-01,Women's Bantamweight,Luana Santos,7
+2026-09-01,Women's Bantamweight,Macy Chiasson,8
+2026-09-01,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-09-01,Women's Bantamweight,Karol Rosa,10
+2026-09-01,Women's Bantamweight,Bia Mesquita,11
+2026-09-01,Women's Bantamweight,Michelle Montague,12
+2026-09-01,Women's Bantamweight,Nora Cornolle,13
+2026-09-01,Women's Bantamweight,Miesha Tate,14
+2026-09-01,Women's Bantamweight,Melissa Croden,15
+2026-09-01,Men's Pound-for-Pound,Islam Makhachev,1
+2026-09-01,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-09-01,Men's Pound-for-Pound,Petr Yan,3
+2026-09-01,Men's Pound-for-Pound,Justin Gaethje,4
+2026-09-01,Men's Pound-for-Pound,Ilia Topuria,5
+2026-09-01,Men's Pound-for-Pound,Tom Aspinall,6
+2026-09-01,Men's Pound-for-Pound,Sean Strickland,7
+2026-09-01,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-09-01,Men's Pound-for-Pound,Alex Pereira,9
+2026-09-01,Men's Pound-for-Pound,Ciryl Gane,10
+2026-09-01,Men's Pound-for-Pound,Joshua Van,10
+2026-09-01,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-09-01,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-09-01,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-09-01,Men's Pound-for-Pound,Charles Oliveira,15
+2026-09-01,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-09-01,Women's Pound-for-Pound,Kayla Harrison,2
+2026-09-01,Women's Pound-for-Pound,Zhang Weili,3
+2026-09-01,Women's Pound-for-Pound,Natalia Silva,4
+2026-09-01,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-09-01,Women's Pound-for-Pound,Manon Fiorot,6
+2026-09-01,Women's Pound-for-Pound,Alexa Grasso,7
+2026-09-01,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-09-01,Women's Pound-for-Pound,Tatiana Suarez,9
+2026-09-01,Women's Pound-for-Pound,Julianna Pena,10
+2026-09-01,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-09-01,Women's Pound-for-Pound,Rose Namajunas,12
+2026-09-01,Women's Pound-for-Pound,Raquel Pennington,13
+2026-09-01,Women's Pound-for-Pound,Yan Xiaonan,14
+2026-09-01,Women's Pound-for-Pound,Maycee Barber,15
+2026-09-08,Flyweight,Joshua Van,0
+2026-09-08,Flyweight,Alexandre Pantoja,1
+2026-09-08,Flyweight,Manel Kape,2
+2026-09-08,Flyweight,Brandon Royval,3
+2026-09-08,Flyweight,Tatsuro Taira,4
+2026-09-08,Flyweight,Kyoji Horiguchi,5
+2026-09-08,Flyweight,Lone'er Kavanagh,6
+2026-09-08,Flyweight,Asu Almabayev,7
+2026-09-08,Flyweight,Brandon Moreno,8
+2026-09-08,Flyweight,Amir Albazi,9
+2026-09-08,Flyweight,Ramazan Temirov,10
+2026-09-08,Flyweight,Steve Erceg,11
+2026-09-08,Flyweight,Tim Elliott,12
+2026-09-08,Flyweight,Sumudaerji,13
+2026-09-08,Flyweight,Tagir Ulanbekov,14
+2026-09-08,Flyweight,Alex Perez,15
+2026-09-08,Bantamweight,Petr Yan,0
+2026-09-08,Bantamweight,Merab Dvalishvili,1
+2026-09-08,Bantamweight,Sean O'Malley,2
+2026-09-08,Bantamweight,Song Yadong,3
+2026-09-08,Bantamweight,Umar Nurmagomedov,4
+2026-09-08,Bantamweight,Mario Bautista,5
+2026-09-08,Bantamweight,Cory Sandhagen,6
+2026-09-08,Bantamweight,Aiemann Zahabi,7
+2026-09-08,Bantamweight,David Martinez,8
+2026-09-08,Bantamweight,Deiveson Figueiredo,9
+2026-09-08,Bantamweight,Marlon Vera,10
+2026-09-08,Bantamweight,Payton Talbott,11
+2026-09-08,Bantamweight,Raul Rosas Jr.,12
+2026-09-08,Bantamweight,Raoni Barcelos,13
+2026-09-08,Bantamweight,Farid Basharat,14
+2026-09-08,Bantamweight,Marcus McGhee,15
+2026-09-08,Featherweight,Alexander Volkanovski,0
+2026-09-08,Featherweight,Movsar Evloev,1
+2026-09-08,Featherweight,Diego Lopes,2
+2026-09-08,Featherweight,Lerone Murphy,3
+2026-09-08,Featherweight,Aljamain Sterling,4
+2026-09-08,Featherweight,Yair Rodriguez,5
+2026-09-08,Featherweight,Jean Silva,6
+2026-09-08,Featherweight,Arnold Allen,7
+2026-09-08,Featherweight,Youssef Zalal,8
+2026-09-08,Featherweight,Kevin Vallejos,9
+2026-09-08,Featherweight,Steve Garcia,10
+2026-09-08,Featherweight,Brian Ortega,11
+2026-09-08,Featherweight,Aaron Pico,12
+2026-09-08,Featherweight,Melquizael Costa,13
+2026-09-08,Featherweight,David Onama,14
+2026-09-08,Featherweight,Patricio Freire,15
+2026-09-08,Lightweight,Justin Gaethje,0
+2026-09-08,Lightweight,Ilia Topuria,1
+2026-09-08,Lightweight,Arman Tsarukyan,2
+2026-09-08,Lightweight,Charles Oliveira,3
+2026-09-08,Lightweight,Max Holloway,4
+2026-09-08,Lightweight,Paddy Pimblett,5
+2026-09-08,Lightweight,Benoit Saint Denis,6
+2026-09-08,Lightweight,Mauricio Ruffy,7
+2026-09-08,Lightweight,Quillan Salkilld,8
+2026-09-08,Lightweight,Salahdine Parnasse,9
+2026-09-08,Lightweight,Rafael Fiziev,10
+2026-09-08,Lightweight,Renato Moicano,11
+2026-09-08,Lightweight,Mateusz Gamrot,11
+2026-09-08,Lightweight,Dan Hooker,13
+2026-09-08,Lightweight,Tom Nolan,14
+2026-09-08,Lightweight,Beneil Dariush,15
+2026-09-08,Welterweight,Islam Makhachev,0
+2026-09-08,Welterweight,Ian Machado Garry,1
+2026-09-08,Welterweight,Carlos Prates,2
+2026-09-08,Welterweight,Michael Morales,3
+2026-09-08,Welterweight,Jack Della Maddalena,4
+2026-09-08,Welterweight,Gabriel Bonfim,5
+2026-09-08,Welterweight,Sean Brady,6
+2026-09-08,Welterweight,Belal Muhammad,7
+2026-09-08,Welterweight,Leon Edwards,8
+2026-09-08,Welterweight,Kamaru Usman,9
+2026-09-08,Welterweight,Joaquin Buckley,10
+2026-09-08,Welterweight,Yaroslav Amosov,11
+2026-09-08,Welterweight,Uros Medic,12
+2026-09-08,Welterweight,Mike Malott,13
+2026-09-08,Welterweight,Daniel Rodriguez,14
+2026-09-08,Welterweight,Neil Magny,15
+2026-09-08,Middleweight,Sean Strickland,0
+2026-09-08,Middleweight,Khamzat Chimaev,1
+2026-09-08,Middleweight,Dricus Du Plessis,2
+2026-09-08,Middleweight,Nassourdine Imavov,3
+2026-09-08,Middleweight,Brendan Allen,4
+2026-09-08,Middleweight,Caio Borralho,5
+2026-09-08,Middleweight,Joe Pyfer,6
+2026-09-08,Middleweight,Gregory Rodrigues,7
+2026-09-08,Middleweight,Anthony Hernandez,8
+2026-09-08,Middleweight,Israel Adesanya,9
+2026-09-08,Middleweight,Christian Leroy Duncan,10
+2026-09-08,Middleweight,Jared Cannonier,11
+2026-09-08,Middleweight,Abus Magomedov,12
+2026-09-08,Middleweight,Ikram Aliskerov,13
+2026-09-08,Middleweight,Bo Nickal,14
+2026-09-08,Middleweight,Shara Magomedov,15
+2026-09-08,Light Heavyweight,Carlos Ulberg,0
+2026-09-08,Light Heavyweight,Magomed Ankalaev,1
+2026-09-08,Light Heavyweight,Jiri Prochazka,2
+2026-09-08,Light Heavyweight,Alex Pereira,3
+2026-09-08,Light Heavyweight,Khalil Rountree Jr.,4
+2026-09-08,Light Heavyweight,Navajo Stirling,5
+2026-09-08,Light Heavyweight,Paulo Costa,6
+2026-09-08,Light Heavyweight,Jamahal Hill,7
+2026-09-08,Light Heavyweight,Azamat Murzakanov,8
+2026-09-08,Light Heavyweight,Jan Blachowicz,9
+2026-09-08,Light Heavyweight,Dominick Reyes,10
+2026-09-08,Light Heavyweight,Bogdan Guskov,11
+2026-09-08,Light Heavyweight,Robert Whittaker,12
+2026-09-08,Light Heavyweight,Johnny Walker,13
+2026-09-08,Light Heavyweight,Alonzo Menifield,14
+2026-09-08,Light Heavyweight,Nikita Krylov,15
+2026-09-08,Heavyweight,Tom Aspinall,0
+2026-09-08,Heavyweight,Ciryl Gane,1
+2026-09-08,Heavyweight,Alexander Volkov,2
+2026-09-08,Heavyweight,Sergei Pavlovich,3
+2026-09-08,Heavyweight,Josh Hokit,4
+2026-09-08,Heavyweight,Waldo Cortes-Acosta,5
+2026-09-08,Heavyweight,Curtis Blaydes,6
+2026-09-08,Heavyweight,Rizvan Kuniev,7
+2026-09-08,Heavyweight,Vitor Petrino,8
+2026-09-08,Heavyweight,Serghei Spivac,9
+2026-09-08,Heavyweight,Ante Delija,10
+2026-09-08,Heavyweight,Valter Walker,11
+2026-09-08,Heavyweight,Tyrell Fortune,12
+2026-09-08,Heavyweight,Derrick Lewis,13
+2026-09-08,Heavyweight,Mario Pinto,14
+2026-09-08,Heavyweight,Aleksandar Rakic,15
+2026-09-08,Women's Strawweight,Mackenzie Dern,0
+2026-09-08,Women's Strawweight,Zhang Weili,1
+2026-09-08,Women's Strawweight,Tatiana Suarez,2
+2026-09-08,Women's Strawweight,Virna Jandiroba,3
+2026-09-08,Women's Strawweight,Denise Gomes,4
+2026-09-08,Women's Strawweight,Gillian Robertson,5
+2026-09-08,Women's Strawweight,Yan Xiaonan,6
+2026-09-08,Women's Strawweight,Fatima Kline,7
+2026-09-08,Women's Strawweight,Loopy Godinez,8
+2026-09-08,Women's Strawweight,Alexia Thainara,9
+2026-09-08,Women's Strawweight,Jessica Andrade,10
+2026-09-08,Women's Strawweight,Tabatha Ricci,11
+2026-09-08,Women's Strawweight,Amanda Lemos,12
+2026-09-08,Women's Strawweight,Amanda Ribas,13
+2026-09-08,Women's Strawweight,Angela Hill,14
+2026-09-08,Women's Strawweight,Mizuki,15
+2026-09-08,Women's Flyweight,Valentina Shevchenko,0
+2026-09-08,Women's Flyweight,Natalia Silva,1
+2026-09-08,Women's Flyweight,Manon Fiorot,2
+2026-09-08,Women's Flyweight,Alexa Grasso,3
+2026-09-08,Women's Flyweight,Erin Blanchfield,4
+2026-09-08,Women's Flyweight,Rose Namajunas,5
+2026-09-08,Women's Flyweight,Maycee Barber,6
+2026-09-08,Women's Flyweight,Jasmine Jasudavicius,7
+2026-09-08,Women's Flyweight,Wang Cong,8
+2026-09-08,Women's Flyweight,Tracy Cortez,9
+2026-09-08,Women's Flyweight,Miranda Maverick,10
+2026-09-08,Women's Flyweight,Karine Silva,11
+2026-09-08,Women's Flyweight,Casey O'Neill,12
+2026-09-08,Women's Flyweight,Eduarda Moura,13
+2026-09-08,Women's Flyweight,Gabriella Fernandes,14
+2026-09-08,Women's Flyweight,JJ Aldrich,15
+2026-09-08,Women's Bantamweight,Kayla Harrison,0
+2026-09-08,Women's Bantamweight,Julianna Pena,1
+2026-09-08,Women's Bantamweight,Raquel Pennington,2
+2026-09-08,Women's Bantamweight,Joselyne Edwards,3
+2026-09-08,Women's Bantamweight,Norma Dumont,4
+2026-09-08,Women's Bantamweight,Ailin Perez,5
+2026-09-08,Women's Bantamweight,Yana Santos,6
+2026-09-08,Women's Bantamweight,Luana Santos,7
+2026-09-08,Women's Bantamweight,Macy Chiasson,8
+2026-09-08,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-09-08,Women's Bantamweight,Karol Rosa,10
+2026-09-08,Women's Bantamweight,Bia Mesquita,11
+2026-09-08,Women's Bantamweight,Michelle Montague,12
+2026-09-08,Women's Bantamweight,Nora Cornolle,13
+2026-09-08,Women's Bantamweight,Miesha Tate,14
+2026-09-08,Women's Bantamweight,Melissa Croden,15
+2026-09-08,Men's Pound-for-Pound,Islam Makhachev,1
+2026-09-08,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-09-08,Men's Pound-for-Pound,Petr Yan,3
+2026-09-08,Men's Pound-for-Pound,Justin Gaethje,4
+2026-09-08,Men's Pound-for-Pound,Ilia Topuria,5
+2026-09-08,Men's Pound-for-Pound,Tom Aspinall,6
+2026-09-08,Men's Pound-for-Pound,Sean Strickland,7
+2026-09-08,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-09-08,Men's Pound-for-Pound,Alex Pereira,9
+2026-09-08,Men's Pound-for-Pound,Joshua Van,10
+2026-09-08,Men's Pound-for-Pound,Ciryl Gane,10
+2026-09-08,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-09-08,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-09-08,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-09-08,Men's Pound-for-Pound,Charles Oliveira,15
+2026-09-08,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-09-08,Women's Pound-for-Pound,Kayla Harrison,2
+2026-09-08,Women's Pound-for-Pound,Zhang Weili,3
+2026-09-08,Women's Pound-for-Pound,Natalia Silva,4
+2026-09-08,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-09-08,Women's Pound-for-Pound,Manon Fiorot,6
+2026-09-08,Women's Pound-for-Pound,Alexa Grasso,7
+2026-09-08,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-09-08,Women's Pound-for-Pound,Tatiana Suarez,9
+2026-09-08,Women's Pound-for-Pound,Julianna Pena,10
+2026-09-08,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-09-08,Women's Pound-for-Pound,Rose Namajunas,12
+2026-09-08,Women's Pound-for-Pound,Raquel Pennington,13
+2026-09-08,Women's Pound-for-Pound,Denise Gomes,14
+2026-09-08,Women's Pound-for-Pound,Maycee Barber,15
+2026-09-15,Flyweight,Joshua Van,0
+2026-09-15,Flyweight,Alexandre Pantoja,1
+2026-09-15,Flyweight,Manel Kape,2
+2026-09-15,Flyweight,Brandon Royval,3
+2026-09-15,Flyweight,Tatsuro Taira,4
+2026-09-15,Flyweight,Kyoji Horiguchi,5
+2026-09-15,Flyweight,Lone'er Kavanagh,6
+2026-09-15,Flyweight,Asu Almabayev,7
+2026-09-15,Flyweight,Brandon Moreno,8
+2026-09-15,Flyweight,Amir Albazi,9
+2026-09-15,Flyweight,Ramazan Temirov,10
+2026-09-15,Flyweight,Tim Elliott,11
+2026-09-15,Flyweight,Steve Erceg,12
+2026-09-15,Flyweight,Sumudaerji,13
+2026-09-15,Flyweight,Tagir Ulanbekov,14
+2026-09-15,Flyweight,Alex Perez,15
+2026-09-15,Bantamweight,Petr Yan,0
+2026-09-15,Bantamweight,Merab Dvalishvili,1
+2026-09-15,Bantamweight,Sean O'Malley,2
+2026-09-15,Bantamweight,Song Yadong,3
+2026-09-15,Bantamweight,Umar Nurmagomedov,4
+2026-09-15,Bantamweight,Mario Bautista,5
+2026-09-15,Bantamweight,Cory Sandhagen,6
+2026-09-15,Bantamweight,Aiemann Zahabi,7
+2026-09-15,Bantamweight,David Martinez,8
+2026-09-15,Bantamweight,Deiveson Figueiredo,9
+2026-09-15,Bantamweight,Marlon Vera,10
+2026-09-15,Bantamweight,Payton Talbott,11
+2026-09-15,Bantamweight,Raul Rosas Jr.,12
+2026-09-15,Bantamweight,Raoni Barcelos,13
+2026-09-15,Bantamweight,Farid Basharat,14
+2026-09-15,Bantamweight,Marcus McGhee,15
+2026-09-15,Featherweight,Alexander Volkanovski,0
+2026-09-15,Featherweight,Movsar Evloev,1
+2026-09-15,Featherweight,Diego Lopes,2
+2026-09-15,Featherweight,Lerone Murphy,3
+2026-09-15,Featherweight,Aljamain Sterling,4
+2026-09-15,Featherweight,Jean Silva,5
+2026-09-15,Featherweight,Yair Rodriguez,6
+2026-09-15,Featherweight,Arnold Allen,7
+2026-09-15,Featherweight,Youssef Zalal,8
+2026-09-15,Featherweight,Kevin Vallejos,9
+2026-09-15,Featherweight,Steve Garcia,10
+2026-09-15,Featherweight,Brian Ortega,11
+2026-09-15,Featherweight,Aaron Pico,12
+2026-09-15,Featherweight,Melquizael Costa,13
+2026-09-15,Featherweight,David Onama,14
+2026-09-15,Featherweight,Patricio Freire,15
+2026-09-15,Lightweight,Justin Gaethje,0
+2026-09-15,Lightweight,Ilia Topuria,1
+2026-09-15,Lightweight,Arman Tsarukyan,2
+2026-09-15,Lightweight,Charles Oliveira,3
+2026-09-15,Lightweight,Max Holloway,4
+2026-09-15,Lightweight,Paddy Pimblett,5
+2026-09-15,Lightweight,Benoit Saint Denis,6
+2026-09-15,Lightweight,Mauricio Ruffy,7
+2026-09-15,Lightweight,Quillan Salkilld,8
+2026-09-15,Lightweight,Salahdine Parnasse,9
+2026-09-15,Lightweight,Rafael Fiziev,10
+2026-09-15,Lightweight,Renato Moicano,11
+2026-09-15,Lightweight,Mateusz Gamrot,11
+2026-09-15,Lightweight,Dan Hooker,13
+2026-09-15,Lightweight,Tom Nolan,14
+2026-09-15,Lightweight,Beneil Dariush,15
+2026-09-15,Welterweight,Islam Makhachev,0
+2026-09-15,Welterweight,Ian Machado Garry,1
+2026-09-15,Welterweight,Carlos Prates,2
+2026-09-15,Welterweight,Michael Morales,3
+2026-09-15,Welterweight,Jack Della Maddalena,4
+2026-09-15,Welterweight,Gabriel Bonfim,5
+2026-09-15,Welterweight,Sean Brady,6
+2026-09-15,Welterweight,Belal Muhammad,7
+2026-09-15,Welterweight,Leon Edwards,8
+2026-09-15,Welterweight,Kamaru Usman,9
+2026-09-15,Welterweight,Joaquin Buckley,10
+2026-09-15,Welterweight,Yaroslav Amosov,11
+2026-09-15,Welterweight,Uros Medic,12
+2026-09-15,Welterweight,Mike Malott,13
+2026-09-15,Welterweight,Daniel Rodriguez,14
+2026-09-15,Welterweight,Neil Magny,15
+2026-09-15,Middleweight,Sean Strickland,0
+2026-09-15,Middleweight,Khamzat Chimaev,1
+2026-09-15,Middleweight,Dricus Du Plessis,2
+2026-09-15,Middleweight,Nassourdine Imavov,3
+2026-09-15,Middleweight,Brendan Allen,4
+2026-09-15,Middleweight,Caio Borralho,5
+2026-09-15,Middleweight,Joe Pyfer,6
+2026-09-15,Middleweight,Gregory Rodrigues,7
+2026-09-15,Middleweight,Anthony Hernandez,8
+2026-09-15,Middleweight,Israel Adesanya,9
+2026-09-15,Middleweight,Christian Leroy Duncan,10
+2026-09-15,Middleweight,Jared Cannonier,11
+2026-09-15,Middleweight,Abus Magomedov,12
+2026-09-15,Middleweight,Ikram Aliskerov,13
+2026-09-15,Middleweight,Bo Nickal,14
+2026-09-15,Middleweight,Shara Magomedov,15
+2026-09-15,Light Heavyweight,Carlos Ulberg,0
+2026-09-15,Light Heavyweight,Magomed Ankalaev,1
+2026-09-15,Light Heavyweight,Jiri Prochazka,2
+2026-09-15,Light Heavyweight,Alex Pereira,3
+2026-09-15,Light Heavyweight,Khalil Rountree Jr.,4
+2026-09-15,Light Heavyweight,Navajo Stirling,5
+2026-09-15,Light Heavyweight,Paulo Costa,6
+2026-09-15,Light Heavyweight,Jamahal Hill,7
+2026-09-15,Light Heavyweight,Azamat Murzakanov,8
+2026-09-15,Light Heavyweight,Jan Blachowicz,9
+2026-09-15,Light Heavyweight,Dominick Reyes,10
+2026-09-15,Light Heavyweight,Bogdan Guskov,11
+2026-09-15,Light Heavyweight,Robert Whittaker,12
+2026-09-15,Light Heavyweight,Johnny Walker,13
+2026-09-15,Light Heavyweight,Alonzo Menifield,14
+2026-09-15,Light Heavyweight,Nikita Krylov,15
+2026-09-15,Heavyweight,Tom Aspinall,0
+2026-09-15,Heavyweight,Ciryl Gane,1
+2026-09-15,Heavyweight,Alexander Volkov,2
+2026-09-15,Heavyweight,Sergei Pavlovich,3
+2026-09-15,Heavyweight,Josh Hokit,4
+2026-09-15,Heavyweight,Curtis Blaydes,5
+2026-09-15,Heavyweight,Waldo Cortes-Acosta,6
+2026-09-15,Heavyweight,Rizvan Kuniev,7
+2026-09-15,Heavyweight,Vitor Petrino,8
+2026-09-15,Heavyweight,Serghei Spivac,9
+2026-09-15,Heavyweight,Ante Delija,10
+2026-09-15,Heavyweight,Valter Walker,11
+2026-09-15,Heavyweight,Tyrell Fortune,12
+2026-09-15,Heavyweight,Derrick Lewis,13
+2026-09-15,Heavyweight,Mario Pinto,14
+2026-09-15,Heavyweight,Aleksandar Rakic,15
+2026-09-15,Women's Strawweight,Mackenzie Dern,0
+2026-09-15,Women's Strawweight,Zhang Weili,1
+2026-09-15,Women's Strawweight,Tatiana Suarez,2
+2026-09-15,Women's Strawweight,Virna Jandiroba,3
+2026-09-15,Women's Strawweight,Denise Gomes,4
+2026-09-15,Women's Strawweight,Gillian Robertson,5
+2026-09-15,Women's Strawweight,Yan Xiaonan,6
+2026-09-15,Women's Strawweight,Fatima Kline,7
+2026-09-15,Women's Strawweight,Loopy Godinez,8
+2026-09-15,Women's Strawweight,Alexia Thainara,9
+2026-09-15,Women's Strawweight,Jessica Andrade,10
+2026-09-15,Women's Strawweight,Tabatha Ricci,11
+2026-09-15,Women's Strawweight,Amanda Lemos,12
+2026-09-15,Women's Strawweight,Amanda Ribas,13
+2026-09-15,Women's Strawweight,Angela Hill,14
+2026-09-15,Women's Strawweight,Mizuki,15
+2026-09-15,Women's Flyweight,Valentina Shevchenko,0
+2026-09-15,Women's Flyweight,Natalia Silva,1
+2026-09-15,Women's Flyweight,Alexa Grasso,2
+2026-09-15,Women's Flyweight,Manon Fiorot,3
+2026-09-15,Women's Flyweight,Erin Blanchfield,4
+2026-09-15,Women's Flyweight,Rose Namajunas,5
+2026-09-15,Women's Flyweight,Maycee Barber,6
+2026-09-15,Women's Flyweight,Jasmine Jasudavicius,7
+2026-09-15,Women's Flyweight,Wang Cong,8
+2026-09-15,Women's Flyweight,Tracy Cortez,9
+2026-09-15,Women's Flyweight,Miranda Maverick,10
+2026-09-15,Women's Flyweight,Karine Silva,11
+2026-09-15,Women's Flyweight,Casey O'Neill,12
+2026-09-15,Women's Flyweight,Eduarda Moura,13
+2026-09-15,Women's Flyweight,Gabriella Fernandes,14
+2026-09-15,Women's Flyweight,Regina Tarin,15
+2026-09-15,Women's Bantamweight,Kayla Harrison,0
+2026-09-15,Women's Bantamweight,Julianna Pena,1
+2026-09-15,Women's Bantamweight,Raquel Pennington,2
+2026-09-15,Women's Bantamweight,Joselyne Edwards,3
+2026-09-15,Women's Bantamweight,Norma Dumont,4
+2026-09-15,Women's Bantamweight,Ailin Perez,5
+2026-09-15,Women's Bantamweight,Yana Santos,6
+2026-09-15,Women's Bantamweight,Luana Santos,7
+2026-09-15,Women's Bantamweight,Macy Chiasson,8
+2026-09-15,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-09-15,Women's Bantamweight,Karol Rosa,10
+2026-09-15,Women's Bantamweight,Bia Mesquita,11
+2026-09-15,Women's Bantamweight,Michelle Montague,12
+2026-09-15,Women's Bantamweight,Nora Cornolle,13
+2026-09-15,Women's Bantamweight,Miesha Tate,14
+2026-09-15,Women's Bantamweight,Melissa Croden,15
+2026-09-15,Men's Pound-for-Pound,Islam Makhachev,1
+2026-09-15,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-09-15,Men's Pound-for-Pound,Petr Yan,3
+2026-09-15,Men's Pound-for-Pound,Justin Gaethje,4
+2026-09-15,Men's Pound-for-Pound,Ilia Topuria,5
+2026-09-15,Men's Pound-for-Pound,Tom Aspinall,6
+2026-09-15,Men's Pound-for-Pound,Sean Strickland,7
+2026-09-15,Men's Pound-for-Pound,Merab Dvalishvili,8
+2026-09-15,Men's Pound-for-Pound,Alex Pereira,9
+2026-09-15,Men's Pound-for-Pound,Ciryl Gane,10
+2026-09-15,Men's Pound-for-Pound,Joshua Van,11
+2026-09-15,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-09-15,Men's Pound-for-Pound,Alexandre Pantoja,13
+2026-09-15,Men's Pound-for-Pound,Arman Tsarukyan,14
+2026-09-15,Men's Pound-for-Pound,Charles Oliveira,15
+2026-09-15,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-09-15,Women's Pound-for-Pound,Kayla Harrison,2
+2026-09-15,Women's Pound-for-Pound,Zhang Weili,3
+2026-09-15,Women's Pound-for-Pound,Natalia Silva,4
+2026-09-15,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-09-15,Women's Pound-for-Pound,Alexa Grasso,6
+2026-09-15,Women's Pound-for-Pound,Manon Fiorot,7
+2026-09-15,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-09-15,Women's Pound-for-Pound,Tatiana Suarez,9
+2026-09-15,Women's Pound-for-Pound,Julianna Pena,10
+2026-09-15,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-09-15,Women's Pound-for-Pound,Raquel Pennington,12
+2026-09-15,Women's Pound-for-Pound,Rose Namajunas,12
+2026-09-15,Women's Pound-for-Pound,Denise Gomes,14
+2026-09-15,Women's Pound-for-Pound,Maycee Barber,15
+2026-09-22,Flyweight,Joshua Van,0
+2026-09-22,Flyweight,Alexandre Pantoja,1
+2026-09-22,Flyweight,Manel Kape,2
+2026-09-22,Flyweight,Brandon Royval,3
+2026-09-22,Flyweight,Tatsuro Taira,4
+2026-09-22,Flyweight,Kyoji Horiguchi,5
+2026-09-22,Flyweight,Lone'er Kavanagh,6
+2026-09-22,Flyweight,Asu Almabayev,7
+2026-09-22,Flyweight,Brandon Moreno,8
+2026-09-22,Flyweight,Amir Albazi,9
+2026-09-22,Flyweight,Ramazan Temirov,10
+2026-09-22,Flyweight,Tim Elliott,11
+2026-09-22,Flyweight,Steve Erceg,12
+2026-09-22,Flyweight,Sumudaerji,13
+2026-09-22,Flyweight,Tagir Ulanbekov,14
+2026-09-22,Flyweight,Alex Perez,15
+2026-09-22,Bantamweight,Petr Yan,0
+2026-09-22,Bantamweight,Merab Dvalishvili,1
+2026-09-22,Bantamweight,Sean O'Malley,2
+2026-09-22,Bantamweight,Song Yadong,3
+2026-09-22,Bantamweight,Umar Nurmagomedov,4
+2026-09-22,Bantamweight,Mario Bautista,5
+2026-09-22,Bantamweight,Cory Sandhagen,6
+2026-09-22,Bantamweight,Aiemann Zahabi,7
+2026-09-22,Bantamweight,David Martinez,8
+2026-09-22,Bantamweight,Deiveson Figueiredo,9
+2026-09-22,Bantamweight,Marlon Vera,10
+2026-09-22,Bantamweight,Payton Talbott,11
+2026-09-22,Bantamweight,Raul Rosas Jr.,12
+2026-09-22,Bantamweight,Raoni Barcelos,13
+2026-09-22,Bantamweight,Farid Basharat,14
+2026-09-22,Bantamweight,Marcus McGhee,15
+2026-09-22,Featherweight,Alexander Volkanovski,0
+2026-09-22,Featherweight,Movsar Evloev,1
+2026-09-22,Featherweight,Diego Lopes,2
+2026-09-22,Featherweight,Lerone Murphy,3
+2026-09-22,Featherweight,Aljamain Sterling,4
+2026-09-22,Featherweight,Jean Silva,5
+2026-09-22,Featherweight,Yair Rodriguez,6
+2026-09-22,Featherweight,Arnold Allen,7
+2026-09-22,Featherweight,Youssef Zalal,8
+2026-09-22,Featherweight,Kevin Vallejos,9
+2026-09-22,Featherweight,Steve Garcia,10
+2026-09-22,Featherweight,Aaron Pico,11
+2026-09-22,Featherweight,Melquizael Costa,12
+2026-09-22,Featherweight,Brian Ortega,13
+2026-09-22,Featherweight,Patricio Freire,14
+2026-09-22,Featherweight,David Onama,15
+2026-09-22,Lightweight,Justin Gaethje,0
+2026-09-22,Lightweight,Ilia Topuria,1
+2026-09-22,Lightweight,Arman Tsarukyan,2
+2026-09-22,Lightweight,Charles Oliveira,3
+2026-09-22,Lightweight,Max Holloway,4
+2026-09-22,Lightweight,Paddy Pimblett,5
+2026-09-22,Lightweight,Benoit Saint Denis,6
+2026-09-22,Lightweight,Quillan Salkilld,7
+2026-09-22,Lightweight,Mauricio Ruffy,8
+2026-09-22,Lightweight,Salahdine Parnasse,9
+2026-09-22,Lightweight,Mateusz Gamrot,10
+2026-09-22,Lightweight,Rafael Fiziev,11
+2026-09-22,Lightweight,Renato Moicano,11
+2026-09-22,Lightweight,Dan Hooker,13
+2026-09-22,Lightweight,Tom Nolan,14
+2026-09-22,Lightweight,Beneil Dariush,15
+2026-09-22,Welterweight,Islam Makhachev,0
+2026-09-22,Welterweight,Ian Machado Garry,1
+2026-09-22,Welterweight,Carlos Prates,2
+2026-09-22,Welterweight,Michael Morales,3
+2026-09-22,Welterweight,Jack Della Maddalena,4
+2026-09-22,Welterweight,Gabriel Bonfim,5
+2026-09-22,Welterweight,Sean Brady,6
+2026-09-22,Welterweight,Belal Muhammad,7
+2026-09-22,Welterweight,Leon Edwards,8
+2026-09-22,Welterweight,Kamaru Usman,9
+2026-09-22,Welterweight,Joaquin Buckley,10
+2026-09-22,Welterweight,Yaroslav Amosov,11
+2026-09-22,Welterweight,Uros Medic,12
+2026-09-22,Welterweight,Mike Malott,13
+2026-09-22,Welterweight,Daniel Rodriguez,14
+2026-09-22,Welterweight,Neil Magny,15
+2026-09-22,Middleweight,Sean Strickland,0
+2026-09-22,Middleweight,Khamzat Chimaev,1
+2026-09-22,Middleweight,Dricus Du Plessis,2
+2026-09-22,Middleweight,Nassourdine Imavov,3
+2026-09-22,Middleweight,Brendan Allen,4
+2026-09-22,Middleweight,Caio Borralho,5
+2026-09-22,Middleweight,Joe Pyfer,6
+2026-09-22,Middleweight,Gregory Rodrigues,7
+2026-09-22,Middleweight,Anthony Hernandez,8
+2026-09-22,Middleweight,Israel Adesanya,9
+2026-09-22,Middleweight,Christian Leroy Duncan,10
+2026-09-22,Middleweight,Jared Cannonier,11
+2026-09-22,Middleweight,Abus Magomedov,12
+2026-09-22,Middleweight,Ikram Aliskerov,13
+2026-09-22,Middleweight,Bo Nickal,14
+2026-09-22,Middleweight,Shara Magomedov,15
+2026-09-22,Light Heavyweight,Carlos Ulberg,0
+2026-09-22,Light Heavyweight,Magomed Ankalaev,1
+2026-09-22,Light Heavyweight,Jiri Prochazka,2
+2026-09-22,Light Heavyweight,Alex Pereira,3
+2026-09-22,Light Heavyweight,Khalil Rountree Jr.,4
+2026-09-22,Light Heavyweight,Navajo Stirling,5
+2026-09-22,Light Heavyweight,Paulo Costa,6
+2026-09-22,Light Heavyweight,Jamahal Hill,7
+2026-09-22,Light Heavyweight,Azamat Murzakanov,8
+2026-09-22,Light Heavyweight,Jan Blachowicz,9
+2026-09-22,Light Heavyweight,Dominick Reyes,10
+2026-09-22,Light Heavyweight,Bogdan Guskov,11
+2026-09-22,Light Heavyweight,Robert Whittaker,12
+2026-09-22,Light Heavyweight,Johnny Walker,13
+2026-09-22,Light Heavyweight,Alonzo Menifield,14
+2026-09-22,Light Heavyweight,Nikita Krylov,15
+2026-09-22,Heavyweight,Ciryl Gane,0
+2026-09-22,Heavyweight,Tom Aspinall,1
+2026-09-22,Heavyweight,Alexander Volkov,2
+2026-09-22,Heavyweight,Sergei Pavlovich,3
+2026-09-22,Heavyweight,Josh Hokit,4
+2026-09-22,Heavyweight,Curtis Blaydes,5
+2026-09-22,Heavyweight,Waldo Cortes-Acosta,6
+2026-09-22,Heavyweight,Rizvan Kuniev,7
+2026-09-22,Heavyweight,Vitor Petrino,8
+2026-09-22,Heavyweight,Serghei Spivac,9
+2026-09-22,Heavyweight,Ante Delija,10
+2026-09-22,Heavyweight,Valter Walker,11
+2026-09-22,Heavyweight,Tyrell Fortune,12
+2026-09-22,Heavyweight,Derrick Lewis,13
+2026-09-22,Heavyweight,Mario Pinto,14
+2026-09-22,Heavyweight,Aleksandar Rakic,15
+2026-09-22,Women's Strawweight,Mackenzie Dern,0
+2026-09-22,Women's Strawweight,Zhang Weili,1
+2026-09-22,Women's Strawweight,Tatiana Suarez,2
+2026-09-22,Women's Strawweight,Virna Jandiroba,3
+2026-09-22,Women's Strawweight,Denise Gomes,4
+2026-09-22,Women's Strawweight,Gillian Robertson,5
+2026-09-22,Women's Strawweight,Yan Xiaonan,6
+2026-09-22,Women's Strawweight,Fatima Kline,7
+2026-09-22,Women's Strawweight,Loopy Godinez,8
+2026-09-22,Women's Strawweight,Alexia Thainara,9
+2026-09-22,Women's Strawweight,Jessica Andrade,10
+2026-09-22,Women's Strawweight,Tabatha Ricci,11
+2026-09-22,Women's Strawweight,Amanda Lemos,12
+2026-09-22,Women's Strawweight,Amanda Ribas,13
+2026-09-22,Women's Strawweight,Angela Hill,14
+2026-09-22,Women's Strawweight,Mizuki,15
+2026-09-22,Women's Flyweight,Valentina Shevchenko,0
+2026-09-22,Women's Flyweight,Natalia Silva,1
+2026-09-22,Women's Flyweight,Alexa Grasso,2
+2026-09-22,Women's Flyweight,Manon Fiorot,3
+2026-09-22,Women's Flyweight,Erin Blanchfield,4
+2026-09-22,Women's Flyweight,Rose Namajunas,5
+2026-09-22,Women's Flyweight,Maycee Barber,6
+2026-09-22,Women's Flyweight,Jasmine Jasudavicius,7
+2026-09-22,Women's Flyweight,Wang Cong,8
+2026-09-22,Women's Flyweight,Tracy Cortez,9
+2026-09-22,Women's Flyweight,Miranda Maverick,10
+2026-09-22,Women's Flyweight,Karine Silva,11
+2026-09-22,Women's Flyweight,Casey O'Neill,12
+2026-09-22,Women's Flyweight,Eduarda Moura,13
+2026-09-22,Women's Flyweight,Gabriella Fernandes,14
+2026-09-22,Women's Flyweight,Regina Tarin,15
+2026-09-22,Women's Bantamweight,Kayla Harrison,0
+2026-09-22,Women's Bantamweight,Julianna Pena,1
+2026-09-22,Women's Bantamweight,Raquel Pennington,2
+2026-09-22,Women's Bantamweight,Joselyne Edwards,3
+2026-09-22,Women's Bantamweight,Norma Dumont,4
+2026-09-22,Women's Bantamweight,Ailin Perez,5
+2026-09-22,Women's Bantamweight,Yana Santos,6
+2026-09-22,Women's Bantamweight,Luana Santos,7
+2026-09-22,Women's Bantamweight,Macy Chiasson,8
+2026-09-22,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-09-22,Women's Bantamweight,Karol Rosa,10
+2026-09-22,Women's Bantamweight,Bia Mesquita,11
+2026-09-22,Women's Bantamweight,Michelle Montague,12
+2026-09-22,Women's Bantamweight,Nora Cornolle,13
+2026-09-22,Women's Bantamweight,Miesha Tate,14
+2026-09-22,Women's Bantamweight,Melissa Croden,15
+2026-09-22,Men's Pound-for-Pound,Islam Makhachev,1
+2026-09-22,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-09-22,Men's Pound-for-Pound,Justin Gaethje,3
+2026-09-22,Men's Pound-for-Pound,Petr Yan,4
+2026-09-22,Men's Pound-for-Pound,Ilia Topuria,5
+2026-09-22,Men's Pound-for-Pound,Joshua Van,6
+2026-09-22,Men's Pound-for-Pound,Sean Strickland,7
+2026-09-22,Men's Pound-for-Pound,Tom Aspinall,8
+2026-09-22,Men's Pound-for-Pound,Merab Dvalishvili,9
+2026-09-22,Men's Pound-for-Pound,Alex Pereira,10
+2026-09-22,Men's Pound-for-Pound,Ciryl Gane,11
+2026-09-22,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-09-22,Men's Pound-for-Pound,Arman Tsarukyan,13
+2026-09-22,Men's Pound-for-Pound,Alexandre Pantoja,14
+2026-09-22,Men's Pound-for-Pound,Carlos Ulberg,15
+2026-09-22,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-09-22,Women's Pound-for-Pound,Kayla Harrison,2
+2026-09-22,Women's Pound-for-Pound,Zhang Weili,3
+2026-09-22,Women's Pound-for-Pound,Natalia Silva,4
+2026-09-22,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-09-22,Women's Pound-for-Pound,Alexa Grasso,6
+2026-09-22,Women's Pound-for-Pound,Manon Fiorot,7
+2026-09-22,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-09-22,Women's Pound-for-Pound,Tatiana Suarez,9
+2026-09-22,Women's Pound-for-Pound,Julianna Pena,10
+2026-09-22,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-09-22,Women's Pound-for-Pound,Raquel Pennington,12
+2026-09-22,Women's Pound-for-Pound,Rose Namajunas,12
+2026-09-22,Women's Pound-for-Pound,Denise Gomes,14
+2026-09-22,Women's Pound-for-Pound,Maycee Barber,15
+2026-09-29,Flyweight,Joshua Van,0
+2026-09-29,Flyweight,Alexandre Pantoja,1
+2026-09-29,Flyweight,Manel Kape,2
+2026-09-29,Flyweight,Brandon Royval,3
+2026-09-29,Flyweight,Tatsuro Taira,4
+2026-09-29,Flyweight,Kyoji Horiguchi,5
+2026-09-29,Flyweight,Lone'er Kavanagh,6
+2026-09-29,Flyweight,Asu Almabayev,7
+2026-09-29,Flyweight,Brandon Moreno,8
+2026-09-29,Flyweight,Amir Albazi,9
+2026-09-29,Flyweight,Ramazan Temirov,10
+2026-09-29,Flyweight,Tim Elliott,11
+2026-09-29,Flyweight,Steve Erceg,12
+2026-09-29,Flyweight,Sumudaerji,13
+2026-09-29,Flyweight,Tagir Ulanbekov,14
+2026-09-29,Flyweight,Alex Perez,15
+2026-09-29,Bantamweight,Petr Yan,0
+2026-09-29,Bantamweight,Merab Dvalishvili,1
+2026-09-29,Bantamweight,Sean O'Malley,2
+2026-09-29,Bantamweight,Song Yadong,3
+2026-09-29,Bantamweight,Umar Nurmagomedov,4
+2026-09-29,Bantamweight,Mario Bautista,5
+2026-09-29,Bantamweight,Cory Sandhagen,6
+2026-09-29,Bantamweight,Aiemann Zahabi,7
+2026-09-29,Bantamweight,David Martinez,8
+2026-09-29,Bantamweight,Deiveson Figueiredo,9
+2026-09-29,Bantamweight,Marlon Vera,10
+2026-09-29,Bantamweight,Raul Rosas Jr.,11
+2026-09-29,Bantamweight,Payton Talbott,12
+2026-09-29,Bantamweight,Farid Basharat,13
+2026-09-29,Bantamweight,Raoni Barcelos,14
+2026-09-29,Bantamweight,Marcus McGhee,15
+2026-09-29,Featherweight,Alexander Volkanovski,0
+2026-09-29,Featherweight,Movsar Evloev,1
+2026-09-29,Featherweight,Diego Lopes,2
+2026-09-29,Featherweight,Lerone Murphy,3
+2026-09-29,Featherweight,Aljamain Sterling,4
+2026-09-29,Featherweight,Jean Silva,5
+2026-09-29,Featherweight,Yair Rodriguez,6
+2026-09-29,Featherweight,Arnold Allen,7
+2026-09-29,Featherweight,Youssef Zalal,8
+2026-09-29,Featherweight,Kevin Vallejos,9
+2026-09-29,Featherweight,Steve Garcia,10
+2026-09-29,Featherweight,Aaron Pico,11
+2026-09-29,Featherweight,Melquizael Costa,12
+2026-09-29,Featherweight,Brian Ortega,13
+2026-09-29,Featherweight,Patricio Freire,14
+2026-09-29,Featherweight,David Onama,15
+2026-09-29,Lightweight,Justin Gaethje,0
+2026-09-29,Lightweight,Ilia Topuria,1
+2026-09-29,Lightweight,Arman Tsarukyan,2
+2026-09-29,Lightweight,Charles Oliveira,3
+2026-09-29,Lightweight,Max Holloway,4
+2026-09-29,Lightweight,Paddy Pimblett,5
+2026-09-29,Lightweight,Benoit Saint Denis,6
+2026-09-29,Lightweight,Quillan Salkilld,7
+2026-09-29,Lightweight,Mauricio Ruffy,8
+2026-09-29,Lightweight,Salahdine Parnasse,9
+2026-09-29,Lightweight,Mateusz Gamrot,10
+2026-09-29,Lightweight,Rafael Fiziev,11
+2026-09-29,Lightweight,Renato Moicano,12
+2026-09-29,Lightweight,Dan Hooker,13
+2026-09-29,Lightweight,Tom Nolan,14
+2026-09-29,Lightweight,Beneil Dariush,15
+2026-09-29,Welterweight,Islam Makhachev,0
+2026-09-29,Welterweight,Ian Machado Garry,1
+2026-09-29,Welterweight,Carlos Prates,2
+2026-09-29,Welterweight,Michael Morales,3
+2026-09-29,Welterweight,Jack Della Maddalena,4
+2026-09-29,Welterweight,Gabriel Bonfim,5
+2026-09-29,Welterweight,Sean Brady,6
+2026-09-29,Welterweight,Belal Muhammad,7
+2026-09-29,Welterweight,Leon Edwards,8
+2026-09-29,Welterweight,Kamaru Usman,9
+2026-09-29,Welterweight,Joaquin Buckley,10
+2026-09-29,Welterweight,Yaroslav Amosov,11
+2026-09-29,Welterweight,Uros Medic,12
+2026-09-29,Welterweight,Mike Malott,13
+2026-09-29,Welterweight,Daniel Rodriguez,14
+2026-09-29,Welterweight,Neil Magny,15
+2026-09-29,Middleweight,Sean Strickland,0
+2026-09-29,Middleweight,Khamzat Chimaev,1
+2026-09-29,Middleweight,Dricus Du Plessis,2
+2026-09-29,Middleweight,Nassourdine Imavov,3
+2026-09-29,Middleweight,Brendan Allen,4
+2026-09-29,Middleweight,Caio Borralho,5
+2026-09-29,Middleweight,Joe Pyfer,6
+2026-09-29,Middleweight,Gregory Rodrigues,7
+2026-09-29,Middleweight,Anthony Hernandez,8
+2026-09-29,Middleweight,Israel Adesanya,9
+2026-09-29,Middleweight,Christian Leroy Duncan,10
+2026-09-29,Middleweight,Jared Cannonier,11
+2026-09-29,Middleweight,Abus Magomedov,12
+2026-09-29,Middleweight,Ikram Aliskerov,13
+2026-09-29,Middleweight,Bo Nickal,14
+2026-09-29,Middleweight,Shara Magomedov,15
+2026-09-29,Light Heavyweight,Carlos Ulberg,0
+2026-09-29,Light Heavyweight,Magomed Ankalaev,1
+2026-09-29,Light Heavyweight,Jiri Prochazka,2
+2026-09-29,Light Heavyweight,Alex Pereira,3
+2026-09-29,Light Heavyweight,Khalil Rountree Jr.,4
+2026-09-29,Light Heavyweight,Navajo Stirling,5
+2026-09-29,Light Heavyweight,Paulo Costa,6
+2026-09-29,Light Heavyweight,Jamahal Hill,7
+2026-09-29,Light Heavyweight,Azamat Murzakanov,8
+2026-09-29,Light Heavyweight,Jan Blachowicz,9
+2026-09-29,Light Heavyweight,Dominick Reyes,10
+2026-09-29,Light Heavyweight,Bogdan Guskov,11
+2026-09-29,Light Heavyweight,Robert Whittaker,12
+2026-09-29,Light Heavyweight,Johnny Walker,13
+2026-09-29,Light Heavyweight,Alonzo Menifield,14
+2026-09-29,Light Heavyweight,Nikita Krylov,15
+2026-09-29,Heavyweight,Ciryl Gane,0
+2026-09-29,Heavyweight,Tom Aspinall,1
+2026-09-29,Heavyweight,Alexander Volkov,2
+2026-09-29,Heavyweight,Sergei Pavlovich,3
+2026-09-29,Heavyweight,Josh Hokit,4
+2026-09-29,Heavyweight,Curtis Blaydes,5
+2026-09-29,Heavyweight,Waldo Cortes-Acosta,6
+2026-09-29,Heavyweight,Rizvan Kuniev,7
+2026-09-29,Heavyweight,Vitor Petrino,8
+2026-09-29,Heavyweight,Serghei Spivac,9
+2026-09-29,Heavyweight,Ante Delija,10
+2026-09-29,Heavyweight,Valter Walker,11
+2026-09-29,Heavyweight,Tyrell Fortune,12
+2026-09-29,Heavyweight,Derrick Lewis,13
+2026-09-29,Heavyweight,Mario Pinto,14
+2026-09-29,Heavyweight,Aleksandar Rakic,15
+2026-09-29,Women's Strawweight,Mackenzie Dern,0
+2026-09-29,Women's Strawweight,Zhang Weili,1
+2026-09-29,Women's Strawweight,Tatiana Suarez,2
+2026-09-29,Women's Strawweight,Virna Jandiroba,3
+2026-09-29,Women's Strawweight,Denise Gomes,4
+2026-09-29,Women's Strawweight,Gillian Robertson,5
+2026-09-29,Women's Strawweight,Yan Xiaonan,6
+2026-09-29,Women's Strawweight,Fatima Kline,7
+2026-09-29,Women's Strawweight,Loopy Godinez,8
+2026-09-29,Women's Strawweight,Alexia Thainara,9
+2026-09-29,Women's Strawweight,Jessica Andrade,10
+2026-09-29,Women's Strawweight,Tabatha Ricci,11
+2026-09-29,Women's Strawweight,Amanda Lemos,12
+2026-09-29,Women's Strawweight,Amanda Ribas,13
+2026-09-29,Women's Strawweight,Angela Hill,14
+2026-09-29,Women's Strawweight,Mizuki,15
+2026-09-29,Women's Flyweight,Valentina Shevchenko,0
+2026-09-29,Women's Flyweight,Natalia Silva,1
+2026-09-29,Women's Flyweight,Alexa Grasso,2
+2026-09-29,Women's Flyweight,Manon Fiorot,3
+2026-09-29,Women's Flyweight,Erin Blanchfield,4
+2026-09-29,Women's Flyweight,Rose Namajunas,5
+2026-09-29,Women's Flyweight,Maycee Barber,6
+2026-09-29,Women's Flyweight,Jasmine Jasudavicius,7
+2026-09-29,Women's Flyweight,Wang Cong,8
+2026-09-29,Women's Flyweight,Tracy Cortez,9
+2026-09-29,Women's Flyweight,Miranda Maverick,10
+2026-09-29,Women's Flyweight,Karine Silva,11
+2026-09-29,Women's Flyweight,Casey O'Neill,12
+2026-09-29,Women's Flyweight,Eduarda Moura,13
+2026-09-29,Women's Flyweight,Regina Tarin,14
+2026-09-29,Women's Flyweight,Gabriella Fernandes,15
+2026-09-29,Women's Bantamweight,Kayla Harrison,0
+2026-09-29,Women's Bantamweight,Julianna Pena,1
+2026-09-29,Women's Bantamweight,Joselyne Edwards,2
+2026-09-29,Women's Bantamweight,Ailin Perez,3
+2026-09-29,Women's Bantamweight,Raquel Pennington,3
+2026-09-29,Women's Bantamweight,Norma Dumont,5
+2026-09-29,Women's Bantamweight,Yana Santos,6
+2026-09-29,Women's Bantamweight,Luana Santos,7
+2026-09-29,Women's Bantamweight,Macy Chiasson,8
+2026-09-29,Women's Bantamweight,Jacqueline Cavalcanti,9
+2026-09-29,Women's Bantamweight,Karol Rosa,10
+2026-09-29,Women's Bantamweight,Bia Mesquita,11
+2026-09-29,Women's Bantamweight,Michelle Montague,12
+2026-09-29,Women's Bantamweight,Nora Cornolle,13
+2026-09-29,Women's Bantamweight,Miesha Tate,14
+2026-09-29,Women's Bantamweight,Melissa Croden,15
+2026-09-29,Men's Pound-for-Pound,Islam Makhachev,1
+2026-09-29,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-09-29,Men's Pound-for-Pound,Justin Gaethje,3
+2026-09-29,Men's Pound-for-Pound,Petr Yan,4
+2026-09-29,Men's Pound-for-Pound,Ilia Topuria,5
+2026-09-29,Men's Pound-for-Pound,Joshua Van,6
+2026-09-29,Men's Pound-for-Pound,Sean Strickland,7
+2026-09-29,Men's Pound-for-Pound,Tom Aspinall,8
+2026-09-29,Men's Pound-for-Pound,Merab Dvalishvili,9
+2026-09-29,Men's Pound-for-Pound,Alex Pereira,10
+2026-09-29,Men's Pound-for-Pound,Ciryl Gane,11
+2026-09-29,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-09-29,Men's Pound-for-Pound,Arman Tsarukyan,13
+2026-09-29,Men's Pound-for-Pound,Alexandre Pantoja,14
+2026-09-29,Men's Pound-for-Pound,Carlos Ulberg,15
+2026-09-29,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-09-29,Women's Pound-for-Pound,Kayla Harrison,2
+2026-09-29,Women's Pound-for-Pound,Zhang Weili,3
+2026-09-29,Women's Pound-for-Pound,Natalia Silva,4
+2026-09-29,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-09-29,Women's Pound-for-Pound,Alexa Grasso,6
+2026-09-29,Women's Pound-for-Pound,Manon Fiorot,7
+2026-09-29,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-09-29,Women's Pound-for-Pound,Tatiana Suarez,9
+2026-09-29,Women's Pound-for-Pound,Julianna Pena,10
+2026-09-29,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-09-29,Women's Pound-for-Pound,Rose Namajunas,12
+2026-09-29,Women's Pound-for-Pound,Raquel Pennington,13
+2026-09-29,Women's Pound-for-Pound,Denise Gomes,14
+2026-09-29,Women's Pound-for-Pound,Maycee Barber,15
+2026-10-06,Flyweight,Joshua Van,0
+2026-10-06,Flyweight,Alexandre Pantoja,1
+2026-10-06,Flyweight,Manel Kape,2
+2026-10-06,Flyweight,Brandon Royval,3
+2026-10-06,Flyweight,Tatsuro Taira,4
+2026-10-06,Flyweight,Kyoji Horiguchi,5
+2026-10-06,Flyweight,Lone'er Kavanagh,6
+2026-10-06,Flyweight,Asu Almabayev,7
+2026-10-06,Flyweight,Brandon Moreno,8
+2026-10-06,Flyweight,Amir Albazi,9
+2026-10-06,Flyweight,Ramazan Temirov,10
+2026-10-06,Flyweight,Tim Elliott,11
+2026-10-06,Flyweight,Steve Erceg,12
+2026-10-06,Flyweight,Sumudaerji,13
+2026-10-06,Flyweight,Tagir Ulanbekov,14
+2026-10-06,Flyweight,Alex Perez,15
+2026-10-06,Bantamweight,Petr Yan,0
+2026-10-06,Bantamweight,Merab Dvalishvili,1
+2026-10-06,Bantamweight,Sean O'Malley,2
+2026-10-06,Bantamweight,Song Yadong,3
+2026-10-06,Bantamweight,Umar Nurmagomedov,4
+2026-10-06,Bantamweight,Mario Bautista,5
+2026-10-06,Bantamweight,Cory Sandhagen,6
+2026-10-06,Bantamweight,Payton Talbott,7
+2026-10-06,Bantamweight,Aiemann Zahabi,8
+2026-10-06,Bantamweight,David Martinez,9
+2026-10-06,Bantamweight,Raul Rosas Jr.,10
+2026-10-06,Bantamweight,Marlon Vera,11
+2026-10-06,Bantamweight,Deiveson Figueiredo,12
+2026-10-06,Bantamweight,Farid Basharat,13
+2026-10-06,Bantamweight,Marcus McGhee,14
+2026-10-06,Bantamweight,Raoni Barcelos,15
+2026-10-06,Featherweight,Alexander Volkanovski,0
+2026-10-06,Featherweight,Movsar Evloev,1
+2026-10-06,Featherweight,Diego Lopes,2
+2026-10-06,Featherweight,Lerone Murphy,3
+2026-10-06,Featherweight,Aljamain Sterling,4
+2026-10-06,Featherweight,Jean Silva,5
+2026-10-06,Featherweight,Yair Rodriguez,6
+2026-10-06,Featherweight,Arnold Allen,7
+2026-10-06,Featherweight,Youssef Zalal,8
+2026-10-06,Featherweight,Kevin Vallejos,9
+2026-10-06,Featherweight,Steve Garcia,10
+2026-10-06,Featherweight,Aaron Pico,11
+2026-10-06,Featherweight,Melquizael Costa,12
+2026-10-06,Featherweight,Brian Ortega,13
+2026-10-06,Featherweight,Patricio Freire,14
+2026-10-06,Featherweight,David Onama,15
+2026-10-06,Lightweight,Justin Gaethje,0
+2026-10-06,Lightweight,Ilia Topuria,1
+2026-10-06,Lightweight,Arman Tsarukyan,2
+2026-10-06,Lightweight,Charles Oliveira,3
+2026-10-06,Lightweight,Max Holloway,4
+2026-10-06,Lightweight,Paddy Pimblett,5
+2026-10-06,Lightweight,Benoit Saint Denis,6
+2026-10-06,Lightweight,Quillan Salkilld,7
+2026-10-06,Lightweight,Mauricio Ruffy,8
+2026-10-06,Lightweight,Salahdine Parnasse,9
+2026-10-06,Lightweight,Mateusz Gamrot,10
+2026-10-06,Lightweight,Rafael Fiziev,11
+2026-10-06,Lightweight,Renato Moicano,12
+2026-10-06,Lightweight,Dan Hooker,13
+2026-10-06,Lightweight,Tom Nolan,14
+2026-10-06,Lightweight,Beneil Dariush,15
+2026-10-06,Welterweight,Islam Makhachev,0
+2026-10-06,Welterweight,Ian Machado Garry,1
+2026-10-06,Welterweight,Carlos Prates,2
+2026-10-06,Welterweight,Michael Morales,3
+2026-10-06,Welterweight,Jack Della Maddalena,4
+2026-10-06,Welterweight,Gabriel Bonfim,5
+2026-10-06,Welterweight,Sean Brady,6
+2026-10-06,Welterweight,Belal Muhammad,7
+2026-10-06,Welterweight,Leon Edwards,8
+2026-10-06,Welterweight,Kamaru Usman,9
+2026-10-06,Welterweight,Joaquin Buckley,10
+2026-10-06,Welterweight,Yaroslav Amosov,11
+2026-10-06,Welterweight,Uros Medic,12
+2026-10-06,Welterweight,Mike Malott,13
+2026-10-06,Welterweight,Daniel Rodriguez,14
+2026-10-06,Welterweight,Neil Magny,15
+2026-10-06,Middleweight,Sean Strickland,0
+2026-10-06,Middleweight,Khamzat Chimaev,1
+2026-10-06,Middleweight,Dricus Du Plessis,2
+2026-10-06,Middleweight,Nassourdine Imavov,3
+2026-10-06,Middleweight,Brendan Allen,4
+2026-10-06,Middleweight,Caio Borralho,5
+2026-10-06,Middleweight,Joe Pyfer,6
+2026-10-06,Middleweight,Gregory Rodrigues,7
+2026-10-06,Middleweight,Anthony Hernandez,8
+2026-10-06,Middleweight,Israel Adesanya,9
+2026-10-06,Middleweight,Christian Leroy Duncan,10
+2026-10-06,Middleweight,Jared Cannonier,11
+2026-10-06,Middleweight,Abus Magomedov,12
+2026-10-06,Middleweight,Ikram Aliskerov,13
+2026-10-06,Middleweight,Bo Nickal,14
+2026-10-06,Middleweight,Shara Magomedov,15
+2026-10-06,Light Heavyweight,Carlos Ulberg,0
+2026-10-06,Light Heavyweight,Magomed Ankalaev,1
+2026-10-06,Light Heavyweight,Jiri Prochazka,2
+2026-10-06,Light Heavyweight,Alex Pereira,3
+2026-10-06,Light Heavyweight,Khalil Rountree Jr.,4
+2026-10-06,Light Heavyweight,Navajo Stirling,5
+2026-10-06,Light Heavyweight,Paulo Costa,6
+2026-10-06,Light Heavyweight,Azamat Murzakanov,7
+2026-10-06,Light Heavyweight,Dominick Reyes,8
+2026-10-06,Light Heavyweight,Jan Blachowicz,9
+2026-10-06,Light Heavyweight,Bogdan Guskov,10
+2026-10-06,Light Heavyweight,Robert Whittaker,11
+2026-10-06,Light Heavyweight,Alonzo Menifield,12
+2026-10-06,Light Heavyweight,Muhammad Said,13
+2026-10-06,Light Heavyweight,Reinier de Ridder,14
+2026-10-06,Light Heavyweight,Nikita Krylov,15
+2026-10-06,Heavyweight,Ciryl Gane,0
+2026-10-06,Heavyweight,Tom Aspinall,1
+2026-10-06,Heavyweight,Alexander Volkov,2
+2026-10-06,Heavyweight,Sergei Pavlovich,3
+2026-10-06,Heavyweight,Josh Hokit,4
+2026-10-06,Heavyweight,Curtis Blaydes,5
+2026-10-06,Heavyweight,Waldo Cortes-Acosta,6
+2026-10-06,Heavyweight,Rizvan Kuniev,7
+2026-10-06,Heavyweight,Vitor Petrino,8
+2026-10-06,Heavyweight,Serghei Spivac,9
+2026-10-06,Heavyweight,Ante Delija,10
+2026-10-06,Heavyweight,Valter Walker,11
+2026-10-06,Heavyweight,Tyrell Fortune,12
+2026-10-06,Heavyweight,Derrick Lewis,13
+2026-10-06,Heavyweight,Aleksandar Rakic,14
+2026-10-06,Heavyweight,Mario Pinto,15
+2026-10-06,Women's Strawweight,Mackenzie Dern,0
+2026-10-06,Women's Strawweight,Zhang Weili,1
+2026-10-06,Women's Strawweight,Tatiana Suarez,2
+2026-10-06,Women's Strawweight,Virna Jandiroba,3
+2026-10-06,Women's Strawweight,Denise Gomes,4
+2026-10-06,Women's Strawweight,Gillian Robertson,5
+2026-10-06,Women's Strawweight,Yan Xiaonan,6
+2026-10-06,Women's Strawweight,Fatima Kline,7
+2026-10-06,Women's Strawweight,Loopy Godinez,8
+2026-10-06,Women's Strawweight,Alexia Thainara,9
+2026-10-06,Women's Strawweight,Jessica Andrade,10
+2026-10-06,Women's Strawweight,Tabatha Ricci,11
+2026-10-06,Women's Strawweight,Amanda Lemos,12
+2026-10-06,Women's Strawweight,Amanda Ribas,13
+2026-10-06,Women's Strawweight,Angela Hill,14
+2026-10-06,Women's Strawweight,Mizuki,15
+2026-10-06,Women's Flyweight,Natalia Silva,0
+2026-10-06,Women's Flyweight,Valentina Shevchenko,1
+2026-10-06,Women's Flyweight,Alexa Grasso,2
+2026-10-06,Women's Flyweight,Manon Fiorot,3
+2026-10-06,Women's Flyweight,Erin Blanchfield,4
+2026-10-06,Women's Flyweight,Rose Namajunas,5
+2026-10-06,Women's Flyweight,Jasmine Jasudavicius,6
+2026-10-06,Women's Flyweight,Maycee Barber,6
+2026-10-06,Women's Flyweight,Wang Cong,8
+2026-10-06,Women's Flyweight,Tracy Cortez,9
+2026-10-06,Women's Flyweight,Miranda Maverick,10
+2026-10-06,Women's Flyweight,Karine Silva,11
+2026-10-06,Women's Flyweight,Casey O'Neill,12
+2026-10-06,Women's Flyweight,Eduarda Moura,13
+2026-10-06,Women's Flyweight,Regina Tarin,14
+2026-10-06,Women's Flyweight,Gabriella Fernandes,15
+2026-10-06,Women's Bantamweight,Kayla Harrison,0
+2026-10-06,Women's Bantamweight,Julianna Pena,1
+2026-10-06,Women's Bantamweight,Joselyne Edwards,2
+2026-10-06,Women's Bantamweight,Ailin Perez,3
+2026-10-06,Women's Bantamweight,Raquel Pennington,4
+2026-10-06,Women's Bantamweight,Norma Dumont,5
+2026-10-06,Women's Bantamweight,Yana Santos,6
+2026-10-06,Women's Bantamweight,Luana Santos,7
+2026-10-06,Women's Bantamweight,Jacqueline Cavalcanti,8
+2026-10-06,Women's Bantamweight,Macy Chiasson,9
+2026-10-06,Women's Bantamweight,Karol Rosa,10
+2026-10-06,Women's Bantamweight,Bia Mesquita,11
+2026-10-06,Women's Bantamweight,Michelle Montague,12
+2026-10-06,Women's Bantamweight,Nora Cornolle,13
+2026-10-06,Women's Bantamweight,Melissa Croden,14
+2026-10-06,Women's Bantamweight,Daria Zhelezniakova,15
+2026-10-06,Men's Pound-for-Pound,Islam Makhachev,1
+2026-10-06,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-10-06,Men's Pound-for-Pound,Justin Gaethje,3
+2026-10-06,Men's Pound-for-Pound,Petr Yan,4
+2026-10-06,Men's Pound-for-Pound,Ilia Topuria,5
+2026-10-06,Men's Pound-for-Pound,Joshua Van,6
+2026-10-06,Men's Pound-for-Pound,Sean Strickland,7
+2026-10-06,Men's Pound-for-Pound,Tom Aspinall,8
+2026-10-06,Men's Pound-for-Pound,Merab Dvalishvili,9
+2026-10-06,Men's Pound-for-Pound,Alex Pereira,10
+2026-10-06,Men's Pound-for-Pound,Ciryl Gane,11
+2026-10-06,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-10-06,Men's Pound-for-Pound,Arman Tsarukyan,13
+2026-10-06,Men's Pound-for-Pound,Alexandre Pantoja,14
+2026-10-06,Men's Pound-for-Pound,Carlos Ulberg,15
+2026-10-06,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-10-06,Women's Pound-for-Pound,Kayla Harrison,2
+2026-10-06,Women's Pound-for-Pound,Zhang Weili,3
+2026-10-06,Women's Pound-for-Pound,Natalia Silva,4
+2026-10-06,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-10-06,Women's Pound-for-Pound,Alexa Grasso,6
+2026-10-06,Women's Pound-for-Pound,Manon Fiorot,7
+2026-10-06,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-10-06,Women's Pound-for-Pound,Tatiana Suarez,9
+2026-10-06,Women's Pound-for-Pound,Julianna Pena,10
+2026-10-06,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-10-06,Women's Pound-for-Pound,Rose Namajunas,12
+2026-10-06,Women's Pound-for-Pound,Raquel Pennington,13
+2026-10-06,Women's Pound-for-Pound,Denise Gomes,14
+2026-10-06,Women's Pound-for-Pound,Maycee Barber,15
+2026-10-13,Flyweight,Joshua Van,0
+2026-10-13,Flyweight,Alexandre Pantoja,1
+2026-10-13,Flyweight,Manel Kape,2
+2026-10-13,Flyweight,Brandon Royval,3
+2026-10-13,Flyweight,Tatsuro Taira,4
+2026-10-13,Flyweight,Kyoji Horiguchi,5
+2026-10-13,Flyweight,Lone'er Kavanagh,6
+2026-10-13,Flyweight,Asu Almabayev,7
+2026-10-13,Flyweight,Brandon Moreno,8
+2026-10-13,Flyweight,Amir Albazi,9
+2026-10-13,Flyweight,Ramazan Temirov,10
+2026-10-13,Flyweight,Tim Elliott,11
+2026-10-13,Flyweight,Steve Erceg,12
+2026-10-13,Flyweight,Sumudaerji,13
+2026-10-13,Flyweight,Tagir Ulanbekov,14
+2026-10-13,Flyweight,Alex Perez,15
+2026-10-13,Bantamweight,Petr Yan,0
+2026-10-13,Bantamweight,Merab Dvalishvili,1
+2026-10-13,Bantamweight,Sean O'Malley,2
+2026-10-13,Bantamweight,Song Yadong,3
+2026-10-13,Bantamweight,Umar Nurmagomedov,4
+2026-10-13,Bantamweight,Mario Bautista,5
+2026-10-13,Bantamweight,Cory Sandhagen,6
+2026-10-13,Bantamweight,Payton Talbott,7
+2026-10-13,Bantamweight,Aiemann Zahabi,8
+2026-10-13,Bantamweight,David Martinez,9
+2026-10-13,Bantamweight,Raul Rosas Jr.,10
+2026-10-13,Bantamweight,Marlon Vera,11
+2026-10-13,Bantamweight,Deiveson Figueiredo,12
+2026-10-13,Bantamweight,Farid Basharat,13
+2026-10-13,Bantamweight,Marcus McGhee,14
+2026-10-13,Bantamweight,Raoni Barcelos,15
+2026-10-13,Featherweight,Alexander Volkanovski,0
+2026-10-13,Featherweight,Movsar Evloev,1
+2026-10-13,Featherweight,Diego Lopes,2
+2026-10-13,Featherweight,Lerone Murphy,3
+2026-10-13,Featherweight,Aljamain Sterling,4
+2026-10-13,Featherweight,Jean Silva,5
+2026-10-13,Featherweight,Yair Rodriguez,6
+2026-10-13,Featherweight,Arnold Allen,7
+2026-10-13,Featherweight,Youssef Zalal,8
+2026-10-13,Featherweight,Kevin Vallejos,9
+2026-10-13,Featherweight,Steve Garcia,10
+2026-10-13,Featherweight,Aaron Pico,11
+2026-10-13,Featherweight,Melquizael Costa,12
+2026-10-13,Featherweight,Brian Ortega,13
+2026-10-13,Featherweight,Patricio Freire,14
+2026-10-13,Featherweight,David Onama,15
+2026-10-13,Lightweight,Justin Gaethje,0
+2026-10-13,Lightweight,Ilia Topuria,1
+2026-10-13,Lightweight,Arman Tsarukyan,2
+2026-10-13,Lightweight,Charles Oliveira,3
+2026-10-13,Lightweight,Max Holloway,4
+2026-10-13,Lightweight,Paddy Pimblett,5
+2026-10-13,Lightweight,Benoit Saint Denis,6
+2026-10-13,Lightweight,Quillan Salkilld,7
+2026-10-13,Lightweight,Mauricio Ruffy,8
+2026-10-13,Lightweight,Salahdine Parnasse,9
+2026-10-13,Lightweight,Mateusz Gamrot,10
+2026-10-13,Lightweight,Rafael Fiziev,11
+2026-10-13,Lightweight,Renato Moicano,12
+2026-10-13,Lightweight,Dan Hooker,13
+2026-10-13,Lightweight,Tom Nolan,14
+2026-10-13,Lightweight,Beneil Dariush,15
+2026-10-13,Welterweight,Islam Makhachev,0
+2026-10-13,Welterweight,Ian Machado Garry,1
+2026-10-13,Welterweight,Carlos Prates,2
+2026-10-13,Welterweight,Michael Morales,3
+2026-10-13,Welterweight,Jack Della Maddalena,4
+2026-10-13,Welterweight,Gabriel Bonfim,5
+2026-10-13,Welterweight,Sean Brady,6
+2026-10-13,Welterweight,Belal Muhammad,7
+2026-10-13,Welterweight,Leon Edwards,8
+2026-10-13,Welterweight,Kamaru Usman,9
+2026-10-13,Welterweight,Joaquin Buckley,10
+2026-10-13,Welterweight,Yaroslav Amosov,11
+2026-10-13,Welterweight,Uros Medic,12
+2026-10-13,Welterweight,Mike Malott,13
+2026-10-13,Welterweight,Daniel Rodriguez,14
+2026-10-13,Welterweight,Neil Magny,15
+2026-10-13,Middleweight,Sean Strickland,0
+2026-10-13,Middleweight,Khamzat Chimaev,1
+2026-10-13,Middleweight,Dricus Du Plessis,2
+2026-10-13,Middleweight,Nassourdine Imavov,3
+2026-10-13,Middleweight,Brendan Allen,4
+2026-10-13,Middleweight,Caio Borralho,5
+2026-10-13,Middleweight,Joe Pyfer,6
+2026-10-13,Middleweight,Gregory Rodrigues,7
+2026-10-13,Middleweight,Anthony Hernandez,8
+2026-10-13,Middleweight,Israel Adesanya,9
+2026-10-13,Middleweight,Christian Leroy Duncan,10
+2026-10-13,Middleweight,Jared Cannonier,11
+2026-10-13,Middleweight,Abus Magomedov,12
+2026-10-13,Middleweight,Ikram Aliskerov,13
+2026-10-13,Middleweight,Bo Nickal,14
+2026-10-13,Middleweight,Shara Magomedov,15
+2026-10-13,Light Heavyweight,Carlos Ulberg,0
+2026-10-13,Light Heavyweight,Magomed Ankalaev,1
+2026-10-13,Light Heavyweight,Jiri Prochazka,2
+2026-10-13,Light Heavyweight,Alex Pereira,3
+2026-10-13,Light Heavyweight,Khalil Rountree Jr.,4
+2026-10-13,Light Heavyweight,Navajo Stirling,5
+2026-10-13,Light Heavyweight,Paulo Costa,6
+2026-10-13,Light Heavyweight,Azamat Murzakanov,7
+2026-10-13,Light Heavyweight,Dominick Reyes,8
+2026-10-13,Light Heavyweight,Jan Blachowicz,9
+2026-10-13,Light Heavyweight,Bogdan Guskov,10
+2026-10-13,Light Heavyweight,Robert Whittaker,11
+2026-10-13,Light Heavyweight,Alonzo Menifield,12
+2026-10-13,Light Heavyweight,Muhammad Said,13
+2026-10-13,Light Heavyweight,Reinier de Ridder,14
+2026-10-13,Light Heavyweight,Nikita Krylov,15
+2026-10-13,Heavyweight,Ciryl Gane,0
+2026-10-13,Heavyweight,Tom Aspinall,1
+2026-10-13,Heavyweight,Alexander Volkov,2
+2026-10-13,Heavyweight,Sergei Pavlovich,3
+2026-10-13,Heavyweight,Josh Hokit,4
+2026-10-13,Heavyweight,Curtis Blaydes,5
+2026-10-13,Heavyweight,Waldo Cortes-Acosta,6
+2026-10-13,Heavyweight,Rizvan Kuniev,7
+2026-10-13,Heavyweight,Vitor Petrino,8
+2026-10-13,Heavyweight,Serghei Spivac,9
+2026-10-13,Heavyweight,Ante Delija,10
+2026-10-13,Heavyweight,Valter Walker,11
+2026-10-13,Heavyweight,Tyrell Fortune,12
+2026-10-13,Heavyweight,Derrick Lewis,12
+2026-10-13,Heavyweight,Aleksandar Rakic,14
+2026-10-13,Heavyweight,Mario Pinto,15
+2026-10-13,Women's Strawweight,Mackenzie Dern,0
+2026-10-13,Women's Strawweight,Zhang Weili,1
+2026-10-13,Women's Strawweight,Tatiana Suarez,2
+2026-10-13,Women's Strawweight,Virna Jandiroba,3
+2026-10-13,Women's Strawweight,Denise Gomes,4
+2026-10-13,Women's Strawweight,Gillian Robertson,5
+2026-10-13,Women's Strawweight,Yan Xiaonan,6
+2026-10-13,Women's Strawweight,Fatima Kline,7
+2026-10-13,Women's Strawweight,Loopy Godinez,8
+2026-10-13,Women's Strawweight,Alexia Thainara,9
+2026-10-13,Women's Strawweight,Jessica Andrade,10
+2026-10-13,Women's Strawweight,Tabatha Ricci,11
+2026-10-13,Women's Strawweight,Amanda Lemos,12
+2026-10-13,Women's Strawweight,Amanda Ribas,13
+2026-10-13,Women's Strawweight,Angela Hill,14
+2026-10-13,Women's Strawweight,Mizuki,15
+2026-10-13,Women's Flyweight,Natalia Silva,0
+2026-10-13,Women's Flyweight,Valentina Shevchenko,1
+2026-10-13,Women's Flyweight,Alexa Grasso,2
+2026-10-13,Women's Flyweight,Manon Fiorot,3
+2026-10-13,Women's Flyweight,Erin Blanchfield,4
+2026-10-13,Women's Flyweight,Rose Namajunas,5
+2026-10-13,Women's Flyweight,Jasmine Jasudavicius,6
+2026-10-13,Women's Flyweight,Maycee Barber,6
+2026-10-13,Women's Flyweight,Wang Cong,8
+2026-10-13,Women's Flyweight,Tracy Cortez,9
+2026-10-13,Women's Flyweight,Miranda Maverick,10
+2026-10-13,Women's Flyweight,Karine Silva,11
+2026-10-13,Women's Flyweight,Casey O'Neill,12
+2026-10-13,Women's Flyweight,Eduarda Moura,13
+2026-10-13,Women's Flyweight,Regina Tarin,14
+2026-10-13,Women's Flyweight,Gabriella Fernandes,15
+2026-10-13,Women's Bantamweight,Kayla Harrison,0
+2026-10-13,Women's Bantamweight,Julianna Pena,1
+2026-10-13,Women's Bantamweight,Joselyne Edwards,2
+2026-10-13,Women's Bantamweight,Ailin Perez,3
+2026-10-13,Women's Bantamweight,Raquel Pennington,4
+2026-10-13,Women's Bantamweight,Norma Dumont,5
+2026-10-13,Women's Bantamweight,Yana Santos,6
+2026-10-13,Women's Bantamweight,Luana Santos,7
+2026-10-13,Women's Bantamweight,Jacqueline Cavalcanti,8
+2026-10-13,Women's Bantamweight,Macy Chiasson,9
+2026-10-13,Women's Bantamweight,Karol Rosa,10
+2026-10-13,Women's Bantamweight,Bia Mesquita,11
+2026-10-13,Women's Bantamweight,Michelle Montague,12
+2026-10-13,Women's Bantamweight,Nora Cornolle,13
+2026-10-13,Women's Bantamweight,Alice Pereira,14
+2026-10-13,Women's Bantamweight,Melissa Croden,15
+2026-10-13,Men's Pound-for-Pound,Islam Makhachev,1
+2026-10-13,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-10-13,Men's Pound-for-Pound,Justin Gaethje,3
+2026-10-13,Men's Pound-for-Pound,Petr Yan,4
+2026-10-13,Men's Pound-for-Pound,Ilia Topuria,5
+2026-10-13,Men's Pound-for-Pound,Joshua Van,6
+2026-10-13,Men's Pound-for-Pound,Sean Strickland,7
+2026-10-13,Men's Pound-for-Pound,Tom Aspinall,8
+2026-10-13,Men's Pound-for-Pound,Merab Dvalishvili,9
+2026-10-13,Men's Pound-for-Pound,Alex Pereira,10
+2026-10-13,Men's Pound-for-Pound,Ciryl Gane,11
+2026-10-13,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-10-13,Men's Pound-for-Pound,Arman Tsarukyan,13
+2026-10-13,Men's Pound-for-Pound,Alexandre Pantoja,14
+2026-10-13,Men's Pound-for-Pound,Carlos Ulberg,15
+2026-10-13,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-10-13,Women's Pound-for-Pound,Kayla Harrison,2
+2026-10-13,Women's Pound-for-Pound,Zhang Weili,3
+2026-10-13,Women's Pound-for-Pound,Natalia Silva,4
+2026-10-13,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-10-13,Women's Pound-for-Pound,Alexa Grasso,6
+2026-10-13,Women's Pound-for-Pound,Manon Fiorot,7
+2026-10-13,Women's Pound-for-Pound,Erin Blanchfield,8
+2026-10-13,Women's Pound-for-Pound,Tatiana Suarez,9
+2026-10-13,Women's Pound-for-Pound,Julianna Pena,10
+2026-10-13,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-10-13,Women's Pound-for-Pound,Rose Namajunas,12
+2026-10-13,Women's Pound-for-Pound,Raquel Pennington,13
+2026-10-13,Women's Pound-for-Pound,Denise Gomes,14
+2026-10-13,Women's Pound-for-Pound,Maycee Barber,15
+2026-10-20,Flyweight,Joshua Van,0
+2026-10-20,Flyweight,Alexandre Pantoja,1
+2026-10-20,Flyweight,Manel Kape,2
+2026-10-20,Flyweight,Brandon Royval,3
+2026-10-20,Flyweight,Tatsuro Taira,4
+2026-10-20,Flyweight,Kyoji Horiguchi,5
+2026-10-20,Flyweight,Lone'er Kavanagh,6
+2026-10-20,Flyweight,Asu Almabayev,7
+2026-10-20,Flyweight,Brandon Moreno,8
+2026-10-20,Flyweight,Amir Albazi,9
+2026-10-20,Flyweight,Ramazan Temirov,10
+2026-10-20,Flyweight,Tim Elliott,11
+2026-10-20,Flyweight,Steve Erceg,12
+2026-10-20,Flyweight,Sumudaerji,13
+2026-10-20,Flyweight,Tagir Ulanbekov,14
+2026-10-20,Flyweight,Alex Perez,15
+2026-10-20,Bantamweight,Petr Yan,0
+2026-10-20,Bantamweight,Merab Dvalishvili,1
+2026-10-20,Bantamweight,Sean O'Malley,2
+2026-10-20,Bantamweight,Song Yadong,3
+2026-10-20,Bantamweight,Umar Nurmagomedov,4
+2026-10-20,Bantamweight,Mario Bautista,5
+2026-10-20,Bantamweight,Cory Sandhagen,6
+2026-10-20,Bantamweight,Payton Talbott,7
+2026-10-20,Bantamweight,David Martinez,8
+2026-10-20,Bantamweight,Aiemann Zahabi,9
+2026-10-20,Bantamweight,Raul Rosas Jr.,10
+2026-10-20,Bantamweight,Marlon Vera,11
+2026-10-20,Bantamweight,Deiveson Figueiredo,12
+2026-10-20,Bantamweight,Marcus McGhee,13
+2026-10-20,Bantamweight,Raoni Barcelos,14
+2026-10-20,Bantamweight,Bryce Mitchell,15
+2026-10-20,Featherweight,Alexander Volkanovski,0
+2026-10-20,Featherweight,Movsar Evloev,1
+2026-10-20,Featherweight,Diego Lopes,2
+2026-10-20,Featherweight,Lerone Murphy,3
+2026-10-20,Featherweight,Aljamain Sterling,4
+2026-10-20,Featherweight,Jean Silva,5
+2026-10-20,Featherweight,Yair Rodriguez,6
+2026-10-20,Featherweight,Arnold Allen,7
+2026-10-20,Featherweight,Youssef Zalal,8
+2026-10-20,Featherweight,Kevin Vallejos,9
+2026-10-20,Featherweight,Steve Garcia,10
+2026-10-20,Featherweight,Aaron Pico,11
+2026-10-20,Featherweight,Melquizael Costa,12
+2026-10-20,Featherweight,Brian Ortega,13
+2026-10-20,Featherweight,Patricio Freire,14
+2026-10-20,Featherweight,David Onama,15
+2026-10-20,Lightweight,Justin Gaethje,0
+2026-10-20,Lightweight,Ilia Topuria,1
+2026-10-20,Lightweight,Arman Tsarukyan,2
+2026-10-20,Lightweight,Charles Oliveira,3
+2026-10-20,Lightweight,Max Holloway,4
+2026-10-20,Lightweight,Paddy Pimblett,5
+2026-10-20,Lightweight,Benoit Saint Denis,6
+2026-10-20,Lightweight,Quillan Salkilld,7
+2026-10-20,Lightweight,Mauricio Ruffy,8
+2026-10-20,Lightweight,Salahdine Parnasse,9
+2026-10-20,Lightweight,Mateusz Gamrot,10
+2026-10-20,Lightweight,Rafael Fiziev,11
+2026-10-20,Lightweight,Renato Moicano,12
+2026-10-20,Lightweight,Dan Hooker,13
+2026-10-20,Lightweight,Tom Nolan,14
+2026-10-20,Lightweight,Beneil Dariush,15
+2026-10-20,Welterweight,Islam Makhachev,0
+2026-10-20,Welterweight,Ian Machado Garry,1
+2026-10-20,Welterweight,Carlos Prates,2
+2026-10-20,Welterweight,Michael Morales,3
+2026-10-20,Welterweight,Jack Della Maddalena,4
+2026-10-20,Welterweight,Gabriel Bonfim,5
+2026-10-20,Welterweight,Sean Brady,6
+2026-10-20,Welterweight,Belal Muhammad,7
+2026-10-20,Welterweight,Leon Edwards,8
+2026-10-20,Welterweight,Kamaru Usman,9
+2026-10-20,Welterweight,Mike Malott,10
+2026-10-20,Welterweight,Yaroslav Amosov,11
+2026-10-20,Welterweight,Joaquin Buckley,12
+2026-10-20,Welterweight,Uros Medic,12
+2026-10-20,Welterweight,Daniel Rodriguez,14
+2026-10-20,Welterweight,Neil Magny,15
+2026-10-20,Middleweight,Sean Strickland,0
+2026-10-20,Middleweight,Khamzat Chimaev,1
+2026-10-20,Middleweight,Dricus Du Plessis,2
+2026-10-20,Middleweight,Nassourdine Imavov,3
+2026-10-20,Middleweight,Brendan Allen,4
+2026-10-20,Middleweight,Caio Borralho,5
+2026-10-20,Middleweight,Joe Pyfer,6
+2026-10-20,Middleweight,Gregory Rodrigues,7
+2026-10-20,Middleweight,Anthony Hernandez,8
+2026-10-20,Middleweight,Israel Adesanya,9
+2026-10-20,Middleweight,Christian Leroy Duncan,10
+2026-10-20,Middleweight,Jared Cannonier,11
+2026-10-20,Middleweight,Abus Magomedov,12
+2026-10-20,Middleweight,Ikram Aliskerov,13
+2026-10-20,Middleweight,Bo Nickal,14
+2026-10-20,Middleweight,Shara Magomedov,15
+2026-10-20,Light Heavyweight,Carlos Ulberg,0
+2026-10-20,Light Heavyweight,Magomed Ankalaev,1
+2026-10-20,Light Heavyweight,Jiri Prochazka,2
+2026-10-20,Light Heavyweight,Alex Pereira,3
+2026-10-20,Light Heavyweight,Khalil Rountree Jr.,4
+2026-10-20,Light Heavyweight,Navajo Stirling,5
+2026-10-20,Light Heavyweight,Paulo Costa,6
+2026-10-20,Light Heavyweight,Azamat Murzakanov,7
+2026-10-20,Light Heavyweight,Dominick Reyes,8
+2026-10-20,Light Heavyweight,Jan Blachowicz,9
+2026-10-20,Light Heavyweight,Bogdan Guskov,10
+2026-10-20,Light Heavyweight,Robert Whittaker,11
+2026-10-20,Light Heavyweight,Alonzo Menifield,12
+2026-10-20,Light Heavyweight,Muhammad Said,13
+2026-10-20,Light Heavyweight,Reinier de Ridder,14
+2026-10-20,Light Heavyweight,Nikita Krylov,15
+2026-10-20,Heavyweight,Ciryl Gane,0
+2026-10-20,Heavyweight,Tom Aspinall,1
+2026-10-20,Heavyweight,Alexander Volkov,2
+2026-10-20,Heavyweight,Sergei Pavlovich,3
+2026-10-20,Heavyweight,Josh Hokit,4
+2026-10-20,Heavyweight,Curtis Blaydes,5
+2026-10-20,Heavyweight,Waldo Cortes-Acosta,6
+2026-10-20,Heavyweight,Rizvan Kuniev,7
+2026-10-20,Heavyweight,Vitor Petrino,8
+2026-10-20,Heavyweight,Serghei Spivac,9
+2026-10-20,Heavyweight,Ante Delija,10
+2026-10-20,Heavyweight,Valter Walker,11
+2026-10-20,Heavyweight,Tyrell Fortune,12
+2026-10-20,Heavyweight,Derrick Lewis,12
+2026-10-20,Heavyweight,Aleksandar Rakic,14
+2026-10-20,Heavyweight,Mario Pinto,15
+2026-10-20,Women's Strawweight,Mackenzie Dern,0
+2026-10-20,Women's Strawweight,Zhang Weili,1
+2026-10-20,Women's Strawweight,Tatiana Suarez,2
+2026-10-20,Women's Strawweight,Virna Jandiroba,3
+2026-10-20,Women's Strawweight,Denise Gomes,4
+2026-10-20,Women's Strawweight,Gillian Robertson,5
+2026-10-20,Women's Strawweight,Yan Xiaonan,6
+2026-10-20,Women's Strawweight,Fatima Kline,7
+2026-10-20,Women's Strawweight,Loopy Godinez,8
+2026-10-20,Women's Strawweight,Alexia Thainara,9
+2026-10-20,Women's Strawweight,Jessica Andrade,10
+2026-10-20,Women's Strawweight,Tabatha Ricci,11
+2026-10-20,Women's Strawweight,Amanda Lemos,12
+2026-10-20,Women's Strawweight,Amanda Ribas,13
+2026-10-20,Women's Strawweight,Angela Hill,14
+2026-10-20,Women's Strawweight,Mizuki,15
+2026-10-20,Women's Flyweight,Natalia Silva,0
+2026-10-20,Women's Flyweight,Valentina Shevchenko,1
+2026-10-20,Women's Flyweight,Alexa Grasso,2
+2026-10-20,Women's Flyweight,Manon Fiorot,3
+2026-10-20,Women's Flyweight,Jasmine Jasudavicius,4
+2026-10-20,Women's Flyweight,Erin Blanchfield,5
+2026-10-20,Women's Flyweight,Rose Namajunas,6
+2026-10-20,Women's Flyweight,Maycee Barber,7
+2026-10-20,Women's Flyweight,Wang Cong,8
+2026-10-20,Women's Flyweight,Tracy Cortez,9
+2026-10-20,Women's Flyweight,Miranda Maverick,10
+2026-10-20,Women's Flyweight,Karine Silva,11
+2026-10-20,Women's Flyweight,Casey O'Neill,12
+2026-10-20,Women's Flyweight,Eduarda Moura,13
+2026-10-20,Women's Flyweight,Gabriella Fernandes,14
+2026-10-20,Women's Flyweight,Regina Tarin,15
+2026-10-20,Women's Bantamweight,Kayla Harrison,0
+2026-10-20,Women's Bantamweight,Julianna Pena,1
+2026-10-20,Women's Bantamweight,Joselyne Edwards,2
+2026-10-20,Women's Bantamweight,Ailin Perez,3
+2026-10-20,Women's Bantamweight,Norma Dumont,4
+2026-10-20,Women's Bantamweight,Raquel Pennington,5
+2026-10-20,Women's Bantamweight,Yana Santos,6
+2026-10-20,Women's Bantamweight,Luana Santos,7
+2026-10-20,Women's Bantamweight,Jacqueline Cavalcanti,8
+2026-10-20,Women's Bantamweight,Macy Chiasson,9
+2026-10-20,Women's Bantamweight,Karol Rosa,10
+2026-10-20,Women's Bantamweight,Bia Mesquita,11
+2026-10-20,Women's Bantamweight,Michelle Montague,12
+2026-10-20,Women's Bantamweight,Nora Cornolle,13
+2026-10-20,Women's Bantamweight,Chelsea Chandler,14
+2026-10-20,Women's Bantamweight,Alice Pereira,15
+2026-10-20,Men's Pound-for-Pound,Islam Makhachev,1
+2026-10-20,Men's Pound-for-Pound,Alexander Volkanovski,2
+2026-10-20,Men's Pound-for-Pound,Justin Gaethje,3
+2026-10-20,Men's Pound-for-Pound,Petr Yan,4
+2026-10-20,Men's Pound-for-Pound,Ilia Topuria,5
+2026-10-20,Men's Pound-for-Pound,Joshua Van,6
+2026-10-20,Men's Pound-for-Pound,Tom Aspinall,7
+2026-10-20,Men's Pound-for-Pound,Sean Strickland,7
+2026-10-20,Men's Pound-for-Pound,Tom Aspinall,8
+2026-10-20,Men's Pound-for-Pound,Merab Dvalishvili,9
+2026-10-20,Men's Pound-for-Pound,Alex Pereira,10
+2026-10-20,Men's Pound-for-Pound,Ciryl Gane,11
+2026-10-20,Men's Pound-for-Pound,Khamzat Chimaev,12
+2026-10-20,Men's Pound-for-Pound,Arman Tsarukyan,13
+2026-10-20,Men's Pound-for-Pound,Alexandre Pantoja,14
+2026-10-20,Men's Pound-for-Pound,Carlos Ulberg,15
+2026-10-20,Women's Pound-for-Pound,Valentina Shevchenko,1
+2026-10-20,Women's Pound-for-Pound,Kayla Harrison,2
+2026-10-20,Women's Pound-for-Pound,Zhang Weili,3
+2026-10-20,Women's Pound-for-Pound,Natalia Silva,4
+2026-10-20,Women's Pound-for-Pound,Mackenzie Dern,5
+2026-10-20,Women's Pound-for-Pound,Alexa Grasso,6
+2026-10-20,Women's Pound-for-Pound,Manon Fiorot,7
+2026-10-20,Women's Pound-for-Pound,Tatiana Suarez,8
+2026-10-20,Women's Pound-for-Pound,Erin Blanchfield,9
+2026-10-20,Women's Pound-for-Pound,Julianna Pena,9
+2026-10-20,Women's Pound-for-Pound,Julianna Pena,10
+2026-10-20,Women's Pound-for-Pound,Virna Jandiroba,10
+2026-10-20,Women's Pound-for-Pound,Virna Jandiroba,11
+2026-10-20,Women's Pound-for-Pound,Jasmine Jasudavicius,11
+2026-10-20,Women's Pound-for-Pound,Jasmine Jasudavicius,12
+2026-10-20,Women's Pound-for-Pound,Rose Namajunas,12
+2026-10-20,Women's Pound-for-Pound,Rose Namajunas,13
+2026-10-20,Women's Pound-for-Pound,Raquel Pennington,13
+2026-10-20,Women's Pound-for-Pound,Raquel Pennington,14
+2026-10-20,Women's Pound-for-Pound,Erin Blanchfield,14
+2026-10-20,Women's Pound-for-Pound,Denise Gomes,15
